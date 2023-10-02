@@ -1,98 +1,180 @@
-body{
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-h1{
+h1 {
     text-align: center;
     padding: 50px;
 }
 
-.Grid {
-    width: 700px;
-    height: 500px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-}
-
-div{
+.Grid div {
     border: 1px solid black;
-    margin-left: -1px;
-    margin-top: -1px;
+}
+
+.Grid {
+    width: 1100px;
+    height: 550px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: 0.5fr repeat(7, 1fr);
+
+}
+
+.time, .week {
     text-align: center;
-
+    background: #ACA9A7;
 }
 
-.time div{
-
+.week, .lecture, .course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.pondeli {
+.Grid .lecture {
+    background: #F7C1BB;
+    border: 2px solid #6D3B47;
+    padding: 1px;
+}
+
+.Grid .course {
+    background: #AED4D4;
+    border: 2px solid #022B3A;
+    padding: 1px;
+}
+
+.mon {
     grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.Utery {
-    grid-row-start: 3;
     grid-row-end: 4;
 }
 
-.Streda {
+.tue {
     grid-row-start: 4;
-    grid-row-end: 5;
-}
-
-.Ctvrtek {
-    grid-row-start: 5;
     grid-row-end: 6;
 }
 
-.Patek {
+.wed {
     grid-row-start: 6;
     grid-row-end: 7;
 }
 
-.a {
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 3;
-    grid-column-end: 5;
+.thu {
+    grid-row-start: 7;
+    grid-row-end: 8;
 }
 
-.b {
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 7;
+.fri {
+    grid-row-start: 8;
+    grid-row-end: 9;
+}
+
+#pjava {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 6;
     grid-column-end: 8;
 }
 
-.c {
+#pvia {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 8;
+    grid-column-end: 10;
+}
+
+#ppos {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 8;
+    grid-column-end: 10;
+}
+
+#pds {
     grid-row-start: 4;
     grid-row-end: 5;
     grid-column-start: 4;
-    grid-column-end: 5;
-}
-
-.d {
-    grid-row-start: 4;
-    grid-row-end: 5;
-    grid-column-start: 5;
     grid-column-end: 6;
 }
 
-.e {
-    grid-row-start: 5;
-    grid-row-end: 6;
-    grid-column-start: 2;
-    grid-column-end: 3;
+#palg {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 6;
+    grid-column-end: 8;
 }
 
-.f {
+#pek {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#pdim {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#java {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 8;
+    grid-column-end: 10;
+}
+
+#via {
     grid-row-start: 5;
     grid-row-end: 6;
-    grid-column-start: 5;
-    grid-column-end: 7;
+    grid-column-start: 4;
+    grid-column-end: 6;
 }
+
+#pos {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 5;
+    grid-column-end: 8;
+}
+
+#ds {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+
+#alg {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 12;
+    grid-column-end: 14;
+}
+
+#ek {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+
+#dim {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 12;
+    grid-column-end: 14;
+}
+
+#aj {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 10;
+    grid-column-end: 12;
+}
+

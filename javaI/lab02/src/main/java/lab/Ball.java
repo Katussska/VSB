@@ -27,14 +27,14 @@ public class Ball {
         this.position = new Point2D(20, 20);
     }
 
-    public Ball(Game game, Point2D startPos) {
+    public Ball(Game game, Point2D startPosition) {
         this.game = game;
-        this.position = startPos;
+        this.position = startPosition;
     }
 
     public void draw(GraphicsContext gc) {
         gc.save();
-        gc.setFill(Color.WHITE);
+        gc.setFill(Color.GRAY);
         gc.fillRect(position.getX(), position.getY(), width, height);
         gc.restore();
     }

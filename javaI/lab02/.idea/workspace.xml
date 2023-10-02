@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d74bce6-6dc3-4322-bd90-903447fe0df2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab01/src/main/java/lab/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab01/src/main/java/lab/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab01/src/main/java/lab/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab01/src/main/java/lab/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab01/src/main/java/lab/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab01/src/main/java/lab/lab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Bat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Bat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Routines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Routines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lab/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lab/Ball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lab/Bat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lab/Bat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lab/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lab/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lab/Routines.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lab/Routines.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +43,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,22 +52,28 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2VhfXFk8houH2at53Q6sHtSPhQf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/katussska/Private/Github/vsb",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/katussska/Private/github/vsb/javaI/lab02",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -55,19 +81,6 @@
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lab.App" />
       <module name="lab01" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="lab02" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="lab02" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,10 +106,18 @@
       <workItem from="1695888250398" duration="31000" />
       <workItem from="1695888316775" duration="3132000" />
       <workItem from="1696247457835" duration="1400000" />
+      <workItem from="1696254572832" duration="1244000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
