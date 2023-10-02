@@ -1,0 +1,10 @@
+# ninja log v5
+58	3133	7052767392698460	CMakeFiles/library.dir/main.cpp.obj	9f31587355ecd2fe
+1	3157	7052767392488439	CMakeFiles/library.dir/src/AudioBook.cpp.obj	95939cdf54f7c1f6
+3143	7290	7052767434539149	CMakeFiles/library.dir/src/Library.cpp.obj	99cd169feb200856
+4918	7317	7052767434889145	CMakeFiles/library.dir/src/RegisteredUser.cpp.obj	f04962a95d569cb5
+75	3173	7052767392488439	CMakeFiles/library.dir/src/EBook.cpp.obj	9fbe95c33846441d
+3174	4830	7052767410028880	CMakeFiles/library.dir/src/Librarian.cpp.obj	9d0209218063b166
+3158	4917	7052767410898910	CMakeFiles/library.dir/src/Book.cpp.obj	85dc1c707f57f1e5
+4831	7404	7052767435781357	CMakeFiles/library.dir/src/User.cpp.obj	ea11be4121e8a80
+7937	14806	7052767509677974	library.exe	6b010e2df61df83e

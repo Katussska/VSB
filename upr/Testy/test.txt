@@ -1,0 +1,6 @@
+jana,brno,50,2
+petr,ostrava,25,1
+pavel,brno,15,10
+karel,brno,75,4
+patrik,teplice,25,1
+city-priority,brno

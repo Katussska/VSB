@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+            "preLaunchTask": "gcc build active file",
+            "args": [
+                "--real_data",
+                "data.csv",
+                "--infectious_days",
+                "8",
+                "--infections_per_day",
+                "0.3",
+                "--output",
+                "output.svg"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Connect to valgrind",
+                    "text": "target remote | vgdb",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

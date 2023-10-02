@@ -1,0 +1,457 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.5.12)  12 MAY 2023 21:23
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/home/katussska/Private/VS Code/latex/swi/swi.tex"
+(/home/katussska/Private/VS Code/latex/swi/swi.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-12-17> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks17
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+ (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count196
+)
+\csq@reset=\count197
+\csq@gtype=\count198
+\csq@glevel=\count199
+\csq@qlevel=\count266
+\csq@maxlvl=\count267
+\csq@tshold=\count268
+\csq@ltx@everypar=\toks18
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Enabling multilingual quotes.
+) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+ (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+)
+\XKV@depth=\count269
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+) (/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box51
+)
+\tc@llx=\dimen151
+\tc@lly=\dimen152
+\tc@urx=\dimen153
+\tc@ury=\dimen154
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen155
+\adjbox@Height=\dimen156
+\adjbox@Depth=\dimen157
+\adjbox@Totalheight=\dimen158
+\adjbox@pwidth=\dimen159
+\adjbox@pheight=\dimen160
+\adjbox@pdepth=\dimen161
+\adjbox@ptotalheight=\dimen162
+ (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count270
+) (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box52
+\sift@deathcycles=\count271
+\@vwid@loff=\dimen163
+\@vwid@roff=\dimen164
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/12/26 3.84 The Babel package
+\babel@savecnt=\count272
+\U@D=\dimen165
+\l@unhyphenated=\language3
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count273
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-czech/czech.ldf
+Language: czech 2008/07/06 v3.1a Czech support from the babel system
+
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language 'Czech' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 53.
+
+Package babel Info: Hyphen rules for 'czech' set to \l@english
+(babel)             (\language0). Reported on input line 54.
+Package babel Info: Making " an active character on input line 172.
+\cs@wordlen=\count274
+Package babel Info: Making - an active character on input line 226.
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/cs/babel-czech.tex
+Package babel Info: Importing font and identification data for czech
+(babel)             from babel-cs.ini. Reported on input line 11.
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+\l__pdf_internal_box=\box53
+) (./swi.aux)
+\openout1 = `swi.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=702.78308pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count276
+\scratchdimen=\dimen166
+\scratchbox=\box54
+\nofMPsegments=\count277
+\nofMParguments=\count278
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count279
+\MPscratchDim=\dimen167
+\MPnumerator=\count280
+\makeMPintoPDFobject=\count281
+\everyMPtoPDFconversion=\toks22
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 19.
+ [1
+
+{/usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./swi.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
+\tf@toc=\write3
+\openout3 = `swi.toc'.
+
+ [1] [2
+
+] [3
+
+]
+Overfull \hbox (11.94798pt too wide) in paragraph at lines 92--93
+[]\OT1/cmr/m/n/12 Aplikace mus^^S^^P spr^^Savn^^Te a co ne-jrych-leji naj^^S^^Pt shodn^^Se pro-fily vzh-le-dem k zadan^^Sym po^^Tzadavk^^Wum
+ []
+
+
+Overfull \hbox (2.29114pt too wide) in paragraph at lines 130--132
+\OT1/cmr/m/n/12 Tato sekce se zab^^Syv^^Sa ^^Sudr^^Tzbou syst^^Semu, kter^^Sa zahrnuje nap^^Tr^^S^^Pklad z^^Saplaty, ak-tu-al-izace s p^^Tr^^S^^Ppadnou
+ []
+
+[4
+
+] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--184
+
+ []
+
+[6
+
+]
+<./img//UC_diagram.png, id=27, 1433.355pt x 1031.855pt>
+File: ./img//UC_diagram.png Graphic file (type png)
+<use ./img//UC_diagram.png>
+Package pdftex.def Info: ./img//UC_diagram.png  used on input line 202.
+(pdftex.def)             Requested size: 483.69687pt x 348.19667pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 202--203
+[][] 
+ []
+
+[7
+
+ <./img//UC_diagram.png>] [8
+
+] [9
+
+] [10
+
+]
+<./img//Class_diagram.png, id=43, 759.28668pt x 596.2275pt>
+File: ./img//Class_diagram.png Graphic file (type png)
+<use ./img//Class_diagram.png>
+Package pdftex.def Info: ./img//Class_diagram.png  used on input line 329.
+(pdftex.def)             Requested size: 483.69687pt x 379.81935pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 329--330
+[][] 
+ []
+
+[11
+
+ <./img//Class_diagram.png>]
+<./img//Sequence_diagram _1.png, id=47, 1245.65375pt x 1101.11375pt>
+File: ./img//Sequence_diagram _1.png Graphic file (type png)
+<use ./img//Sequence_diagram _1.png>
+Package pdftex.def Info: ./img//Sequence_diagram _1.png  used on input line 346.
+(pdftex.def)             Requested size: 483.69687pt x 427.56766pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 346--347
+[][] 
+ []
+
+[12
+
+ <./img//Sequence_diagram _1.png>]
+<./img//Sequence_diagram _2.png, id=53, 1294.8375pt x 1245.65375pt>
+File: ./img//Sequence_diagram _2.png Graphic file (type png)
+<use ./img//Sequence_diagram _2.png>
+Package pdftex.def Info: ./img//Sequence_diagram _2.png  used on input line 362.
+(pdftex.def)             Requested size: 483.69687pt x 465.31334pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 362--363
+[][] 
+ []
+
+[13
+
+ <./img//Sequence_diagram _2.png>]
+<./img//Sequence_diagram _3.png, id=58, 1257.69875pt x 849.1725pt>
+File: ./img//Sequence_diagram _3.png Graphic file (type png)
+<use ./img//Sequence_diagram _3.png>
+Package pdftex.def Info: ./img//Sequence_diagram _3.png  used on input line 378.
+(pdftex.def)             Requested size: 483.69687pt x 326.5761pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 378--379
+[][] 
+ []
+
+[14
+
+ <./img//Sequence_diagram _3.png>]
+<./img//Activity_diagram_1.png, id=63, 1818.795pt x 2780.3875pt>
+File: ./img//Activity_diagram_1.png Graphic file (type png)
+<use ./img//Activity_diagram_1.png>
+Package pdftex.def Info: ./img//Activity_diagram_1.png  used on input line 395.
+(pdftex.def)             Requested size: 386.95897pt x 591.53516pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 395--396
+[][] 
+ []
+
+[15
+
+ <./img//Activity_diagram_1.png>]
+<./img//Activity_diagram_2.png, id=68, 1198.4775pt x 2226.3175pt>
+File: ./img//Activity_diagram_2.png Graphic file (type png)
+<use ./img//Activity_diagram_2.png>
+Package pdftex.def Info: ./img//Activity_diagram_2.png  used on input line 410.
+(pdftex.def)             Requested size: 290.22107pt x 539.11702pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 410--411
+[][] 
+ []
+
+[16
+
+ <./img//Activity_diagram_2.png>]
+<./img//Activity_diagram_3.png, id=73, 1367.1075pt x 1963.335pt>
+File: ./img//Activity_diagram_3.png Graphic file (type png)
+<use ./img//Activity_diagram_3.png>
+Package pdftex.def Info: ./img//Activity_diagram_3.png  used on input line 426.
+(pdftex.def)             Requested size: 386.95897pt x 555.72166pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 426--427
+[][] 
+ []
+
+[17
+
+ <./img//Activity_diagram_3.png>]
+<./img//State_diagram_1.png, id=78, 1120.185pt x 977.6525pt>
+File: ./img//State_diagram_1.png Graphic file (type png)
+<use ./img//State_diagram_1.png>
+Package pdftex.def Info: ./img//State_diagram_1.png  used on input line 441.
+(pdftex.def)             Requested size: 314.40001pt x 274.39722pt.
+ [18
+
+ <./img//State_diagram_1.png>]
+<./img//State_diagram_2.png, id=84, 2156.055pt x 1288.815pt>
+File: ./img//State_diagram_2.png Graphic file (type png)
+<use ./img//State_diagram_2.png>
+Package pdftex.def Info: ./img//State_diagram_2.png  used on input line 455.
+(pdftex.def)             Requested size: 483.69687pt x 289.12524pt.
+ [19
+
+ <./img//State_diagram_2.png>]
+<./img//State_diagram_3.png, id=89, 816.04875pt x 404.51125pt>
+File: ./img//State_diagram_3.png Graphic file (type png)
+<use ./img//State_diagram_3.png>
+Package pdftex.def Info: ./img//State_diagram_3.png  used on input line 472.
+(pdftex.def)             Requested size: 483.69687pt x 239.77058pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 472--473
+[][] 
+ []
+
+[20
+
+ <./img//State_diagram_3.png>] (./swi.aux) ) 
+Here is how much of TeX's memory you used:
+ 5676 strings out of 478126
+ 97628 string characters out of 5842810
+ 1865793 words of memory out of 6000000
+ 25647 multiletter control sequences out of 15000+600000
+ 518099 words of font info for 51 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 84i,7n,90p,325b,203s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on swi.pdf (21 pages, 1502766 bytes).
+PDF statistics:
+ 110 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+

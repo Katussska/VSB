@@ -1,0 +1,98 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    padding: 50px;
+}
+
+.Grid {
+    width: 700px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+div{
+    border: 1px solid black;
+    margin-left: -1px;
+    margin-top: -1px;
+    text-align: center;
+
+}
+
+.time div{
+
+}
+
+.pondeli {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.Utery {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.Streda {
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.Ctvrtek {
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.Patek {
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.a {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.b {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 7;
+    grid-column-end: 8;
+}
+
+.c {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.d {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+.e {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.f {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 5;
+    grid-column-end: 7;
+}

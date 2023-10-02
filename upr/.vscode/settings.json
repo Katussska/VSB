@@ -1,0 +1,8 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "stdio.h": "c",
+        "DOUCOVANI.C": "cpp",
+        "string.h": "c"
+    }
+}

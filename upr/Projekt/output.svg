@@ -1,0 +1,65 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graph" aria-labelledby="title" role="img">
+<title id ="title">Graf vývoje epidemie</title>
+<g>
+<text x="100" y="445">1</text>
+<text x="150" y="445">2</text>
+<text x="200" y="445">3</text>
+<text x="250" y="445">4</text>
+<text x="300" y="445">5</text>
+<text x="350" y="445">6</text>
+<text x="400" y="445">7</text>
+<text x="450" y="445">8</text>
+<text x="500" y="445">9</text>
+<text x="550" y="445">10</text>
+<text x="600" y="445">11</text>
+<text x="650" y="445">12</text>
+<text x="700" y="445">13</text>
+<text x="750" y="445">14</text>
+<text x="425" y="470" class="label-title">Days</text>
+<line x1="99" y1="430" x2="750" y2="430" stroke="black" />
+</g>
+<g class="labels y-labels">
+<text x="70" y="130">1.0</text>
+<line x1="100" y1="130" x2="750" y2="130" stroke="#ECEFEF" />
+<text x="70" y="160">0.9</text>
+<line x1="100" y1="160" x2="750" y2="160" stroke="#ECEFEF" />
+<text x="70" y="190">0.8</text>
+<line x1="100" y1="190" x2="750" y2="190" stroke="#ECEFEF" />
+<text x="70" y="220">0.7</text>
+<line x1="100" y1="220" x2="750" y2="220" stroke="#ECEFEF" />
+<text x="70" y="250">0.6</text>
+<line x1="100" y1="250" x2="750" y2="250" stroke="#ECEFEF" />
+<text x="70" y="280">0.5</text>
+<line x1="100" y1="280" x2="750" y2="280" stroke="#ECEFEF" />
+<text x="70" y="310">0.4</text>
+<line x1="100" y1="310" x2="750" y2="310" stroke="#ECEFEF" />
+<text x="70" y="340">0.3</text>
+<line x1="100" y1="340" x2="750" y2="340" stroke="#ECEFEF" />
+<text x="70" y="370">0.2</text>
+<line x1="100" y1="370" x2="750" y2="370" stroke="#ECEFEF" />
+<text x="70" y="400">0.1</text>
+<line x1="100" y1="400" x2="750" y2="400" stroke="#ECEFEF" />
+<text x="70" y="430">0</text>
+<line x1="100" y1="430" x2="100" y2="110" stroke="black" />
+</g>
+<polyline points="100,190 150,213 200,274 250,286 300,310 350,322 400,358 450,382 500,190 550,213 600,274 650,218 700,220 750,230 " fill="none" stroke="green" />
+<polyline points="100,382 150,370 200,334 250,322 300,358 350,346 400,322 450,310 500,382 550,370 600,334 650,394 700,365 750,396 " fill="none" stroke="red" />
+<polyline points="100,418 150,406 200,382 250,382 300,322 350,322 400,310 450,298 500,418 550,406 600,382 650,377 700,404 750,363 " fill="none" stroke="blue" />
+<polyline points="100,190 150,201 200,213 250,226 300,239 350,252 400,265 450,278 500,291 550,302 600,313 650,323 700,332 750,340 " fill="none" stroke="#72DD72" />
+<polyline points="100,382 150,376 200,370 250,365 300,360 350,355 400,352 450,349 500,346 550,345 600,345 650,346 700,347 750,350 " fill="none" stroke="#DD7272" />
+<polyline points="100,418 150,412 200,405 250,397 300,389 350,381 400,371 450,362 500,352 550,341 600,331 650,320 700,310 750,299 " fill="none" stroke="#728FDD" />
+<g>
+<circle cx="100" cy="480" r="5" fill="green" />
+<circle cx="100" cy="495" r="5" fill="red" />
+<circle cx="100" cy="510" r="5" fill="blue" />
+<circle cx="100" cy="525" r="5" fill="#72DD72" />
+<circle cx="100" cy="540" r="5" fill="#DD7272" />
+<circle cx="100" cy="555" r="5" fill="#728FDD" />
+<text x="110" y="485">Zdraví</text>
+<text x="110" y="500">Nakažení</text>
+<text x="110" y="515">Uzdravení</text>
+<text x="110" y="530">Zdraví (Simulace)</text>
+<text x="110" y="545">Nakažení (Simulace)</text>
+<text x="110" y="560">Uzdravení (Simulace)</text>
+</g>
+</svg>

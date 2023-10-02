@@ -1,0 +1,43 @@
+\babel@toc {czech}{}\relax 
+\contentsline {section}{\numberline {1}Počáteční popis}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Zadání od zákazníka}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Důvod, okolnosti zavedení řešení}{3}{}%
+\contentsline {section}{\numberline {2}Systémové požadavky}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Funkčnost (functionality - F)}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Vhodnost k použití (usability - U)}{4}{}%
+\contentsline {subsection}{\numberline {2.3}Spolehlivost (reliability- R)}{4}{}%
+\contentsline {subsection}{\numberline {2.4}Výkon (performance - P)}{4}{}%
+\contentsline {subsection}{\numberline {2.5}Schopnost být udržována (supportability - S)}{5}{}%
+\contentsline {section}{\numberline {3}Charakteristika aktérů a prostředí}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Uživatelé figurující v systému}{5}{}%
+\contentsline {section}{\numberline {4}Scénáře případů použití systému}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Ideální případ použití}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Hraniční případ použití}{6}{}%
+\contentsline {subsection}{\numberline {4.3}Případ použití za hranou}{6}{}%
+\contentsline {section}{\numberline {5}Podrobný náhled na stavbu produktu}{7}{}%
+\contentsline {subsection}{\numberline {5.1}Use case diagram}{7}{}%
+\contentsline {subsection}{\numberline {5.2}Konkrétní implementace use case 1}{8}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}UC1: Parametry}{8}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}UC1: Hlavní scénář}{8}{}%
+\contentsline {subsubsection}{\numberline {5.2.3}UC1: Extension}{8}{}%
+\contentsline {subsection}{\numberline {5.3}Konkrétní implementace use case 2}{9}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}UC2: Parametry}{9}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}UC2: Hlavní scénář}{9}{}%
+\contentsline {subsubsection}{\numberline {5.3.3}UC2: Extension}{9}{}%
+\contentsline {subsection}{\numberline {5.4}Konkrétní implementace use case 3}{10}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}UC3: Parametry}{10}{}%
+\contentsline {subsubsection}{\numberline {5.4.2}UC3: Hlavní scénář}{10}{}%
+\contentsline {subsubsection}{\numberline {5.4.3}UC3: Extension}{10}{}%
+\contentsline {subsection}{\numberline {5.5}Class diagram}{11}{}%
+\contentsline {subsection}{\numberline {5.6}Sekvenční diagramy}{12}{}%
+\contentsline {subsubsection}{\numberline {5.6.1}Tvorba uživatelského profilu}{12}{}%
+\contentsline {subsubsection}{\numberline {5.6.2}Hledání shody}{13}{}%
+\contentsline {subsubsection}{\numberline {5.6.3}Založení group chatu}{14}{}%
+\contentsline {subsection}{\numberline {5.7}Aktivitní diagramy}{15}{}%
+\contentsline {subsubsection}{\numberline {5.7.1}Registrace uživatele}{15}{}%
+\contentsline {subsubsection}{\numberline {5.7.2}Nahlášení profilu}{16}{}%
+\contentsline {subsubsection}{\numberline {5.7.3}Založení group chatu}{17}{}%
+\contentsline {subsection}{\numberline {5.8}Stavové diagramy}{18}{}%
+\contentsline {subsubsection}{\numberline {5.8.1}Odesílání zpráv}{18}{}%
+\contentsline {subsubsection}{\numberline {5.8.2}Vytvoření skupinového chatu}{19}{}%
+\contentsline {subsubsection}{\numberline {5.8.3}Provoz}{20}{}%
