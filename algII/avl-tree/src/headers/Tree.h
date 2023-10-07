@@ -5,8 +5,6 @@
 #ifndef AVL_TREE_TREE_H
 #define AVL_TREE_TREE_H
 
-using namespace std;
-
 #include "Node.h"
 
 
@@ -18,13 +16,13 @@ public:
 
     int getNodeHeight(Node *node);
 
-    int balance(Node *node); //pro vybalancovani
+    int isBalanced(Node *node); //pro vybalancovani
 
-    Node *rotateRight(Node *node); //rotace vpravo
-    Node *rotateLeft(Node *node); //rotace vlevo
+    Node *rightRotation(Node *node); //rotace vpravo
+    Node *leftRotation(Node *node); //rotace vlevo
     Node *insert(Node *node, int key); //dopsat rotace
 
-    //vypsani stromu
+    void printTree(Node *root, int space);
 };
 
 

@@ -5,6 +5,10 @@
 #ifndef AVL_TREE_NODE_H
 #define AVL_TREE_NODE_H
 
+#include <iostream>
+#include <vector>
+#include <queue>
+
 using namespace std;
 
 class Node {
@@ -14,7 +18,8 @@ public:
     Node *left; //levy potomek
     Node *right; //pravy potomek
 
-    Node(int key);
+    explicit Node(int key);
+
 };
 
 
