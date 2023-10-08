@@ -6,9 +6,11 @@
 
 using namespace std;
 
+// Constructor for the Node class in the AVL tree.
+// Initializes a node with a specified key, default height of 1, and null left and right children.
 Node::Node(int key) {
-    this->key = key;
-    this->height = 1;
-    this->left = nullptr;
-    this->right = nullptr;
+    this->key = key;        // Set the key value of the node
+    this->height = 1;       // Initialize the height of the node to 1
+    this->left = nullptr;   // Initialize the left child pointer to null
+    this->right = nullptr;  // Initialize the right child pointer to null
 }

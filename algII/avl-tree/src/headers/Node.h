@@ -11,12 +11,15 @@
 
 using namespace std;
 
+// The Node class represents a single node in an AVL tree.
+// It contains a key value, height information for balancing,
+// and pointers to its left and right children.
 class Node {
 public:
-    int key; //klic uzlu(hodnota)
-    int height; //vyska ve strome(pro rotaci)
-    Node *left; //levy potomek
-    Node *right; //pravy potomek
+    int key;
+    int height;
+    Node *left;
+    Node *right;
 
     explicit Node(int key);
 
