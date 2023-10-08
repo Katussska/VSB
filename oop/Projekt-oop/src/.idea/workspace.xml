@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84f6025b-6811-4d5c-a717-ea7bd412e385" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/b.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/src/Node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/src/Tree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/src/headers/Node.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/src/headers/Tree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../algII/avl-tree/src/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab02-2023_solution_Wed_10_45/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab02-2023_solution_Wed_10_45/src/main/java/lab/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab02-2023_solution_Wed_10_45/src/main/java/lab/Dragon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab02-2023_solution_Wed_10_45/src/main/resources/lab/dragon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/BulletAnimated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/Cannon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/Dragon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/DrawingThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/Routines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/lab/World.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/resources/lab/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/resources/lab/dragon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javaI/lab03-Solution_Wed_10-45/src/main/resources/lab/fireball-transparent.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../algII/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../algII/bubblesort/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../algII/program" beforeDir="false" afterPath="$PROJECT_DIR$/../../../algII/bubblesort/program" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javaI/BAI0033_lab02.zip" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2WLQBdouxr8Czz5w2cpQWjSQcTC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/katussska/Private/github/vsb/oop/ukol_05",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84f6025b-6811-4d5c-a717-ea7bd412e385" name="Changes" comment="" />
+      <created>1696509245990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696509245990</updated>
+      <workItem from="1696509247067" duration="661000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
