@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8633c626-cc36-43cf-bb64-759674be53f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pong/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pong/target/classes/lab/Bat.class" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/target/classes/lab/Bat.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696505922641</updated>
       <workItem from="1696505923995" duration="236000" />
-      <workItem from="1696790005339" duration="599000" />
+      <workItem from="1696790005339" duration="601000" />
     </task>
     <servers />
   </component>
