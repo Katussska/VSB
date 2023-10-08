@@ -9,13 +9,16 @@ public class Game {
     private Ball ball;
     private Bat player1;
     private Bat player2;
+    private Bat[] players;
 
     public Game(double width, double height) {
         this.width = width;
         this.height = height;
         ball = new Ball(this);
-        player1 = new Bat(this, 30);
-        player2 = new Bat(this, (int) width - 45);
+        players = new Bat[]{
+                new Bat(this, 30),
+                new Bat(this, (int) width - 45)
+        };
     }
 
     public void draw(GraphicsContext gc) {
@@ -36,14 +39,19 @@ public class Game {
         }
 
         ball.draw(gc);
-        player1.draw(gc);
-        player2.draw(gc);
+        for (Bat player : players) {
+            player.draw(gc);
+        }
     }
 
     public void simulate() {
         ball.simulate();
-        player1.simulate();
-        player2.simulate();
+        for (Bat player : players) {
+            player.simulate();
+            if (player.getBB().intersects(ball.getBB())) {
+                ball.hit();
+            }
+        }
     }
 
     public double getWidth() {

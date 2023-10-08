@@ -1,6 +1,7 @@
 package lab;
 
 import javafx.geometry.Point2D;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -34,5 +35,9 @@ public class Bat {
             speed *= -1;
         }
         position = new Point2D(position.getX(), position.getY() + speed);
+    }
+
+    public Rectangle2D getBB() {
+        return new Rectangle2D(position.getX(), position.getY(), width, height);
     }
 }

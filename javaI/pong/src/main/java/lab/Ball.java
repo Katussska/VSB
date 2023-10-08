@@ -1,6 +1,7 @@
 package lab;
 
 import javafx.geometry.Point2D;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -47,5 +48,13 @@ public class Ball {
             vector.y *= -1;
         }
         position = new Point2D(position.getX() + vector.x, position.getY() + vector.y);
+    }
+
+    public Rectangle2D getBB() {
+        return new Rectangle2D(position.getX(), position.getY(), width, height);
+    }
+
+    public void hit() {
+        vector.x *= -1;
     }
 }
