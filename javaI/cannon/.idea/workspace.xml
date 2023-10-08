@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8633c626-cc36-43cf-bb64-759674be53f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab02-2023_solution_Wed_10_45/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab02-2023_solution_Wed_10_45/src/main/java/lab/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab02-2023_solution_Wed_10_45/src/main/java/lab/Dragon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab02-2023_solution_Wed_10_45/src/main/resources/lab/dragon.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab03-Solution_Wed_10-45.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/BulletAnimated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Cannon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Dragon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Routines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/World.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lab/application.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lab/dragon.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lab/fireball-transparent.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BAI0033_lab02.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +18,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2WLJRuWrh3CUHul1DSPvHxFvaYz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,6 +32,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696505922641</updated>
       <workItem from="1696505923995" duration="236000" />
+      <workItem from="1696790005339" duration="601000" />
     </task>
     <servers />
   </component>
