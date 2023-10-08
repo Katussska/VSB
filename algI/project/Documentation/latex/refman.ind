@@ -1,0 +1,206 @@
+\begin{theindex}
+
+  \item {\_\_has\_include}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{11}, \hyperpage{15}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{18}, \hyperpage{21}
+  \item {$\sim$Component}
+    \subitem {Component}, \hyperpage{5}
+  \item {$\sim$Graph}
+    \subitem {Graph}, \hyperpage{7}
+  \item {$\sim$Point}
+    \subitem {Point}, \hyperpage{9}
+
+  \indexspace
+
+  \item {ARCHITECTURE\_ID}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{12}, \hyperpage{15}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{18}, \hyperpage{21}
+
+  \indexspace
+
+  \item {biggestComponent}
+    \subitem {Graph}, \hyperpage{8}
+  \item {build/CMakeFiles/3.26.3/CompilerIdC/CMakeCCompilerId.c}, 
+		\hyperpage{11}
+  \item {build/CMakeFiles/3.26.3/CompilerIdCXX/CMakeCXXCompilerId.cpp}, 
+		\hyperpage{17}
+  \item {build/CMakeFiles/project.dir/main.cpp.o.d}, \hyperpage{24}
+
+  \indexspace
+
+  \item {C\_VERSION}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{12}, \hyperpage{15}
+  \item {checked}
+    \subitem {Point}, \hyperpage{10}
+  \item {CMakeCCompilerId.c}
+    \subitem {\_\_has\_include}, \hyperpage{11}, \hyperpage{15}
+    \subitem {ARCHITECTURE\_ID}, \hyperpage{12}, \hyperpage{15}
+    \subitem {C\_VERSION}, \hyperpage{12}, \hyperpage{15}
+    \subitem {COMPILER\_ID}, \hyperpage{12}, \hyperpage{15}
+    \subitem {DEC}, \hyperpage{12}, \hyperpage{15}
+    \subitem {HEX}, \hyperpage{12}, \hyperpage{15}
+    \subitem {info\_arch}, \hyperpage{13}, \hyperpage{16}
+    \subitem {info\_compiler}, \hyperpage{13}, \hyperpage{17}
+    \subitem {info\_language\_extensions\_default}, \hyperpage{13}, 
+		\hyperpage{17}
+    \subitem {info\_language\_standard\_default}, \hyperpage{14}, 
+		\hyperpage{17}
+    \subitem {info\_platform}, \hyperpage{14}, \hyperpage{17}
+    \subitem {main}, \hyperpage{13}, \hyperpage{16}
+    \subitem {PLATFORM\_ID}, \hyperpage{12}, \hyperpage{16}
+    \subitem {STRINGIFY}, \hyperpage{13}, \hyperpage{16}
+    \subitem {STRINGIFY\_HELPER}, \hyperpage{13}, \hyperpage{16}
+  \item {CMakeCXXCompilerId.cpp}
+    \subitem {\_\_has\_include}, \hyperpage{18}, \hyperpage{21}
+    \subitem {ARCHITECTURE\_ID}, \hyperpage{18}, \hyperpage{21}
+    \subitem {COMPILER\_ID}, \hyperpage{18}, \hyperpage{21}
+    \subitem {CXX\_STD}, \hyperpage{18}, \hyperpage{22}
+    \subitem {DEC}, \hyperpage{18}, \hyperpage{22}
+    \subitem {HEX}, \hyperpage{19}, \hyperpage{22}
+    \subitem {info\_arch}, \hyperpage{20}, \hyperpage{23}
+    \subitem {info\_compiler}, \hyperpage{20}, \hyperpage{23}
+    \subitem {info\_language\_extensions\_default}, \hyperpage{20}, 
+		\hyperpage{23}
+    \subitem {info\_language\_standard\_default}, \hyperpage{20}, 
+		\hyperpage{23}
+    \subitem {info\_platform}, \hyperpage{20}, \hyperpage{24}
+    \subitem {main}, \hyperpage{19}, \hyperpage{23}
+    \subitem {PLATFORM\_ID}, \hyperpage{19}, \hyperpage{22}
+    \subitem {STRINGIFY}, \hyperpage{19}, \hyperpage{22}
+    \subitem {STRINGIFY\_HELPER}, \hyperpage{19}, \hyperpage{23}
+  \item {CMakeFiles/3.26.3/CompilerIdC/CMakeCCompilerId.c}, 
+		\hyperpage{14}
+  \item {CMakeFiles/3.26.3/CompilerIdCXX/CMakeCXXCompilerId.cpp}, 
+		\hyperpage{21}
+  \item {CMakeFiles/project.dir/main.cpp.o.d}, \hyperpage{24}
+  \item {COMPILER\_ID}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{12}, \hyperpage{15}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{18}, \hyperpage{21}
+  \item {Component}, \hyperpage{5}
+    \subitem {$\sim$Component}, \hyperpage{5}
+    \subitem {Component}, \hyperpage{5}
+    \subitem {getDiameter}, \hyperpage{6}
+    \subitem {getExcentricities}, \hyperpage{6}
+    \subitem {getRadius}, \hyperpage{6}
+    \subitem {points}, \hyperpage{6}
+  \item {components}
+    \subitem {Graph}, \hyperpage{8}
+  \item {CXX\_STD}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{18}, \hyperpage{22}
+
+  \indexspace
+
+  \item {DEC}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{12}, \hyperpage{15}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{18}, \hyperpage{22}
+  \item {distance}
+    \subitem {Point}, \hyperpage{10}
+
+  \indexspace
+
+  \item {excentricity}
+    \subitem {Point}, \hyperpage{10}
+
+  \indexspace
+
+  \item {findComponents}
+    \subitem {Graph}, \hyperpage{8}
+
+  \indexspace
+
+  \item {getDiameter}
+    \subitem {Component}, \hyperpage{6}
+  \item {getExcentricities}
+    \subitem {Component}, \hyperpage{6}
+  \item {getRadius}
+    \subitem {Component}, \hyperpage{6}
+  \item {Graph}, \hyperpage{7}
+    \subitem {$\sim$Graph}, \hyperpage{7}
+    \subitem {biggestComponent}, \hyperpage{8}
+    \subitem {components}, \hyperpage{8}
+    \subitem {findComponents}, \hyperpage{8}
+    \subitem {Graph}, \hyperpage{7}
+    \subitem {points}, \hyperpage{8}
+    \subitem {where}, \hyperpage{8}
+
+  \indexspace
+
+  \item {HEX}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{12}, \hyperpage{15}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{19}, \hyperpage{22}
+
+  \indexspace
+
+  \item {info\_arch}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{13}, \hyperpage{16}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{20}, \hyperpage{23}
+  \item {info\_compiler}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{13}, \hyperpage{17}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{20}, \hyperpage{23}
+  \item {info\_language\_extensions\_default}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{13}, \hyperpage{17}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{20}, \hyperpage{23}
+  \item {info\_language\_standard\_default}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{14}, \hyperpage{17}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{20}, \hyperpage{23}
+  \item {info\_platform}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{14}, \hyperpage{17}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{20}, \hyperpage{24}
+
+  \indexspace
+
+  \item {main}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{13}, \hyperpage{16}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{19}, \hyperpage{23}
+    \subitem {main.cpp}, \hyperpage{24}
+  \item {main.cpp}, \hyperpage{24}
+    \subitem {main}, \hyperpage{24}
+
+  \indexspace
+
+  \item {neighbors}
+    \subitem {Point}, \hyperpage{10}
+
+  \indexspace
+
+  \item {PLATFORM\_ID}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{12}, \hyperpage{16}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{19}, \hyperpage{22}
+  \item {Point}, \hyperpage{9}
+    \subitem {$\sim$Point}, \hyperpage{9}
+    \subitem {checked}, \hyperpage{10}
+    \subitem {distance}, \hyperpage{10}
+    \subitem {excentricity}, \hyperpage{10}
+    \subitem {neighbors}, \hyperpage{10}
+    \subitem {Point}, \hyperpage{9}
+    \subitem {value}, \hyperpage{10}
+  \item {points}
+    \subitem {Component}, \hyperpage{6}
+    \subitem {Graph}, \hyperpage{8}
+
+  \indexspace
+
+  \item {src/Component.cpp}, \hyperpage{25}
+  \item {src/Graph.cpp}, \hyperpage{25}
+  \item {src/headers/Component.h}, \hyperpage{25}
+  \item {src/headers/Graph.h}, \hyperpage{25, 26}
+  \item {src/headers/Point.h}, \hyperpage{26}
+  \item {src/Point.cpp}, \hyperpage{26}
+  \item {STRINGIFY}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{13}, \hyperpage{16}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{19}, \hyperpage{22}
+  \item {STRINGIFY\_HELPER}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{13}, \hyperpage{16}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{19}, \hyperpage{23}
+
+  \indexspace
+
+  \item {value}
+    \subitem {Point}, \hyperpage{10}
+
+  \indexspace
+
+  \item {where}
+    \subitem {Graph}, \hyperpage{8}
+
+\end{theindex}
