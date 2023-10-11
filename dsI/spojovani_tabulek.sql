@@ -16,3 +16,13 @@ FROM rental
 WHERE customer.last_name = 'SIMPSON'
 
 --4
+SELECT address
+FROM address
+         JOIN customer ON address.address_id = customer.address_id
+WHERE customer.last_name = 'SIMPSON'
+
+--5
+SELECT first_name, last_name, address, postal_code, city
+FROM customer
+         JOIN address ON customer.address_id = address.address_id
+         JOIN city ON address.city_id = city.city_id
