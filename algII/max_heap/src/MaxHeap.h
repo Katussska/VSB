@@ -18,6 +18,8 @@ private:
     void heapiDown(int value);
 
 public:
+    int size();
+    bool isEmpty();
     void insert(int value);
     void remove(int value);
     void print();

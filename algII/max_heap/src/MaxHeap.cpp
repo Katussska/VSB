@@ -66,3 +66,14 @@ void MaxHeap::print() {
 
     cout << endl;
 }
+
+int MaxHeap::size() {
+    return heap.size();
+}
+
+bool MaxHeap::isEmpty() {
+    if (heap.size() > 0)
+        return false;
+    else
+        return true;
+}
