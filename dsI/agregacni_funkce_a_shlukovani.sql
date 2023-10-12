@@ -21,7 +21,8 @@ HAVING COUNT(*) > 2300
 --HAVING vzdy, kdyz porovnavame agregacni funkce, bcs se vyhodnocuje po GROUP BY a SELECT pred
 
 --10
-SELECT language_id, COUNT(*) AS pocet
+SELECT language_id,
+       COUNT(*) AS pocet
 FROM film
 GROUP BY language_id
 
