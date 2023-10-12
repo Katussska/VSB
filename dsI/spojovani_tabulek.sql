@@ -22,7 +22,16 @@ FROM address
 WHERE customer.last_name = 'SIMPSON'
 
 --5
-SELECT first_name, last_name, address, postal_code, city
+SELECT first_name,
+       last_name,
+       address,
+       postal_code,
+       city
 FROM customer
          JOIN address ON customer.address_id = address.address_id
          JOIN city ON address.city_id = city.city_id
+
+--24
+SELECT *
+FROM film
+         LEFT JOIN language ON film.language_id = language.language_id AND language.name LIKE 'I%'

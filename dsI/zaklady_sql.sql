@@ -85,7 +85,8 @@ FROM film
 WHERE LEN(title) != 20;
 
 --16
-SELECT rental_id, DATEDIFF(MINUTE, rental_date, return_date) AS minutes
+SELECT rental_id,
+       DATEDIFF(MINUTE, rental_date, return_date) AS minutes
 FROM rental
 WHERE return_date IS NOT NULL
 
@@ -121,7 +122,9 @@ SELECT COUNT(DISTINCT rating) AS pocet_klas
 FROM film;
 
 --23
-SELECT COUNT(*) AS pocet_vsech, COUNT(DISTINCT postal_code) AS ruzna_psc, COUNT(postal_code) AS pocet_s_psc
+SELECT COUNT(*)                    AS pocet_vsech,
+       COUNT(DISTINCT postal_code) AS ruzna_psc,
+       COUNT(postal_code)          AS pocet_s_psc
 FROM address;
 
 --24
@@ -132,7 +135,8 @@ SELECT MIN(length)    AS nejmensi,
 FROM film
 
 --25
-SELECT COUNT(*) AS pocet, SUM(amount) AS soucet
+SELECT COUNT(*)    AS pocet,
+       SUM(amount) AS soucet
 FROM payment
 WHERE YEAR(payment_date) = 2005
 
