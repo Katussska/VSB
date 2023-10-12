@@ -33,7 +33,7 @@ public class App extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.resizableProperty().set(false);
-			primaryStage.setTitle("Java 1 - 3rd laboratory");
+			primaryStage.setTitle("Java 1 - 4th laboratory");
 			primaryStage.show();
 			
 			//Exit program when main window is closed

@@ -9,8 +9,6 @@ public final class Constants {
 	
 	public static final double AIR_DENSITY = 1.2;
 	
-	static final int REFRESH_TIMEOUT = 25;
-	
 	public static final Image DRAGON_IMAGE;
 	
 	static{ 

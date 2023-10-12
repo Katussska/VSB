@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
 
-public class Cannon {
+public class Cannon implements DrawableSimulable {
 
 	private int direction=-1;
 	private double angle = 0;
@@ -13,7 +13,7 @@ public class Cannon {
 	private Point2D size;
 	private World world;
 	
-	private final double speed = 20;
+	
 	 
 
 	public Cannon(World world, Point2D position, Point2D size) {
@@ -23,13 +23,15 @@ public class Cannon {
 		this.size = size;
 	}
 
+	@Override
 	public void simulate(double timeStep) {
-		angle = angle + direction*speed*timeStep;
+		angle = angle + direction*80*timeStep;
 		if(angle <=-90 || angle >= 0) {
 			direction*=-1;
 		}
 	}
 	
+	@Override
 	public void draw(GraphicsContext gc) {
 		gc.save();
 		Point2D worldPosition = world.getCanvasPoint(position);

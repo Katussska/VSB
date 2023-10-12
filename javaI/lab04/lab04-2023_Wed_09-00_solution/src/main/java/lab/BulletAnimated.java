@@ -5,7 +5,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-public class BulletAnimated {
+public class BulletAnimated extends WorldEntity implements AbleToHit  {
 
 	private Point2D position;
 	private Point2D start;
@@ -13,13 +13,15 @@ public class BulletAnimated {
 	private Point2D initialSpeed;
 	private double size;
 	private double mass = 2;
-	private double strenghtOfCannon = 80;
+	private double strenghtOfCannon = 100;
 	private double cannonLength = 100;
 	private boolean accelerate = true;
 	private boolean hitToGround = false;
+
+	private double crossSectionalArea;
+	private double dragCoefficient = 0.47;
 	
 	private Image image;
-	private World world;
 	private Cannon cannon;
 
 	public BulletAnimated(World world, Cannon cannon) {
@@ -27,61 +29,72 @@ public class BulletAnimated {
 	}
 
 	public BulletAnimated(World world, Cannon cannon, Point2D start, Point2D speed, double size) {
+		super(world);
 		this.start = start;
 		this.position = this.start;
 		this.initialSpeed = speed;
 		this.speed = speed;
 		this.size = size;
-		this.world = world;
 		this.cannon = cannon;
 		image = new Image(getClass().getResourceAsStream("fireball-transparent.gif"), size, size,
 				true, true);
 	}
 
-	public void draw(GraphicsContext gc) {
-		gc.save();
-		Point2D canvasPosition = world.getCanvasPoint(position);
+	@Override
+	protected void drawInternal(GraphicsContext gc) {
+		Point2D canvasPosition = getWorld().getCanvasPoint(position);
 		gc.drawImage(image, canvasPosition.getX(), canvasPosition.getY());
-		gc.restore();
 	}
 
-	public void simulate(double timeStep) {
+	@Override
+	public void simulate(double deltaT) {
 		if (accelerate && start.distance(position) < cannonLength) {
 			double cannonAngle = cannon.getAngle(); 
 			speed = speed
 					.add(new Point2D(Math.cos(cannonAngle) * strenghtOfCannon, Math.sin(cannonAngle) * strenghtOfCannon)
-							.multiply(1 / mass * timeStep * 10));
+							.multiply(deltaT / mass));
 		} else if (!hitToGround) {
 			accelerate = false;
-			Point2D acceleration = new Point2D(0, -Constants.GRAVITATIONAL_ACCELERATION*50 * mass * timeStep * 10);
-			speed = speed.add(acceleration.multiply(timeStep));
+			Point2D airResistanceforce = new Point2D(
+					-1. / 2 * crossSectionalArea * Constants.AIR_DENSITY * dragCoefficient * Math.pow(speed.getX(), 2),
+					-1. / 2 * crossSectionalArea * Constants.AIR_DENSITY * 0.47 * Math.pow(speed.getY(), 2));
+			Point2D acceleration = new Point2D(-airResistanceforce.getX() * mass,
+					(-Constants.GRAVITATIONAL_ACCELERATION + airResistanceforce.getY()) * mass);
+			speed = speed.add(acceleration.multiply(deltaT));
 		}
 		if (!hitToGround) {
-			position = position.add(speed.multiply(timeStep));
+			position = position.add(speed.multiply(deltaT*100));
 			if (!accelerate && position.getY() <= size / 2) {
 				hitToGround = true;
 				position = new Point2D(position.getX(), size / 2);
 			}
 		} else {
 			reload();
-		}
-		
-		
+		}		
 	}
 
+	@Override
+	public Rectangle2D getBoundingBox() {
+		return new Rectangle2D(position.getX(), position.getY(), size, size);
+	}
+	
+	@Override
+	public void hitBy(Collisionable that) {
+		if (that instanceof Dragon) {
+			reload();
+		}
+	}
+	
+	public boolean overlaps(Dragon dragon) {
+		return getBoundingBox().intersects(dragon.getBoundingBox());
+	}
+	
+	
 	public void reload() {
 		position = start;
 		speed = initialSpeed;
 		hitToGround = false;
 		accelerate = true;
-	}
-	
-	public Rectangle2D getBB() {
-		return new Rectangle2D(position.getX(), position.getY(), size, size);
-	}
-
-	public boolean isInCannon() {
-		return accelerate;
 	}
 	
 }
