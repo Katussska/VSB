@@ -1,57 +1,48 @@
 package lab;
 
+import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Game {
     private double width;
     private double height;
-    private Ball ball;
-    private Bat player1;
-    private Bat player2;
-    private Bat[] players;
+    private PlayingField field;
+    private GameObject[] objects = new GameObject[3];
 
-    public Game(double width, double height) {
+    public Game(double width, double height, GraphicsContext gc) {
         this.width = width;
         this.height = height;
-        ball = new Ball(this);
-        players = new Bat[]{
-                new Bat(this, 30),
-                new Bat(this, (int) width - 45)
-        };
+        field = new PlayingField(gc, width, height);
+        objects[0] = new Ball(this, field);
+        objects[1] = new Bat(this, 30);
+        objects[2] = new Bat(this, (int)width - 45);
     }
 
     public void draw(GraphicsContext gc) {
-        gc.clearRect(0, 0, width, height);
-
-        //background
-        gc.setFill(Color.BLACK);
-        gc.fillRect(0, 0, width, height);
-
-        //lines
-        gc.setFill(Color.GRAY);
-        gc.fillRect(0, 0, width, 15);
-        gc.fillRect(0, height - 15, width, 15);
-
-        //middle
-        for (int i = 0; i < 15; i++) {
-            gc.fillRect(width / 2 - 15, i * 15 + i * 15, 15, 15);
-        }
-
-        ball.draw(gc);
-        for (Bat player : players) {
-            player.draw(gc);
-        }
+        field.draw();
+        for (GameObject obj : objects)
+            obj.draw(gc);
     }
 
     public void simulate() {
-        ball.simulate();
-        for (Bat player : players) {
-            player.simulate();
-            if (player.getBB().intersects(ball.getBB())) {
-                ball.hit();
+        for (GameObject obj : objects) {
+            obj.simulate();
+            if (obj instanceof Ball) {
+                for (GameObject secondObj : objects) {
+                    if (secondObj != obj && secondObj.intersects(obj)) {
+                        ((Ball) obj).hit();
+                    }
+                }
             }
         }
+//        ball.simulate();
+//        for (Bat bat : bats) {
+//            bat.simulate();
+//            if (bat.intersects(ball)) {
+//                ball.hit();
+//            }
+//        }
     }
 
     public double getWidth() {

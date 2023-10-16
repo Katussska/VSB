@@ -4,8 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d74bce6-6dc3-4322-bd90-903447fe0df2" name="Changes" comment="feat: bat bounce ball">
-      <change beforePath="$PROJECT_DIR$/../../.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/discord.xml" afterDir="false" />
+    <list default="true" id="a349231f-0b3a-4330-a5bb-924b7630abef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Collisionable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/DrawableSimulable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/PlayingField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab04.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/Ball.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/Vector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023__21_01__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023__21_01__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Bat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Bat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Routines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Routines.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +35,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="package.json" />
+        <option value="Interface" />
       </list>
     </option>
-  </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -29,9 +47,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2VhfXFk8houH2at53Q6sHtSPhQf" />
+  <component name="ProjectId" id="2VypCulrFB2HxMBkvT2zEkPi3m1" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -42,18 +60,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/katussska/Private/github/vsb/javaI/pong",
+    "last_opened_file_path": "/Users/tassilo/code/vsb/java-i/pong",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -69,26 +88,24 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4d74bce6-6dc3-4322-bd90-903447fe0df2" name="Changes" comment="" />
-      <created>1695293271941</created>
+      <changelist id="a349231f-0b3a-4330-a5bb-924b7630abef" name="Changes" comment="" />
+      <created>1695818050639</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695293271941</updated>
-      <workItem from="1695293273612" duration="2908000" />
-      <workItem from="1695302325417" duration="1023000" />
-      <workItem from="1695303364617" duration="3067000" />
-      <workItem from="1695308601729" duration="218000" />
-      <workItem from="1695798729454" duration="220000" />
-      <workItem from="1695883978484" duration="147000" />
-      <workItem from="1695884139638" duration="33000" />
-      <workItem from="1695884185317" duration="152000" />
-      <workItem from="1695884352918" duration="1516000" />
-      <workItem from="1695888250398" duration="31000" />
-      <workItem from="1695888316775" duration="3132000" />
-      <workItem from="1696247457835" duration="1400000" />
-      <workItem from="1696254572832" duration="1244000" />
-      <workItem from="1696791704487" duration="67000" />
-      <workItem from="1696792412951" duration="53000" />
+      <updated>1695818050639</updated>
+      <workItem from="1695818051915" duration="1809000" />
+      <workItem from="1696180857047" duration="2888000" />
+      <workItem from="1696185093085" duration="6946000" />
+      <workItem from="1696503804639" duration="40000" />
+      <workItem from="1696619841621" duration="5997000" />
+      <workItem from="1696789471590" duration="2218000" />
+      <workItem from="1696791707739" duration="64000" />
+      <workItem from="1696791803215" duration="409000" />
+      <workItem from="1697106846944" duration="38000" />
+      <workItem from="1697109208952" duration="1487000" />
+      <workItem from="1697143935350" duration="1269000" />
+      <workItem from="1697394426985" duration="8937000" />
+      <workItem from="1697460991007" duration="4543000" />
     </task>
     <servers />
   </component>
@@ -97,11 +114,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: bat bounce ball" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: bat bounce ball" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

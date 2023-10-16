@@ -3,7 +3,6 @@ package lab;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.text.Font;
 
 public class DrawingThread extends AnimationTimer {
 
@@ -14,7 +13,7 @@ public class DrawingThread extends AnimationTimer {
 	public DrawingThread(Canvas canvas) {
 		this.canvas = canvas;
 		this.gc = canvas.getGraphicsContext2D();
-		this.game = new Game(canvas.getWidth(), canvas.getHeight());
+		this.game = new Game(canvas.getWidth(), canvas.getHeight(), gc);
 	}
 
 	@Override
