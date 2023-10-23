@@ -10,12 +10,14 @@ public class PlayingField {
     private double height;
     private int scoreLeft = 0;
     private int scoreRight = 0;
-    private GraphicsContext gc;
+    private String playerAName;
+    private String playerBName;
 
-    PlayingField(GraphicsContext gc, double w, double h) {
-        this.gc = gc;
+    PlayingField(double w, double h, String playerAName, String playerBName) {
         this.width = w;
         this.height = h;
+        this.playerAName = playerAName;
+        this.playerBName = playerBName;
     }
 
     public void scoreLeft() {
@@ -26,7 +28,7 @@ public class PlayingField {
         scoreRight += 1;
     }
 
-    public void drawScore() {
+    public void drawScore(GraphicsContext gc) {
         // score text
         gc.setFont(Font.font("monospace", 50));
         gc.setTextAlign(TextAlignment.RIGHT);
@@ -35,12 +37,12 @@ public class PlayingField {
         gc.fillText(String.valueOf(scoreRight), width / 2 + 20, 50);
     }
 
-    public void drawBackground() {
+    public void drawBackground(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, width, height);
     }
 
-    public void drawField() {
+    public void drawField(GraphicsContext gc) {
         // horizontal lines
         gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, width, 15);
@@ -52,10 +54,19 @@ public class PlayingField {
         }
     }
 
-    public void draw() {
+    public void drawNames(GraphicsContext gc) {
+        gc.setFont(Font.font("monospace", 20));
+        gc.setTextAlign(TextAlignment.RIGHT);
+        gc.fillText(playerAName, width / 2 - 20, 70);
+        gc.setTextAlign(TextAlignment.LEFT);
+        gc.fillText(playerBName, width / 2 + 20, 70);
+    }
+
+    public void draw(GraphicsContext gc) {
         gc.clearRect(0, 0, width, height);
-        drawBackground();
-        drawField();
-        drawScore();
+        drawBackground(gc);
+        drawField(gc);
+        drawScore(gc);
+        drawNames(gc);
     }
 }

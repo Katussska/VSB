@@ -1,11 +1,9 @@
 package lab;
 
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.scene.Group;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -19,38 +17,32 @@ public class App extends Application {
 		launch(args);
 	}
 	
-	private Canvas canvas;
-	private AnimationTimer timer;
-	
+	private GameController controller;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			//Construct a main window with a canvas.  
-			Group root = new Group();
-			canvas = new Canvas(800, 400);
-			root.getChildren().add(canvas);
-			Scene scene = new Scene(root, 800, 400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("GameView.fxml"));
+			BorderPane root = loader.load();
+			Scene scene = new Scene(root);
+
 			primaryStage.setScene(scene);
 			primaryStage.resizableProperty().set(false);
 			primaryStage.setTitle("Java 1 - 1th laboratory");
 			primaryStage.show();
+
+			controller = loader.getController();
+//			controller.startGame();
 			
 			//Exit program when main window is closed
 			primaryStage.setOnCloseRequest(this::exitProgram);
-			timer = new DrawingThread(canvas);
-			timer.start();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	@Override
-	public void stop() throws Exception {
-		timer.stop();
-		super.stop();
-	}
-	
+
 	private void exitProgram(WindowEvent evt) {
+		controller.stopGame();
 		System.exit(0);
 	}
 }

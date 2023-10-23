@@ -1,9 +1,7 @@
 package lab;
 
-public class Routines {
+public final class Routines {
 
-	
-	
 	public static void sleep(int timeInMilisenonds) {
 		try {
 			Thread.sleep(timeInMilisenonds);

@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a349231f-0b3a-4330-a5bb-924b7630abef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Collisionable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/DrawableSimulable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/PlayingField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab04.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/Ball.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/Vector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023,_21_01_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023__21_01__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023__21_01__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Bat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Bat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/DrawingThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Routines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Routines.java" afterDir="false" />
+    <list default="true" id="a349231f-0b3a-4330-a5bb-924b7630abef" name="Changes" comment="java du5">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lab/GameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lab/GameView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,17 +15,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="package.json" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -59,7 +46,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -72,7 +58,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,15 +90,38 @@
       <workItem from="1697106846944" duration="38000" />
       <workItem from="1697109208952" duration="1487000" />
       <workItem from="1697143935350" duration="1269000" />
-      <workItem from="1697394426985" duration="8937000" />
-      <workItem from="1697460991007" duration="4543000" />
+      <workItem from="1697394426985" duration="9451000" />
+      <workItem from="1698003609157" duration="8435000" />
     </task>
+    <task id="LOCAL-00001" summary="hoo boy">
+      <option name="closed" value="true" />
+      <created>1697405234902</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697405234902</updated>
+    </task>
+    <task id="LOCAL-00002" summary="java du5">
+      <option name="closed" value="true" />
+      <created>1698013535270</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698013535270</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="try our sister game minceraft!" />
+    <MESSAGE value="Not one conflict, today was a good day." />
+    <MESSAGE value="work in progress" />
+    <MESSAGE value="remove debug&#10;all good" />
+    <MESSAGE value="hoo boy" />
+    <MESSAGE value="java du5" />
+    <option name="LAST_COMMIT_MESSAGE" value="java du5" />
   </component>
 </project>

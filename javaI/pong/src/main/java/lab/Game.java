@@ -10,17 +10,17 @@ public class Game {
     private PlayingField field;
     private GameObject[] objects = new GameObject[3];
 
-    public Game(double width, double height, GraphicsContext gc) {
+    public Game(double width, double height, String playerAName, String playerBName) {
         this.width = width;
         this.height = height;
-        field = new PlayingField(gc, width, height);
+        field = new PlayingField(width, height, playerAName, playerBName);
         objects[0] = new Ball(this, field);
         objects[1] = new Bat(this, 30);
         objects[2] = new Bat(this, (int)width - 45);
     }
 
     public void draw(GraphicsContext gc) {
-        field.draw();
+        field.draw(gc);
         for (GameObject obj : objects)
             obj.draw(gc);
     }
@@ -51,6 +51,10 @@ public class Game {
 
     public double getHeight() {
         return height;
+    }
+
+    public void setPlayerPosition(int playerIndex, double newPosition) {
+        objects[playerIndex].position = new Point2D(objects[playerIndex].position.getX(), newPosition);
     }
 
 }

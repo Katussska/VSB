@@ -10,10 +10,10 @@ public class DrawingThread extends AnimationTimer {
 	private final GraphicsContext gc;
 	private final Game game;
 
-	public DrawingThread(Canvas canvas) {
+	public DrawingThread(Canvas canvas, Game game) {
 		this.canvas = canvas;
 		this.gc = canvas.getGraphicsContext2D();
-		this.game = new Game(canvas.getWidth(), canvas.getHeight(), gc);
+		this.game = game;
 	}
 
 	@Override
