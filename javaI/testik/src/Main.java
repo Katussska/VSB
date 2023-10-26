@@ -31,9 +31,7 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
 
             if (array[i] instanceof IExpiration && ((IExpiration) array[i]).getExpiration() < 50) {
-                if (((IExpiration) array[i]).getExpiration() < 50) {
-                    System.out.println(array[i].getDescription() + " - " + ((IExpiration) array[i]).getExpiration() + " dni do exp.");
-                }
+                System.out.println(array[i].getDescription() + " - " + ((IExpiration) array[i]).getExpiration() + " dni do exp.");
             }
         }
 
