@@ -15,16 +15,24 @@ public:
 
     void insert(int key, T value) {
         int index = key % size;
-        table[index].push_back(std::make_pair(key, value));
+        for (auto& pair : table[index]) {
+            if (pair.first == key) {
+                pair.second = value; // Pokud se klíč shoduje, aktualizuj hodnotu.
+                return;
+            }
+        }
+        table[index].push_back(std::make_pair(key, value)); // Pokud klíč neexistuje, přidej nový pár.
     }
 
     T search(int key) {
         int index = key % size;
         for (const auto& pair : table[index]) {
             if (pair.first == key) {
+                std::cout << "Key " << key << " found: " << pair.second << std::endl;
                 return pair.second;
             }
         }
+        std::cout << "Key " << key << " not found." << std::endl;
         return nullptr;
     }
 
@@ -33,9 +41,11 @@ public:
         for (auto it = table[index].begin(); it != table[index].end(); ++it) {
             if (it->first == key) {
                 table[index].erase(it);
+                std::cout << "Key " << key << " removed." << std::endl;
                 return true;
             }
         }
+        std::cout << "Key " << key << " not found." << std::endl;
         return false;
     }
 
@@ -84,6 +94,16 @@ int main() {
     for (int i = 0; i < 100; ++i) {
         ht.insert(i, numberWords[i]);
     }
+
+    ht.printWithContents();
+
+    ht.remove(55);
+    ht.remove(55);
+
+    ht.insert(0, "nula");
+
+    ht.search(42);
+    ht.search(105);
 
     ht.printWithContents();
 
