@@ -1,26 +1,30 @@
 # Hudební Katalog s SQL Databází
 
-## Artists (Umělci)
+---
+
+## Jendotlivé tabulky:
+
+### Artists (Umělci)
 
 - Sloupce: ArtistID (PK), Name, Biography, GenreID (FK)
 
-## Genres (Žánry)
+### Genres (Žánry)
 
 - Sloupce: GenreID (PK), Name, Description
 
-## Songs (Písně)
+### Songs (Písně)
 
 - Sloupce: SongID (PK), SongName, ArtistID (FK), GenreID (FK), Lyrics, Tempo, ReleaseDate, Rating
 
-## Users (Uživatelé)
+### Users (Uživatelé)
 
 - Sloupce: UserID (PK), Username, Password, Email
 
-## Comments (Komentáře)
+### Comments (Komentáře)
 
 - Sloupce: CommentID (PK), UserID (FK), SongID (FK), CommentText, CommentDate
 
-## Ratings (Hodnocení)
+### Ratings (Hodnocení)
 
 - Sloupce: RatingID (PK), UserID (FK), SongID (FK), RatingValue
 

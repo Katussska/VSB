@@ -45,3 +45,5 @@ WHERE film_id IN (SELECT film_id
                   WHERE actor.first_name = 'CHRISTIAN'
                     AND actor.last_name = 'GABLE')
 
+SELECT *
+FROM organ;
