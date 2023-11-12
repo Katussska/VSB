@@ -59,3 +59,7 @@
 
 - Máme 1:M vazbu mezi písněmi a hodnoceními, kde jedna píseň může mít více hodnocení, ale jedno hodnocení patří jen
   jedné písni.
+
+
+
+**Zkratka**: Vysvětlivka pro zkratku.

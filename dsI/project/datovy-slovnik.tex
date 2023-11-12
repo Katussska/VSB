@@ -1,0 +1,147 @@
+Popis jednotlivých tabulek je uveden v následujícím datovém slovníku.
+
+\subsection*{User}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    user\_id                & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK   \\
+    registration\_date      & DATE                &                &               & Ne            &             & Datum registrace uživatele      \\
+    premium\_status         & BIT                 &                &               & Ne            &             & Status prémiového účtu          \\
+    username                & VARCHAR             & 20             &               & Ne            &             & Přezdívka uživatele             \\
+    password                & VARCHAR             & 16             &               & Ne            &             & Heslo uživatele                 \\
+    email                   & VARCHAR             & 30             &               & Ne            &             & E-mail uživatele pro přihlášení \\
+    name                    & VARCHAR             & 20             &               & Ano           &             & Jméno uživatele                 \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Song}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    song\_id                & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK   \\
+    release\_date           & DATE                &                &               & Ne            &             & Datum vydání skladby            \\
+    duration                & TIME                &                &               & Ne            & 1           & Délka skladby                   \\
+    name                    & VARCHAR             & 20             &               & Ne            &             & Název skladby                   \\
+    album\_id               & INTEGER             &                & Cizí (Album)  & Ano           &             & Album, do kterého skladba patří \\
+    lyrics                  & TEXT                &                &               & Ano           &             & Text ke skladbě                 \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Artist}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    artist\_id              & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK \\
+    user\_id                & INTEGER             &                & Cizí (User)   & Ne            &             & Správce účtu                  \\
+    biography               & TEXT                &                &               & Ne            &             & Biografie tvůrce              \\
+    name                    & VARCHAR             & 20             &               & Ne            &             & Jméno tvůrce                  \\
+    country                 & VARCHAR             & 30             &               & Ano           &             & Země původu                   \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Album}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    album\_id               & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK \\
+    artist\_id              & INTEGER             &                & Cizí (Artist) & Ne            &             & Tvůrce alba                   \\
+    release\_date           & DATE                &                &               & Ne            &             & Datum vydání alba             \\
+    name                    & VARCHAR             & 20             &               & Ne            &             & Jméno alba                    \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Rating}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    rating\_id              & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK \\
+    user\_id                & INTEGER             &                & Cizí (User)   & Ne            &             & Hodnotící uživatel            \\
+    song\_id                & INTEGER             &                & Cizí (Song)   & Ne            &             & Hodnocená skladba             \\
+    rating\_value           & TINYINT             &                &               & Ne            & 2           & Samotné ohodnocení            \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Genre}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    genre\_id               & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK \\
+    description             & TEXT                &                &               & Ne            &             & Popis žánru                   \\
+    name                    & VARCHAR             & 20             &               & Ne            &             & Název žánru                   \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Playlist}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    playlist\_id            & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK \\
+    create\_date            & DATE                &                &               & Ne            &             & Datum vytvoření playlistu     \\
+    name                    & VARCHAR             & 20             &               & Ne            &             & Název playlistu               \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Song\_artist}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    song\_id                & INTEGER             &                & Cizí (Song)   & Ne            &             & Vytvořená skladba \\
+    artist\_id              & INTEGER             &                & Cizí (Artist) & Ne            &             & Tvůrce skladby    \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Artist\_genre}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    artist\_id              & INTEGER             &                & Cizí (Artist) & Ne            &             & Profil tvůrce  \\
+    genre\_id               & INTEGER             &                & Cizí (Genre)  & Ne            &             & Patřičný žánr  \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{Song\_genre}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    song\_id                & INTEGER             &                & Cizí (Song)   & Ne            &             & Daná skladba   \\
+    genre\_id               & INTEGER             &                & Cizí (Genre)  & Ne            &             & Patřičný žánr  \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsection*{User\_playlist}
+\begin{tabular}{ |c|c c c c c|c| }
+    \hline
+    \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč}   & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
+    \hline
+    user\_id                & INTEGER             &                & Cizí (USer)     & Ne            &             & Tvůrce playlistu   \\
+    playlist\_id            & INTEGER             &                & Cizí (Playlist) & Ne            &             & Vytvořený playlist \\
+    \hline
+\end{tabular}
+\bigskip
+
+\subsubsection*{Integritní omezení:}
+\begin{enumerate}
+    \item \textit{duration} musí mít maximálně 15 minut.
+    \item \textit{rating\_value} může nabýt pouze hodnoty 1--5.
+    \item \ldots
+\end{enumerate}

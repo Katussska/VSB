@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a349231f-0b3a-4330-a5bb-924b7630abef" name="Changes" comment="nefacha to xdd">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/.idea/project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/MelodySphere.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/out/MelodySphere.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/out/MelodySphere.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/out/MelodySphere.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/out/MelodySphere.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/schema.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +105,7 @@
       <workItem from="1698003609157" duration="8435000" />
       <workItem from="1698058980092" duration="109000" />
       <workItem from="1698270567033" duration="201000" />
+      <workItem from="1699640058926" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="hoo boy">
       <option name="closed" value="true" />
