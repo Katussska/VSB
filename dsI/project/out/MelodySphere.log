@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.21)  14 NOV 2023 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.21)  19 NOV 2023 19:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -277,23 +277,84 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `MelodySphere.toc'.
 
  [1]
-Overfull \hbox (7.56462pt too wide) in paragraph at lines 46--54
+Overfull \hbox (7.56462pt too wide) in paragraph at lines 46--51
 \OT1/put/m/n/12 slou-chat hudbu, vytv[]a[]ret vlastn[]^^P pla-y-listy a hod-no-
 tit jed-not-liv[]e skladby. U[]zivatel[]e mo-hou vyu[]z[]^^Pvat
  []
 
 
-Overfull \hbox (10.43326pt too wide) in paragraph at lines 46--54
-\OT1/put/m/n/12 funkce jako vy-hled[]av[]an[]^^P hu-debn[]^^Pch []z[]anr[]u neb
-o z[]^^Psk[]avat in-for-mace o um[]elc[]^^Pch. \OT1/put/b/n/12 Um[]elec \OT1/pu
-t/m/n/12 je u[]zivatel
+Overfull \hbox (2.00906pt too wide) in paragraph at lines 58--61
+\OT1/put/b/n/12 U[]zivatel[]e \OT1/put/m/n/12 jsou kl[]^^P[]covou en-ti-tou v p
+ro-jektu. Re-gis-trac[]^^P z[]^^Psk[]avaj[]^^P mo[]znost po-slou-chat hudbu, tv
+o[]rit
+ []
+
+
+Overfull \hbox (20.28575pt too wide) in paragraph at lines 80--83
+\OT1/put/m/n/12 spo-jen[]e s um[]elci a jed-not-liv[]ymi skladbami, co[]z pom[]
+ah[]a or-ga-ni-zo-vat hudbu a usnad[]nuje u[]zivatel[]um
  []
 
 [2
 
-] [3
+]
+Overfull \hbox (8.4772pt too wide) in paragraph at lines 87--91
+\OT1/put/m/n/12 ur[]cit[]em ob-dob[]^^P a set[]r[]^^Pdit je podle hod-no-cen[]^
+^P. Um[]elec m[]u[]ze spe-ci-fi-ko-vat []casov[]e ob-dob[]^^P, nap[]r[]^^Pklad
+ []
 
-] (./datovy-slovnik.tex
+
+Overfull \hbox (15.63806pt too wide) in paragraph at lines 96--99
+[]\OT1/put/m/n/12 Pro ad-mi-nistr[]atora je k dis-po-zici t[]reba p[]rehled sta
+-tis-tik t[]ykaj[]^^Pc[]^^P se u[]zivatel[]u a pla-teb za pr[]emiov[]e
+ []
+
+
+Overfull \hbox (14.1171pt too wide) in paragraph at lines 96--99
+\OT1/put/m/n/12 slu[]zby. Ad-mi-nistr[]ator m[]a mo[]znost sle-do-vat sta-tis-t
+iky, jako je po[]cet nov[]e za-re-gis-tro-van[]ych u[]zivatel[]u
+ []
+
+
+Overfull \hbox (13.07253pt too wide) in paragraph at lines 101--112
+\OT1/put/m/n/12 D[]ale za-bezpe[]cuje in-te-gritu pla-y-list[]u b[]ehem spole[]
+cn[]e edi-tace, tak[]ze p[]ri pr[]aci v[]^^Pce u[]zivatel[]u z[]arove[]n
+ []
+
+
+Overfull \hbox (16.03769pt too wide) in paragraph at lines 101--112
+\OT1/put/m/n/12 se sna[]z[]^^P zabr[]anit du-pli-citn[]^^Pm zm[]en[]am a kon-fl
+iktn[]^^Pm si-tuac[]^^Pm. T[]^^Pmto zp[]usobem syst[]em u[]zivatel[]um
+ []
+
+
+Overfull \hbox (9.53328pt too wide) in paragraph at lines 101--112
+\OT1/put/m/n/12 umo[]z[]nuje vytv[]a[]ret obs[]ahl[]e a roz-ma-nit[]e pla-y-lis
+ty d[]^^Pky spole[]cn[]e tvorb[]e a []uprav[]am ob-sahu, zat[]^^Pmco
+ []
+
+[3
+
+]
+<./img//konceptualni_datovy_model.png, id=17, 845.1575pt x 1124.2pt>
+File: ./img//konceptualni_datovy_model.png Graphic file (type png)
+<use ./img//konceptualni_datovy_model.png>
+Package pdftex.def Info: ./img//konceptualni_datovy_model.png  used on input li
+ne 117.
+(pdftex.def)             Requested size: 460.93153pt x 613.13144pt.
+<./img//relacni_datovy_model.png, id=19, 845.1575pt x 1124.2pt>
+File: ./img//relacni_datovy_model.png Graphic file (type png)
+<use ./img//relacni_datovy_model.png>
+Package pdftex.def Info: ./img//relacni_datovy_model.png  used on input line 12
+0.
+(pdftex.def)             Requested size: 512.14963pt x 681.2667pt.
+ [4
+
+ <./img//konceptualni_datovy_model.png>]
+Overfull \vbox (3.81694pt too high) has occurred while \output is active []
+
+
+[5 <./img//relacni_datovy_model.png>] (./datovy-slovnik.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -325,7 +386,7 @@ Overfull \hbox (22.21762pt too wide) in paragraph at lines 62--73
 []
  []
 
-[4
+[6
 
 ]
 Overfull \hbox (11.57367pt too wide) in paragraph at lines 75--85
@@ -337,25 +398,25 @@ Overfull \hbox (11.57367pt too wide) in paragraph at lines 87--97
 []
  []
 
-[5]) [6] (/home/katussska/Private/github/vsb/dsI/project/out/MelodySphere.aux) 
+[7]) [8] (/home/katussska/Private/github/vsb/dsI/project/out/MelodySphere.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 5114 strings out of 476175
- 85693 string characters out of 5796271
- 1878793 words of memory out of 6000000
- 25364 multiletter control sequences out of 15000+600000
+ 5140 strings out of 476175
+ 86511 string characters out of 5796271
+ 1879793 words of memory out of 6000000
+ 25387 multiletter control sequences out of 15000+600000
  544688 words of font info for 60 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 84i,7n,90p,290b,203s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,7n,90p,290b,206s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive
 /texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 adobe/utopia/putri8a.pfb>
 Output written on /home/katussska/Private/github/vsb/dsI/project/out/MelodySphe
-re.pdf (7 pages, 59784 bytes).
+re.pdf (9 pages, 220490 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
