@@ -334,9 +334,8 @@ HAVING COUNT(*) > 1
 ORDER BY pocet DESC;
 
 -- Příklad 1: Vypište osoby, které byly v nějakém výboru poslanecké sněmovny
--- (typ_organ.nazev_typ_org_cz='Výbor') a zároveň ve stejném volebním období
--- (tj. orgány mají stejnou hodnotu organ.rodic_id_organ) nebyly
--- v žádné delegaci poslanecké sněmovny (typ_organ.nazev_typ_org_cz='Delegace').
+-- a zároveň ve stejném volebním období nebyly
+-- v žádné delegaci poslanecké sněmovny.
 -- Pro každou osobu vypište:
 --   id_osoba, jméno a příjmení osoby, počet takových členství ve výborech,
 --   počet všech členství v delegacích (pokud nebyl poslanec členem žádné delegace,
