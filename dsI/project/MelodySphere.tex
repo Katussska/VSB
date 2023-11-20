@@ -38,7 +38,7 @@
     což uživatelům umožňuje aktivně přispívat do hudební komunity.
     Umělci mohou přidávat vlastní skladby a vytvářet hudební alba.
 
-    Aplikace má také uživatelům usnadňovat vyhledávání různých hudebních žánrů
+    Aplikace má také uživatelům usnadňovat vyhledávání nových sklade, alb
     a poskytovat informace o jednotlivých umělcích.
 
 
@@ -46,8 +46,7 @@
     \textbf{Uživatel} je osoba, která vytváří a spravuje svůj osobní účet.
     Po registraci získává možnost poslouchat hudbu, vytvářet vlastní playlisty
     a hodnotit jednotlivé skladby.
-    Uživatelé mohou využívat funkce jako vyhledávání hudebních žánrů nebo
-    získávat informace o umělcích.
+    Uživatelé mohou využívat funkce jako je získávat informace o umělcích.
 
 
     \textbf{Umělec} je uživatel s registrovaným účtem, který má zájem aktivně přispívat do hudební komunity.
@@ -61,13 +60,13 @@
 
 
     Další důležitou entitou jsou \textbf{Umělci}, kteří mají svůj profil na platformě.
-    Každý umělec má jméno, hudební žánr, místo původu a krátkou biografii.
+    Každý umělec má jméno, místo původu a krátkou biografii.
     Jsou zodpovědní za přidávání nových skladeb a vytváření alb, která jsou dostupná pro poslech ostatním uživatelům.
 
 
     Entita \textbf{Skladba} obsahuje detaily o jednotlivých písních.
     Každá skladba má svůj název, délku, datum vydání, text (pokud existuje) a spojení s umělci, kteří na ní pracovali.
-    Skladby mohou patřit do různých žánrů a být součástí alb.
+    Skladby mohou být součástí alb.
     Uživatelé mohou hodnotit skladby, což se také eviduje jako součást této entity.
 
 
@@ -77,9 +76,8 @@
     Každé album může obsahovat skladby od jednoho nebo více umělců.
 
 
-    Kromě toho, existují entity jako \textbf{Hodnocení} a \textbf{Žánry}.
+    Kromě toho, existují entity jako \textbf{Hodnocení}.
     Hodnocení zaznamenává hodnocení skladby uživateli, což umožňuje vyhodnocení oblíbenosti skladeb.
-    Žánry určují hudební žánry spojené s umělci a jednotlivými skladbami, což pomáhá organizovat hudbu a usnadňuje uživatelům vyhledávání specifických žánrů.
 
     \clearpage
 
@@ -89,8 +87,8 @@
     Tyto skladby budou seřazeny podle hodnocení, kde nejlépe hodnocené skladby budou na vrcholu seznamu.
     To umožní umělci zhodnotit, jaké skladby z daného období měly největší ohlas u posluchačů.
 
-    Uživatelé mají možnost vyhledávat nejnovější hudební alba na základě data jejich přidání a současně je filtrovat třeba podle svých oblíbených hudebních žánrů.
-    Tato funkce jim umožňuje zadat specifické datum a zobrazit alba, která byla přidána od té doby, a to ještě více omezit na alba v žánrech.
+    Uživatelé mají možnost vyhledávat nejnovější hudební alba na základě data jejich přidání a současně je filtrovat třeba podle svých oblíbených umělců.
+    Tato funkce jim umožňuje zadat specifické datum a zobrazit alba, která byla přidána od té doby, a to ještě více omezit na dané umělce.
 
 
     Pro administrátora je k dispozici třeba přehled statistik týkající se uživatelů a plateb za prémiové služby.
@@ -100,11 +98,15 @@
     \subsection*{Funkce}
     Kolaborativní tvorba playlistů umožňuje uživatelům společně vytvářet a úpravovat playlisty s ostatními uživateli.
     Tato funkce podporuje sdílení playlistů a spolupráci na jejich obsahu a úpravách.
+
+
     Pro zajištění kvality obsahu playlistů a minimalizaci chyb systém provádí kontrolu unikátnosti skladeb.
     Při přidání nové skladby do playlistu ověřuje, zda již skladba v playlistu není obsažena, přičemž upozorní
     uživatele na možnost duplicity a umožní mu potvrzení nebo zrušení přidání.
     Taktéž systém monitoruje dostupnost skladeb v playlistu a v případě, že některá skladba není momentálně dostupná,
     nabídne uživateli možnost nahrazení jinou skládankou.
+
+
     Dále zabezpečuje integritu playlistů během společné editace, takže při práci více uživatelů
     zároveň se snaží zabránit duplicitním změnám a konfliktním situacím.
     Tímto způsobem systém uživatelům umožňuje vytvářet obsáhlé a rozmanité playlisty díky společné tvorbě a úpravám obsahu,
@@ -114,9 +116,13 @@
 
     \section{Datová analýza}\label{sec:datova-analyza}
     \subsection*{Konceptuální datový model}
+    \bigskip
+    \bigskip
     \includegraphics[width=0.9 \textwidth, center]{konceptualni_datovy_model}
 
     \subsection*{Relační datový model}
+    \bigskip
+    \bigskip
     \includegraphics[width=1\textwidth, center]{relacni_datovy_model}
 
     \clearpage
