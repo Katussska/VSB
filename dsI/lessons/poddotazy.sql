@@ -229,3 +229,115 @@ WHERE (SELECT COUNT(*)
                          FROM film_category
                                   JOIN category ON film_category.category_id = category.category_id
                          WHERE category.name = 'horror')) * 2
+
+--8
+SELECT actor_id,
+       first_name,
+       last_name
+FROM actor
+WHERE (SELECT COUNT(*)
+       FROM film_actor
+                JOIN film ON film_actor.film_id = film.film_id
+       WHERE film_actor.actor_id = actor.actor_id
+         AND length > 150)
+          >
+      (SELECT COUNT(*)
+       FROM film_actor
+                JOIN film ON film_actor.film_id = film.film_id
+       WHERE film_actor.actor_id = actor.actor_id
+         AND length <= 150)
+
+--9
+SELECT first_name,
+       last_name
+FROM customer
+WHERE (SELECT SUM(amount)
+       FROM rental
+                JOIN payment ON rental.rental_id = payment.rental_id
+       WHERE rental.customer_id = customer.customer_id)
+          <
+      (SELECT SUM(film.rental_rate * DATEDIFF(DAY, rental.rental_date, rental.
+          return_date) / film.rental_duration)
+       FROM rental
+                JOIN inventory ON rental.inventory_id = inventory.inventory_id
+                JOIN film ON inventory.film_id = film.film_id
+       WHERE rental.customer_id = customer.customer_id)
+
+--10
+SELECT first_name,
+       last_name
+FROM customer
+WHERE (SELECT COUNT(*)
+       FROM rental
+                JOIN inventory ON rental.inventory_id = inventory.inventory_id
+       WHERE rental.customer_id = customer.customer_id
+         AND film_id IN (SELECT film_id
+                         FROM actor
+                                  JOIN film_actor ON actor.actor_id = film_actor.actor_id
+                         WHERE actor.first_name = 'TOM'
+                           AND actor.last_name = 'MCKELLEN'))
+          >
+      (SELECT COUNT(*)
+       FROM rental
+                JOIN inventory ON rental.inventory_id = inventory.inventory_id
+       WHERE rental.customer_id = customer.customer_id
+         AND film_id IN (SELECT film_id
+                         FROM actor
+                                  JOIN film_actor ON actor.actor_id = film_actor.actor_id
+                         WHERE actor.first_name = 'GROUCHO'
+                           AND actor.last_name = 'SINATRA'))
+
+--10.1
+SELECT first_name,
+       last_name
+FROM customer
+WHERE (SELECT COUNT(*)
+       FROM rental
+                JOIN inventory ON rental.inventory_id = inventory.inventory_id
+                JOIN film_actor ON inventory.film_id = film_actor.film_id
+                JOIN actor ON film_actor.actor_id = actor.actor_id
+       WHERE rental.customer_id = customer.customer_id
+         AND actor.first_name = 'TOM'
+         AND actor.last_name = 'MCKELLEN')
+          >
+      (SELECT COUNT(*)
+       FROM rental
+                JOIN inventory ON rental.inventory_id = inventory.inventory_id
+                JOIN film_actor ON inventory.film_id = film_actor.film_id
+                JOIN actor ON film_actor.actor_id = actor.actor_id
+       WHERE rental.customer_id = customer.customer_id
+         AND actor.first_name = 'GROUCHO'
+         AND actor.last_name = 'SINATRA')
+
+--11
+SELECT first_name,
+       last_name,
+       (SELECT COUNT(*)
+        FROM rental
+        WHERE rental.customer_id = customer.customer_id) AS pocet_vypujcek
+FROM customer
+WHERE NOT EXISTS (SELECT *
+                  FROM rental
+                           JOIN inventory ON rental.inventory_id = inventory.inventory_id
+                           JOIN film ON inventory.film_id = film.film_id
+                           JOIN language ON film.language_id = language.language_id
+                  WHERE rental.customer_id = customer.customer_id
+                    AND language.name != 'English')
+  AND customer_id IN (SELECT customer_id FROM rental)
+
+--11.1
+SELECT first_name,
+       last_name,
+       COUNT(rental.rental_id) AS pocet_vypujcek
+FROM customer
+         JOIN rental ON customer.customer_id = rental.customer_id
+WHERE NOT EXISTS (SELECT *
+                  FROM rental
+                           JOIN inventory ON rental.inventory_id = inventory.inventory_id
+                           JOIN film ON inventory.film_id = film.film_id
+                           JOIN language ON film.language_id = language.language_id
+                  WHERE rental.customer_id = customer.customer_id
+                    AND language.name != 'English')
+GROUP BY customer.customer_id, first_name, last_name
+
+--
