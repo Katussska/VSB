@@ -109,3 +109,5 @@ function showMovieDetails(title, description, rating) {
         console.log('Nelze načíst hodnocení filmu.');
     }
 }
+
+
