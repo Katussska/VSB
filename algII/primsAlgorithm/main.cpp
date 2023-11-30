@@ -16,7 +16,6 @@ int najdiMinimum(std::vector<int>& key, std::vector<bool>& mstSet, int V) {
     return minIndex;
 }
 
-// Funkce pro tisk kostry grafu
 void tiskKostry(std::vector<int>& parent, std::vector<std::vector<int>>& graph, int V) {
     std::cout << "Hrany     Vaha" << std::endl;
     for (int i = 1; i < V; ++i) {
@@ -25,11 +24,11 @@ void tiskKostry(std::vector<int>& parent, std::vector<std::vector<int>>& graph, 
 }
 
 void primAlgorithm(std::vector<std::vector<int>>& graph, int V) {
-    std::vector<int> parent(V); // ukládá konkrétní kostru
-    std::vector<int> key(V, INT_MAX); // klíče pro nalezení nejlevnější cesty
-    std::vector<bool> mstSet(V, false); // pro označení vrcholů, které již jsou v kostrze
+    std::vector<int> parent(V);
+    std::vector<int> key(V, INT_MAX);
+    std::vector<bool> mstSet(V, false);
 
-    key[0] = 0; // První vrchol je vždy kořenem
+    key[0] = 0;
 
     for (int count = 0; count < V - 1; ++count) {
         int u = najdiMinimum(key, mstSet, V);
