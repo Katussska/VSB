@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.21)  19 NOV 2023 20:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.21)  30 NOV 2023 23:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -277,20 +277,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `MelodySphere.toc'.
 
  [1]
-Overfull \hbox (7.56462pt too wide) in paragraph at lines 46--50
+(./specifikace-zadání.tex
+Overfull \hbox (7.56462pt too wide) in paragraph at lines 16--20
 \OT1/put/m/n/12 slou-chat hudbu, vytv[]a[]ret vlastn[]^^P pla-y-listy a hod-no-
 tit jed-not-liv[]e skladby. U[]zivatel[]e mo-hou vyu[]z[]^^Pvat
  []
 
 
-Overfull \hbox (2.00906pt too wide) in paragraph at lines 57--60
+Overfull \hbox (2.00906pt too wide) in paragraph at lines 29--32
 \OT1/put/b/n/12 U[]zivatel[]e \OT1/put/m/n/12 jsou kl[]^^P[]covou en-ti-tou v p
 ro-jektu. Re-gis-trac[]^^P z[]^^Psk[]avaj[]^^P mo[]znost po-slou-chat hudbu, tv
 o[]rit
  []
 
 
-Overfull \hbox (11.11765pt too wide) in paragraph at lines 62--65
+Overfull \hbox (11.11765pt too wide) in paragraph at lines 34--37
 \OT1/put/m/n/12 jm[]eno, m[]^^Psto p[]uvodu a kr[]atkou bi-o-gra-fii. Jsou zod-
 pov[]edn[]^^P za p[]rid[]av[]an[]^^P nov[]ych skla-deb a vytv[]a[]ren[]^^P
  []
@@ -298,43 +299,31 @@ pov[]edn[]^^P za p[]rid[]av[]an[]^^P nov[]ych skla-deb a vytv[]a[]ren[]^^P
 [2
 
 ]
-Overfull \hbox (8.4772pt too wide) in paragraph at lines 85--89
+Overfull \hbox (8.4772pt too wide) in paragraph at lines 57--61
 \OT1/put/m/n/12 ur[]cit[]em ob-dob[]^^P a set[]r[]^^Pdit je podle hod-no-cen[]^
 ^P. Um[]elec m[]u[]ze spe-ci-fi-ko-vat []casov[]e ob-dob[]^^P, nap[]r[]^^Pklad
  []
 
 
-Overfull \hbox (15.63806pt too wide) in paragraph at lines 94--97
-[]\OT1/put/m/n/12 Pro ad-mi-nistr[]atora je k dis-po-zici t[]reba p[]rehled sta
--tis-tik t[]ykaj[]^^Pc[]^^P se u[]zivatel[]u a pla-teb za pr[]emiov[]e
- []
-
-
-Overfull \hbox (14.1171pt too wide) in paragraph at lines 94--97
-\OT1/put/m/n/12 slu[]zby. Ad-mi-nistr[]ator m[]a mo[]znost sle-do-vat sta-tis-t
-iky, jako je po[]cet nov[]e za-re-gis-tro-van[]ych u[]zivatel[]u
- []
-
-
-Overfull \hbox (6.43439pt too wide) in paragraph at lines 103--108
+Overfull \hbox (6.43439pt too wide) in paragraph at lines 76--81
 []\OT1/put/m/n/12 Pro zaji[]st[]en[]^^P kva-lity ob-sahu pla-y-list[]u a mi-ni-
 ma-li-zaci chyb syst[]em prov[]ad[]^^P kon-t-rolu unik[]atnosti
  []
 
 [3
 
-]
-<./img//konceptualni_datovy_model.png, id=17, 2290.5575pt x 2736.2225pt>
+])
+<./img//konceptualni_datovy_model.png, id=17, 1951.29pt x 2429.075pt>
 File: ./img//konceptualni_datovy_model.png Graphic file (type png)
 <use ./img//konceptualni_datovy_model.png>
 Package pdftex.def Info: ./img//konceptualni_datovy_model.png  used on input li
-ne 121.
-(pdftex.def)             Requested size: 460.93153pt x 550.61667pt.
+ne 38.
+(pdftex.def)             Requested size: 460.93153pt x 573.76082pt.
 <./img//relacni_datovy_model.png, id=19, 2244.385pt x 2160.07pt>
 File: ./img//relacni_datovy_model.png Graphic file (type png)
 <use ./img//relacni_datovy_model.png>
-Package pdftex.def Info: ./img//relacni_datovy_model.png  used on input line 12
-6.
+Package pdftex.def Info: ./img//relacni_datovy_model.png  used on input line 43
+.
 (pdftex.def)             Requested size: 512.14963pt x 492.88342pt.
  [4
 
@@ -374,16 +363,16 @@ Overfull \hbox (22.21762pt too wide) in paragraph at lines 62--73
 [6
 
 ]
-Overfull \hbox (11.57367pt too wide) in paragraph at lines 75--85
+Overfull \hbox (40.94904pt too wide) in paragraph at lines 75--86
 []
  []
 
 ) [7] (/home/katussska/Private/github/vsb/dsI/project/out/MelodySphere.aux) ) 
 Here is how much of TeX's memory you used:
- 5138 strings out of 476175
- 86487 string characters out of 5796271
+ 5145 strings out of 476175
+ 86669 string characters out of 5796271
  1879793 words of memory out of 6000000
- 25385 multiletter control sequences out of 15000+600000
+ 25389 multiletter control sequences out of 15000+600000
  544688 words of font info for 60 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  84i,7n,90p,290b,206s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -393,7 +382,7 @@ xmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ado
 be/utopia/putri8a.pfb>
 Output written on /home/katussska/Private/github/vsb/dsI/project/out/MelodySphe
-re.pdf (8 pages, 578912 bytes).
+re.pdf (8 pages, 508041 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

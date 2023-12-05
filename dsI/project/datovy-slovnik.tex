@@ -76,9 +76,10 @@ Popis jednotlivých tabulek je uveden v následujícím datovém slovníku.
     \hline
     \textbf{Název atributu} & \textbf{Datový typ} & \textbf{Délka} & \textbf{Klíč} & \textbf{Null} & \textbf{IO} & \textbf{Popis}                         \\
     \hline
-    playlist\_id            & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK \\
-    create\_date            & DATE                &                &               & Ne            &             & Datum vytvoření playlistu     \\
-    name                    & VARCHAR             & 20             &               & Ne            &             & Název playlistu               \\
+    playlist\_id            & INTEGER             &                & Primární      & Ne            &             & Automaticky inkrementovaný PK        \\
+    song\_number            & INTEGER             &                &               & Ne            &             & Automaticky vytvořené pořadí skladby \\
+    create\_date            & DATE                &                &               & Ne            &             & Datum vytvoření playlistu            \\
+    name                    & VARCHAR             & 20             &               & Ne            &             & Název playlistu                      \\
     \hline
 \end{tabular}
 \bigskip

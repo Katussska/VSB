@@ -28,90 +28,7 @@
 
 
     \section{Specifikace zadání}\label{sec:specifikace-zadani}
-    \subsection*{Vize}
-    Cílem webové aplikace je poskytovat uživatelům prostředí pro přehrávání hudby.
-    Uživatel si vytvoří svůj osobní účet, který mu umožní nejen poslouchat
-    hudbu svých oblíbených umělců, ale také vytvářet
-    vlastní playlisty nebo hodnotit jednotlivé skladby.
-
-    Dále poskytujeme možnost registrovat se jako umělec,
-    což uživatelům umožňuje aktivně přispívat do hudební komunity.
-    Umělci mohou přidávat vlastní skladby a vytvářet hudební alba.
-
-    Aplikace má také uživatelům usnadňovat vyhledávání nových sklade, alb
-    a poskytovat informace o jednotlivých umělcích.
-
-
-    \subsection*{Role}
-    \textbf{Uživatel} je osoba, která vytváří a spravuje svůj osobní účet.
-    Po registraci získává možnost poslouchat hudbu, vytvářet vlastní playlisty
-    a hodnotit jednotlivé skladby.
-    Uživatelé mohou využívat funkce jako je získávat informace o umělcích.
-
-
-    \textbf{Umělec} je uživatel s registrovaným účtem, který má zájem aktivně přispívat do hudební komunity.
-    Může přidávat vlastní skladby a vytvářet hudební alba, která jsou dostupná pro poslech ostatním uživatelům.
-    Umělci mají možnost prezentovat svou tvorbu a budovat svůj profil.
-
-    \subsection*{Vstupy}
-    \textbf{Uživatelé} jsou klíčovou entitou v projektu.
-    Registrací získávají možnost poslouchat hudbu, tvořit vlastní playlisty a hodnotit jednotlivé skladby.
-    Jejich profily obsahují informace jako jméno, příjmení, kontaktní e-mail, zabezpečené heslo, premium status a datum registrace.
-
-
-    Další důležitou entitou jsou \textbf{Umělci}, kteří mají svůj profil na platformě.
-    Každý umělec má jméno, místo původu a krátkou biografii.
-    Jsou zodpovědní za přidávání nových skladeb a vytváření alb, která jsou dostupná pro poslech ostatním uživatelům.
-
-
-    Entita \textbf{Skladba} obsahuje detaily o jednotlivých písních.
-    Každá skladba má svůj název, délku, datum vydání, text (pokud existuje) a spojení s umělci, kteří na ní pracovali.
-    Skladby mohou být součástí alb.
-    Uživatelé mohou hodnotit skladby, což se také eviduje jako součást této entity.
-
-
-    Dvě další entity jsou \textbf{Playlisty} a \textbf{Alba}.
-    Playlisty jsou vytvářeny uživateli a mohou obsahovat různé skladby z různých alb a umělců.
-    Alba jsou kolekcemi skladeb vytvořenými umělci, která jsou k dispozici pro poslech ostatním uživatelům.
-    Každé album může obsahovat skladby od jednoho nebo více umělců.
-
-
-    Kromě toho, existují entity jako \textbf{Hodnocení}.
-    Hodnocení zaznamenává hodnocení skladby uživateli, což umožňuje vyhodnocení oblíbenosti skladeb.
-
-    \clearpage
-
-    \subsection*{Výstupy}
-    Pro umělce je k dispozici například výstup, který umožňuje zobrazit jeho skladby vytvořené v určitém období a setřídit je podle hodnocení.
-    Umělec může specifikovat časové období, například poslední rok nebo konkrétní měsíc, a získat seznam svých skladeb v tomto období.
-    Tyto skladby budou seřazeny podle hodnocení, kde nejlépe hodnocené skladby budou na vrcholu seznamu.
-    To umožní umělci zhodnotit, jaké skladby z daného období měly největší ohlas u posluchačů.
-
-    Uživatelé mají možnost vyhledávat nejnovější hudební alba na základě data jejich přidání a současně je filtrovat třeba podle svých oblíbených umělců.
-    Tato funkce jim umožňuje zadat specifické datum a zobrazit alba, která byla přidána od té doby, a to ještě více omezit na dané umělce.
-
-
-    Pro administrátora je k dispozici třeba přehled statistik týkající se uživatelů a plateb za prémiové služby.
-    Administrátor má možnost sledovat statistiky, jako je počet nově zaregistrovaných uživatelů v různých časových obdobích.
-    Dále může získat informace o počtu uživatelů, kteří zakoupili prémiové členství, a sledovat trendy růstu nebo poklesu v registracích či nákupu prémiového členství.
-
-    \subsection*{Funkce}
-    Kolaborativní tvorba playlistů umožňuje uživatelům společně vytvářet a úpravovat playlisty s ostatními uživateli.
-    Tato funkce podporuje sdílení playlistů a spolupráci na jejich obsahu a úpravách.
-
-
-    Pro zajištění kvality obsahu playlistů a minimalizaci chyb systém provádí kontrolu unikátnosti skladeb.
-    Při přidání nové skladby do playlistu ověřuje, zda již skladba v playlistu není obsažena, přičemž upozorní
-    uživatele na možnost duplicity a umožní mu potvrzení nebo zrušení přidání.
-    Taktéž systém monitoruje dostupnost skladeb v playlistu a v případě, že některá skladba není momentálně dostupná,
-    nabídne uživateli možnost nahrazení jinou skládankou.
-
-
-    Dále zabezpečuje integritu playlistů během společné editace, takže při práci více uživatelů
-    zároveň se snaží zabránit duplicitním změnám a konfliktním situacím.
-    Tímto způsobem systém uživatelům umožňuje vytvářet obsáhlé a rozmanité playlisty díky společné tvorbě a úpravám obsahu,
-    zatímco zároveň minimalizuje možnost výskytu chyb a duplikací skladeb.
-    \clearpage
+    \input{specifikace-zadání}
 
 
     \section{Datová analýza}\label{sec:datova-analyza}
@@ -127,7 +44,8 @@
 
     \clearpage
 
-    \section*{Datový slovník}
+
+    \section{Datový slovník}\label{sec:datovy-slovnik}
     \input{datovy-slovnik}
 
 \end{document}
