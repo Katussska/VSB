@@ -4,7 +4,6 @@
 \usepackage[a4paper, left=20mm, right=30mm, top=30mm, bottom=35mm]{geometry}
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
-\usepackage{xcolor}
 \usepackage{multirow}
 \usepackage{siunitx}
 \usepackage{listings}
@@ -17,12 +16,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[style=numeric,backend=biber,sorting=nty]{biblatex}
 \usepackage[czech]{babel}                             % tenhle musi byt za biblatex
-
-\usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{verbatim}
-\usepackage{algorithm2e}
-
 \usepackage{amsmath}
 \usepackage{amssymb}                                  % velice důležité pro symboly
 
@@ -32,7 +27,7 @@
 \usepackage{titling}
 \title{\Huge\textbf{Diskrétní matematika}\\
 {\textbf{Projekt}}\\
-{\Large číslo zadání \underline{\makebox[1cm]{X}}}}
+{\Large číslo zadání \underline{\makebox[1cm]{1}}}}
 \author{}                                             % nutno ponechat prázdné
 \date{}
 \renewcommand\maketitlehooka{\null\mbox{}\vfill}      % vertically CENTER title page!!!
@@ -45,8 +40,8 @@
 \pagestyle{fancy} 				                      % nastavení stylu záhlaví a zápatí
 \fancyhead[LO]{\Large VŠB - TUO}
 \fancyhead[RO]{\Large Datum \underline{\the\day.\the\month.\the\year}}
-\fancyfoot[LO]{\Large Osobní číslo \underline{\makebox[2.5cm]{END0155}}}
-\fancyfoot[RO]{\Large Jméno \underline{\makebox[4cm]{Jméno Příjmení}}}
+\fancyfoot[LO]{\Large Osobní číslo \underline{\makebox[2.5cm]{BAI0033}}}
+\fancyfoot[RO]{\Large Jméno \underline{\makebox[4cm]{Kateřina Baierová}}}
 \fancyfoot[C]{}                                       % smaže číslování titulní strany!!!
 
 % ZAČÁTEK*********************************************
@@ -67,7 +62,7 @@
         \rule{0pt}{1.5cm}\\
         \rule{0pt}{1cm} \centering 2 &  \\
         \rule{0pt}{1.5cm}\\
-  \end{tabular}
+  \end{tabular}\label{tab:table}
 \end{table}
 
 \clearpage                                            % zprovozní náš custom header!!!
@@ -83,24 +78,44 @@
 
 \newpage
 \setcounter{page}{1}
-\section{Kombinatorika nebo Kongruence (záleží dle zadání)}\label{sec:sec_1}
+\section{Kombinatorika}\label{sec:sec_1}
 
-\textit{Zaměstnanec depa má za úkol natankovat 3 stejné kamiony. První kamion tankoval pouze plnými dvoulitrovými kanystry, přičemž mu po naplnění nádrže zbyl v posledním kanystru jeden litr nafty. Další dva kamiony tankoval pouze plnými třílitrovými kanystry, přičemž mu po naplnění nádrží zbyly v posledním kanystru dva litry nafty. Zaměstnanec si vzpomněl, že když naposled tankoval tyto tři kamiony, používal pouze pětilitrové kanystry a na konci mu v posledním použitém kanystru zbyl jeden litr nafty.\\
-a) Najděte všechny přípustné velikosti nádrže kamionu, které odpovídají zadání.\\
-b) Jaké mohly být velikosti nádrže kamionu, pokud víme, že nebyly větší než 500 litrů? Úlohu řešte jako soustavu kongruencí.}
+\textit{Babička peče sušenky. Když se je pokusila vyskládat na plech v řadách po čtyřech kusech, tak jí
+nějaké zbyly. Když se je pokusila vyskládat na plech v řadách po pěti kusech, tak jich zbylo
+dvakrát tolik. Babička si poté všimla, že pokud připeče šest sušenek navíc, tak jí ani v jednom z
+předchozích vyskládaní nezbude žádná sušenka navíc.\\
+a) Najděte všechna přípustná množství sušenek, které odpovídají zadání.\\
+b) Kolik sušenek mohla mít původně napečených, pokud víme, že těsta měla maximálně na 50.\\
+c) Kolik nejméně jich mohlo původně při vyskládání po čtyřech zbýt?\\}
 \newline\\
-\textbf{Máme celkem 3 nejlepší způsoby psaní matematických výrazů:}
 
 $$2023x\equiv 155\pmod{13},\quad k\in\mathbb{N}$$
 bez odstřelení na nový řádek $365x \equiv 12 \pmod{0}$
 \[33x\equiv 11\pmod{77}\implies 3x=101010\]
 
+\begin{center}
+    $$x\equiv \;?\pmod{4}$$
+    $$x\equiv \;?\pmod{5}$$
+    \rule{5cm}{0.4pt} \\
+    \textcolor{darkgray}{Při přidání 6 sušenek nebude nic chybět a nebude nic navíc}
+    $$x + 6\equiv \;0\pmod{4}$$
+    $$x + 6\equiv \;0\pmod{5}$$
+    \rule{5cm}{0.4pt}
+    $$x\equiv \;-6\pmod{4}$$
+    $$x\equiv \;-6\pmod{5}$$
+    \rule{5cm}{0.4pt}\\
+    \textcolor{darkgray}{x \equiv 4n - 6 \;odvodíme \;a \;přidáme \;do \;(mod \;5)}\\
+    $$x \equiv -6 \pmod{4} \implies x \equiv 4n - 6$$
+\end{center}
+
+
+
 \newpage
 \section{Teorie grafů}\label{sec:sec_2}
 
-\textit{Mějme kompletní graf $K_{\text{n}}$ a označme vrcholy čísly 1 až n.\\
-a) Kolik má kompletní graf $K_{\text{n}}$ faktorů?\\
-b) Kolik existuje různých podgrafů tohoto grafu? Izomorfní grafy považujeme za různé, pokud mají různá očíslování vrcholů. Svůj postup dobře okomentujte.\\
-c) Obecné řešení vyčíslete pro kompletní grafy $K_{\text{3}}$ a $K_{\text{6}}$.}
+\textit{Mějme libovolný souvislý graf se stupňovou posloupností (3,3,2,2,2,2,2,2,2,2), o kterém navíc víme,
+    že mezi každou dvojicí vrcholů ve vzdálenosti 3 a více existuje právě jedna cesta.\\
+a) Může být takový graf hamiltonovský? Pokud ano, nakreslete ho. Pokud ne, pečlivě zdůvodněte proč.\\
+b) Nakreslete graf se stejnou stupňovou posloupností, který je hamiltonovský.}
 
 \end{document} % konec celého dokumentu
