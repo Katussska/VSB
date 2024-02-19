@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="heightMap" targetName="heightMap" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2117aab-d49f-497d-a036-26684b0f44e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../PYT0031-ALG-II/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PYT0031-ALG-II/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/Cube.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/HeightMap.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/main.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Patrik/types.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gaussovaElimMetoda/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gaussovaElimMetoda/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gaussovaElimMetoda/.idea/gaussovaElimMetoda.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gaussovaElimMetoda/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gaussovaElimMetoda/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gaussovaElimMetoda/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeightMap1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeightMap2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeightMap3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeightMap4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kshbdv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/bai0033_10.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/bai0033_10/skripty/skript_data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/bai0033_10/skripty/skript_dotazy.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dsI/project/bai0033_10/skripty/skript_schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/derby.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/partyInfo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/Goods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/IExpiration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/Lego.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/PhysicalGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/src/Voucher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javaI/test1/testik.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149/storage_v2/_src_/database/model.KfszBg/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149/storage_v2/_src_/database/model.KfszBg/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149/storage_v2/_src_/database/msdb.pEgzAA/schema/dbo.sYMBAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/.idea/dataSources/4e3aefcd-2292-490d-accc-d3706b7ec149/storage_v2/_src_/database/msdb.pEgzAA/schema/dbo.sYMBAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/bai0033_5.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/skript_dotazy.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/skript_dotazy.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/skripty.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/skripty.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dsI/project/skripty/skript_dotazy.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../dsI/project/skripty/skript_dotazy.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/boulderdash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test2" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/java-test2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Patrik/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/java-test22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/java-test22.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaI/projekt/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/java-test2-practice" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/java-test22/output.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/Ball.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/Bat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/Collisionable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/DrawableSimulable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/DrawingThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/GameObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/PlayingField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/lab/Routines.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/resources/lab/GameView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/pong/src/main/resources/lab/application.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/assigment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/src/Audio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/src/File.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/src/IDuration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/src/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/src/Video.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/priprava/test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/Apple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/Goods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/IExpiration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/Lego.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/PhysicalGoods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/src/Voucher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaI/testik/testik.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="2.2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ZH98MKUjfcZqFPoiU1O9gM1kQR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/katussska/Private/github/vsb/algII/BAI0033-HEIGHTMAP",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="heightMap" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="heightMap" TARGET_NAME="heightMap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="heightMap" RUN_TARGET_NAME="heightMap">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2117aab-d49f-497d-a036-26684b0f44e5" name="Changes" comment="" />
+      <created>1702067976343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702067976343</updated>
+      <workItem from="1702067977507" duration="1968000" />
+      <workItem from="1702070905387" duration="7817000" />
+      <workItem from="1702232168771" duration="991000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
