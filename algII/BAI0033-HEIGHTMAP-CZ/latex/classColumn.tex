@@ -1,0 +1,192 @@
+\hypertarget{classColumn}{}\doxysection{Column Class Reference}
+\label{classColumn}\index{Column@{Column}}
+
+
+Třída představující sloupec.  
+
+
+
+
+{\ttfamily \#include $<$Column.\+h$>$}
+
+Inheritance diagram for Column\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classColumn}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColumn_abc190ff84ccf6e36c7b63c60bba3db74}{Column}} (int x, int y, int z)
+\begin{DoxyCompactList}\small\item\em Konstruktor pro třídu \mbox{\hyperlink{classColumn}{Column}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classColumn_a08cca63f286486e18536c7a277260eeb}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Getter pro X-\/ovou souřadnici sloupce. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classColumn_ab7d6d7207c69561677137bdf96280f77}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Getter pro Y-\/ovou souřadnici sloupce. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classColumn_a019e82c493a63de13526cf959d2611f6}{getZ}} () const
+\begin{DoxyCompactList}\small\item\em Getter pro Z-\/ovou souřadnici sloupce. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classColumn_aa44249830e4d17d12d23ecdda5a9f605}{check\+Adj}} (Axis axis)
+\begin{DoxyCompactList}\small\item\em Kontroluje překážku v dané ose. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classColumn_a2ad479f5af64079c4581b9898ca5df3b}{check\+It}} () const
+\begin{DoxyCompactList}\small\item\em Zkontroluje, zda je sloupec označen jako zkontrolován. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColumn_a49d2fa33e7c912ea068c139a3ce17ec3}{set\+Checked}} (bool checked)
+\begin{DoxyCompactList}\small\item\em Nastaví stav zkontrolování sloupce. \end{DoxyCompactList}\item 
+std\+::vector$<$ Column\+Ptr $>$ \mbox{\hyperlink{classColumn_ac3f4192ea35b7a163cdb127db5b39d0e}{get\+Adjacent\+Axis}} (Axis axis)
+\begin{DoxyCompactList}\small\item\em Získá sousední sloupce v dané ose. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColumn_aba38ae398ddaa873adfe24c05ee05fcd}{add\+Adjacent}} (Column\+Ptr column, Face face)
+\begin{DoxyCompactList}\small\item\em Přidá sousední sloupec a stranu ke stávajícímu sloupci. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Třída představující sloupec. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classColumn_abc190ff84ccf6e36c7b63c60bba3db74}\label{classColumn_abc190ff84ccf6e36c7b63c60bba3db74}} 
+\index{Column@{Column}!Column@{Column}}
+\index{Column@{Column}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{Column()}{Column()}}
+{\footnotesize\ttfamily Column\+::\+Column (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+Konstruktor pro třídu \mbox{\hyperlink{classColumn}{Column}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/ová souřadnice sloupce. \\
+\hline
+{\em y} & Y-\/ová souřadnice sloupce. \\
+\hline
+{\em z} & Z-\/ová souřadnice sloupce. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classColumn_aba38ae398ddaa873adfe24c05ee05fcd}\label{classColumn_aba38ae398ddaa873adfe24c05ee05fcd}} 
+\index{Column@{Column}!addAdjacent@{addAdjacent}}
+\index{addAdjacent@{addAdjacent}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{addAdjacent()}{addAdjacent()}}
+{\footnotesize\ttfamily void Column\+::add\+Adjacent (\begin{DoxyParamCaption}\item[{Column\+Ptr}]{column,  }\item[{Face}]{face }\end{DoxyParamCaption})}
+
+
+
+Přidá sousední sloupec a stranu ke stávajícímu sloupci. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & Ukazatel na sousední sloupec. \\
+\hline
+{\em face} & Strana sousedního sloupce. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classColumn_aa44249830e4d17d12d23ecdda5a9f605}\label{classColumn_aa44249830e4d17d12d23ecdda5a9f605}} 
+\index{Column@{Column}!checkAdj@{checkAdj}}
+\index{checkAdj@{checkAdj}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{checkAdj()}{checkAdj()}}
+{\footnotesize\ttfamily int Column\+::check\+Adj (\begin{DoxyParamCaption}\item[{Axis}]{axis }\end{DoxyParamCaption})}
+
+
+
+Kontroluje překážku v dané ose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Osa pro kontrolu překážky. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0, pokud je překážka nalezena, 1, pokud není žádná překážka. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColumn_a2ad479f5af64079c4581b9898ca5df3b}\label{classColumn_a2ad479f5af64079c4581b9898ca5df3b}} 
+\index{Column@{Column}!checkIt@{checkIt}}
+\index{checkIt@{checkIt}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{checkIt()}{checkIt()}}
+{\footnotesize\ttfamily bool Column\+::check\+It (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Zkontroluje, zda je sloupec označen jako zkontrolován. 
+
+\begin{DoxyReturn}{Returns}
+True, pokud je zkontrolován, jinak false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColumn_ac3f4192ea35b7a163cdb127db5b39d0e}\label{classColumn_ac3f4192ea35b7a163cdb127db5b39d0e}} 
+\index{Column@{Column}!getAdjacentAxis@{getAdjacentAxis}}
+\index{getAdjacentAxis@{getAdjacentAxis}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{getAdjacentAxis()}{getAdjacentAxis()}}
+{\footnotesize\ttfamily vector$<$ Column\+Ptr $>$ Column\+::get\+Adjacent\+Axis (\begin{DoxyParamCaption}\item[{Axis}]{axis }\end{DoxyParamCaption})}
+
+
+
+Získá sousední sloupce v dané ose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Osa pro zvážení sousedních sloupců. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vektor sousedních sloupců v dané ose. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColumn_a08cca63f286486e18536c7a277260eeb}\label{classColumn_a08cca63f286486e18536c7a277260eeb}} 
+\index{Column@{Column}!getX@{getX}}
+\index{getX@{getX}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Column\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter pro X-\/ovou souřadnici sloupce. 
+
+\begin{DoxyReturn}{Returns}
+X-\/ová souřadnice sloupce. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColumn_ab7d6d7207c69561677137bdf96280f77}\label{classColumn_ab7d6d7207c69561677137bdf96280f77}} 
+\index{Column@{Column}!getY@{getY}}
+\index{getY@{getY}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Column\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter pro Y-\/ovou souřadnici sloupce. 
+
+\begin{DoxyReturn}{Returns}
+Y-\/ová souřadnice sloupce. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColumn_a019e82c493a63de13526cf959d2611f6}\label{classColumn_a019e82c493a63de13526cf959d2611f6}} 
+\index{Column@{Column}!getZ@{getZ}}
+\index{getZ@{getZ}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{getZ()}{getZ()}}
+{\footnotesize\ttfamily int Column\+::getZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter pro Z-\/ovou souřadnici sloupce. 
+
+\begin{DoxyReturn}{Returns}
+Z-\/ová souřadnice sloupce. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColumn_a49d2fa33e7c912ea068c139a3ce17ec3}\label{classColumn_a49d2fa33e7c912ea068c139a3ce17ec3}} 
+\index{Column@{Column}!setChecked@{setChecked}}
+\index{setChecked@{setChecked}!Column@{Column}}
+\doxysubsubsection{\texorpdfstring{setChecked()}{setChecked()}}
+{\footnotesize\ttfamily void Column\+::set\+Checked (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})}
+
+
+
+Nastaví stav zkontrolování sloupce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & Stav k nastavení (true/false). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Column.\+h\item 
+Column.\+cpp\end{DoxyCompactItemize}

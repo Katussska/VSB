@@ -1,0 +1,54 @@
+\begin{theindex}
+
+  \item {$\sim$HeightMap}
+    \subitem {HeightMap}, \hyperpage{12}
+
+  \indexspace
+
+  \item {addAdjacent}
+    \subitem {Column}, \hyperpage{8}
+
+  \indexspace
+
+  \item {checkAdj}
+    \subitem {Column}, \hyperpage{8}
+  \item {checkIt}
+    \subitem {Column}, \hyperpage{9}
+  \item {Column}, \hyperpage{7}
+    \subitem {addAdjacent}, \hyperpage{8}
+    \subitem {checkAdj}, \hyperpage{8}
+    \subitem {checkIt}, \hyperpage{9}
+    \subitem {Column}, \hyperpage{8}
+    \subitem {getAdjacentAxis}, \hyperpage{9}
+    \subitem {getX}, \hyperpage{9}
+    \subitem {getY}, \hyperpage{9}
+    \subitem {getZ}, \hyperpage{10}
+    \subitem {setChecked}, \hyperpage{10}
+  \item {ColumnData}, \hyperpage{10}
+  \item {countFaces}
+    \subitem {HeightMap}, \hyperpage{12}
+
+  \indexspace
+
+  \item {getAdjacentAxis}
+    \subitem {Column}, \hyperpage{9}
+  \item {getX}
+    \subitem {Column}, \hyperpage{9}
+  \item {getY}
+    \subitem {Column}, \hyperpage{9}
+  \item {getZ}
+    \subitem {Column}, \hyperpage{10}
+
+  \indexspace
+
+  \item {HeightMap}, \hyperpage{11}
+    \subitem {$\sim$HeightMap}, \hyperpage{12}
+    \subitem {countFaces}, \hyperpage{12}
+    \subitem {HeightMap}, \hyperpage{11}
+
+  \indexspace
+
+  \item {setChecked}
+    \subitem {Column}, \hyperpage{10}
+
+\end{theindex}

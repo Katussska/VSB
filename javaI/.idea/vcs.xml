@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lab08" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/java-test2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projekt/boulderdash" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projekt/projekt" vcs="Git" />
   </component>
 </project>

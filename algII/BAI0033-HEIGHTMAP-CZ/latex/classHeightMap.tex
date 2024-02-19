@@ -1,0 +1,103 @@
+\hypertarget{classHeightMap}{}\doxysection{Height\+Map Class Reference}
+\label{classHeightMap}\index{HeightMap@{HeightMap}}
+
+
+Reprezentuje výškovou mapu obsahující sloupce.  
+
+
+
+
+{\ttfamily \#include $<$Height\+Map.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHeightMap_a98804991312373a074e7bdd03b739362}{Height\+Map}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Konstruuje objekt \mbox{\hyperlink{classHeightMap}{Height\+Map}} ze souboru. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHeightMap_aae0f26dda6c21b3dc34d626e1a027eef}{count\+Faces}} () const
+\begin{DoxyCompactList}\small\item\em Počítá celkový počet ploch ve výškové mapě. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHeightMap_a55d53e1558e0216a81c78ac152694f19}{$\sim$\+Height\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor třídy \mbox{\hyperlink{classHeightMap}{Height\+Map}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezentuje výškovou mapu obsahující sloupce. 
+
+Třída \mbox{\hyperlink{classHeightMap}{Height\+Map}} spravuje výškovou mapu složenou z sloupců s funkcionalitami pro stanovení sousedních vztahů, počítání ploch podél os a další. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHeightMap_a98804991312373a074e7bdd03b739362}\label{classHeightMap_a98804991312373a074e7bdd03b739362}} 
+\index{HeightMap@{HeightMap}!HeightMap@{HeightMap}}
+\index{HeightMap@{HeightMap}!HeightMap@{HeightMap}}
+\doxysubsubsection{\texorpdfstring{HeightMap()}{HeightMap()}}
+{\footnotesize\ttfamily Height\+Map\+::\+Height\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruuje objekt \mbox{\hyperlink{classHeightMap}{Height\+Map}} ze souboru. 
+
+Konstruktor pro třídu \mbox{\hyperlink{classHeightMap}{Height\+Map}}.
+
+Konstruuje objekt \mbox{\hyperlink{classHeightMap}{Height\+Map}} parsující data ze souboru.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Název souboru obsahujících data výškové mapy.\\
+\hline
+\end{DoxyParams}
+
+
+Vytváří objekt \mbox{\hyperlink{classHeightMap}{Height\+Map}} zpracováním dat ze souboru.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Název souboru obsahující data mapy výšek. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHeightMap_a55d53e1558e0216a81c78ac152694f19}\label{classHeightMap_a55d53e1558e0216a81c78ac152694f19}} 
+\index{HeightMap@{HeightMap}!````~HeightMap@{$\sim$HeightMap}}
+\index{````~HeightMap@{$\sim$HeightMap}!HeightMap@{HeightMap}}
+\doxysubsubsection{\texorpdfstring{$\sim$HeightMap()}{~HeightMap()}}
+{\footnotesize\ttfamily Height\+Map\+::$\sim$\+Height\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor třídy \mbox{\hyperlink{classHeightMap}{Height\+Map}}. 
+
+Destruktor pro třídu \mbox{\hyperlink{classHeightMap}{Height\+Map}}.
+
+Uvolňuje alokovanou paměť a prostředky.
+
+Uvolní alokovanou paměť/ prostředky. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHeightMap_aae0f26dda6c21b3dc34d626e1a027eef}\label{classHeightMap_aae0f26dda6c21b3dc34d626e1a027eef}} 
+\index{HeightMap@{HeightMap}!countFaces@{countFaces}}
+\index{countFaces@{countFaces}!HeightMap@{HeightMap}}
+\doxysubsubsection{\texorpdfstring{countFaces()}{countFaces()}}
+{\footnotesize\ttfamily int Height\+Map\+::count\+Faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Počítá celkový počet ploch ve výškové mapě. 
+
+Počítá celkový počet stěn v mapě výšek.
+
+Prochází všechny osy, počítá plochy a sčítá celkové počty.
+
+\begin{DoxyReturn}{Returns}
+Celkový počet ploch ve výškové mapě.
+\end{DoxyReturn}
+
+
+Projde všechny osy a spočítá stěny, poté sečte výsledky.
+
+\begin{DoxyReturn}{Returns}
+Celkový počet stěn v mapě výšek. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Height\+Map.\+h\item 
+Height\+Map.\+cpp\end{DoxyCompactItemize}

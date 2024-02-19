@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Dec 07 14:40:55 CET 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-018c-4482-8a5d-00000ec05000 
+on database directory memory:/home/katussska/Private/github/vsb/javaI/person with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3f99bd52 
+Loaded from file:/home/katussska/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+java.vendor=Red Hat, Inc.
+java.runtime.version=17.0.8+7
+user.dir=/home/katussska/Private/github/vsb/javaI
+os.name=Linux
+os.arch=amd64
+os.version=6.5.7-200.fc38.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
