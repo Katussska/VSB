@@ -1,81 +1,51 @@
-def fizzbuzz(num):
-    """
-    Return 'Fizz' if `num` is divisible by 3, 'Buzz' if `num` is divisible by 5, 'FizzBuzz' if `num` is divisible both by 3 and 5.
-    If `num` isn't divisible neither by 3 nor by 5, return `num`.
-    Example:
-        fizzbuzz(3) # Fizz
-        fizzbuzz(5) # Buzz
-        fizzbuzz(15) # FizzBuzz
-        fizzbuzz(8) # 8
-    """
-    pass
+def fizzbuzz(n):
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
 
 
 def fibonacci(n):
-    """
-    Return the `n`-th Fibonacci number (counting from 0).
-    Example:
-        fibonacci(0) == 0
-        fibonacci(1) == 1
-        fibonacci(2) == 1
-        fibonacci(3) == 2
-        fibonacci(4) == 3
-    """
-    pass
+    fibb = [0, 1]
+
+    while fibb[-1] + fibb[-2] <= n:
+        fibb.append(fibb[-1] + fibb[-2])
+
+    return fibb
 
 
 def dot_product(a, b):
-    """
-    Calculate the dot product of `a` and `b`.
-    Assume that `a` and `b` have same length.
-    Hint:
-        lookup `zip` function
-    Example:
-        dot_product([1, 2, 3], [0, 3, 4]) == 1*0 + 2*3 + 3*4 == 18
-    """
-    pass
+    return sum(x * y for x, y in zip(a, b))
 
 
 def redact(data, chars):
-    """
-    Return `data` with all characters from `chars` replaced by the character 'x'.
-    Characters are case sensitive.
-    Example:
-        redact("Hello world!", "lo")        # Hexxx wxrxd!
-        redact("Secret message", "mse")     # Sxcrxt xxxxagx
-    """
-    pass
+    for char in chars:
+        data = data.replace(char, 'x')
+
+    return data
 
 
 def count_words(data):
-    """
-    Return a dictionary that maps word -> number of occurences in `data`.
-    Words are separated by spaces (' ').
-    Characters are case sensitive.
+    counter = {}
+    words = data.split(" ")
 
-    Hint:
-        "hi there".split(" ") -> ["hi", "there"]
+    for word in words:
+        if word in counter:
+            counter[word] += 1
+        else:
+            counter[word] = 1
 
-    Example:
-        count_words('this car is my favourite what car is this')
-        {
-            'this': 2,
-            'car': 2,
-            'is': 2,
-            'my': 1,
-            'favourite': 1,
-            'what': 1
-        }
-    """
-    pass
+    return counter
 
 
-def bonus_fizzbuzz(num):
-    """
-    Implement the `fizzbuzz` function.
-    `if`, match-case and cycles are not allowed.
-    """
-    pass
+def bonus_fizzbuzz(n):
+    result = "Fizz" * (n % 3 == 0) + "Buzz" * (n % 5 == 0)
+    return result or n
 
 
 def bonus_utf8(cp):
