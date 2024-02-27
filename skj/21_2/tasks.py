@@ -50,7 +50,7 @@ def bonus_fizzbuzz(n):
 
 def bonus_utf8(cp):
     """
-    Encode `cp` (a Unicode code point) into 1-4 UTF-8 bytes - you should know this from `Základy číslicových systémů (ZDS)`.
+    Encode `cp` (a Unicode code point) into 1-4 UTF-8 bytes.
     Example:
         bonus_utf8(0x01) == [0x01]
         bonus_utf8(0x1F601) == [0xF0, 0x9F, 0x98, 0x81]
