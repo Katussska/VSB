@@ -1,22 +1,35 @@
 def fizzbuzz(n):
-    for i in range(1, n + 1):
-        if i % 3 == 0 and i % 5 == 0:
-            print("FizzBuzz")
-        elif i % 3 == 0:
-            print("Fizz")
-        elif i % 5 == 0:
-            print("Buzz")
-        else:
-            print(i)
+    buzz = "Buzz"
+    fizz = "Fizz"
+
+    if n % 3 == 0 and n % 5 == 0:
+        return fizz + buzz
+    elif n % 3 == 0:
+        return fizz
+    elif n % 5 == 0:
+        return buzz
+    else:
+        return n
 
 
 def fibonacci(n):
-    fibb = [0, 1]
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 1
 
-    while fibb[-1] + fibb[-2] <= n:
-        fibb.append(fibb[-1] + fibb[-2])
+    a, b = 1, 1
+    count = 2
 
-    return fibb
+    while count < n:
+        c = b
+        b = a + b
+        a = c
+        count += 1
+
+    return b
 
 
 def dot_product(a, b):
@@ -31,6 +44,9 @@ def redact(data, chars):
 
 
 def count_words(data):
+    if len(data) == 0:
+        return {}
+
     counter = {}
     words = data.split(" ")
 
@@ -49,10 +65,8 @@ def bonus_fizzbuzz(n):
 
 
 def bonus_utf8(cp):
-    """
-    Encode `cp` (a Unicode code point) into 1-4 UTF-8 bytes.
-    Example:
-        bonus_utf8(0x01) == [0x01]
-        bonus_utf8(0x1F601) == [0xF0, 0x9F, 0x98, 0x81]
-    """
-    pass
+    char = chr(cp)
+
+    utf8 = char.encode('utf-8')
+
+    return list(utf8)

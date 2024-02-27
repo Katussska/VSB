@@ -9,4 +9,6 @@
 
 using CodePoint = uint32_t;
 
-class UTF8String {};
+class UTF8String {
+
+};
