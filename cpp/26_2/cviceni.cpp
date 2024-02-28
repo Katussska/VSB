@@ -1,6 +1,7 @@
 #include <cstring>
 #include <iostream>
 #include <optional>
+#include <vector>
 
 int work(int x) {
     std::cout << "int work(int x)" << std::endl;
