@@ -16,11 +16,11 @@ private:
     size_t reserved = 0;
 
 public:
-    // Can be created from a C or C++ string that contains ASCII bytes.
+    UTF8String(std::string);
 
-    // Can be created from a vector of code points.
+    UTF8String(std::vector<CodePoint>());
 
-    // Can be copied and copy assigned.
+    UTF8String(const UTF8String &str);
 
     UTF8String &operator=(const UTF8String &str);
 
@@ -40,7 +40,7 @@ public:
 
     UTF8String &append(const size_t str);
 
-    //    UTF8String &append(int32_t<CodePoint>);
+    //  UTF8String &append(int32_t<CodePoint>);
 
     UTF8String &operator+(const UTF8String &str);
 
@@ -48,5 +48,6 @@ public:
 
     UTF8String &operator==(const UTF8String &str);
 
-    //  UTF8String<std::string>(UTF8String str);
+    //  Can be converted to an std::string using an explicit cast.
+    //  In this case, assume that the string contains only ASCII characters.
 };
