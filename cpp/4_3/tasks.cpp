@@ -1,8 +1,6 @@
 #include <cstring>
 #include "tasks.h"
 
-// TODO: implement functions from tasks.h
-
 Parser create_char_parser(char c) {
     return Parser([c](const char *input) -> const char * {
         if (input && *input == c) {
@@ -39,16 +37,47 @@ Parser skip_ws() {
     });
 }
 
-Parser any_of(const std::vector<Parser> &) {
-    return Parser();
+Parser any_of(const std::vector<Parser> &parsers) {
+    return Parser([parsers](const char *input) -> const char * {
+        for (const auto &parser: parsers) {
+            auto result = parser(input);
+            if (result)
+                return result;
+        }
+        return nullptr;
+    });
 }
 
-Parser sequence(const std::vector<Parser> &) {
-    return Parser();
+Parser sequence(const std::vector<Parser> &parsers) {
+    return Parser([parsers](const char *input) -> const char * {
+        auto remaining = input;
+
+        for (const auto &parser: parsers) {
+            auto result = parser(remaining);
+
+            if (!result)
+                return nullptr;
+
+            remaining = result;
+        }
+        return remaining;
+    });
 }
 
-Parser repeat(const Parser &, int) {
-    return Parser();
+Parser repeat(const Parser &parser, int multiple) {
+    return Parser([parser, multiple](const char *input) -> const char * {
+        auto remaining = input;
+
+        for (int i = 0; i < multiple; ++i) {
+            auto result = parser(remaining);
+
+            if (!result)
+                return nullptr;
+
+            remaining = result;
+        }
+        return remaining;
+    });
 }
 
 Parser create_word_parser(const std::string &word) {
