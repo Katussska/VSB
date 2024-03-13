@@ -29,10 +29,12 @@ class myApp:
     master.title("Menu2")
     master.config(menu=self.menubar)
   def copy(self):
-    print "copy"
+    print("copy")
+
   def nic(self):
-    print "nic"
-     
+    print("nic")
+
+
 root = Tk()
 app = myApp(root)
 root.mainloop()

@@ -1,137 +1,67 @@
 import tkinter as tk
-from tkinter import ttk
-
-
-def add_example_records():
-    # Add example records to the display
-    records = [
-        ("Prijem", "10.03.2024", "Vyplata", "20000Kc"),
-        ("Vydaj", "08.03.2024", "Nakup", "-1500Kc"),
-        ("Vydaj", "05.03.2024", "Obed", "-180Kc")
-    ]
-
-    for i, record in enumerate(records):
-        for j, value in enumerate(record):
-            ttk.Label(root, text=value).grid(row=i + 11, column=j)
+from tkinter import *
 
 
 class BudgetTrackerApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Budget Tracker")
+    def render_add(self):
+        pass
 
-        # Labels and Entry Widgets
-        ttk.Label(root, text="Poznamka").grid(row=0, column=0)
-        self.note_entry = ttk.Entry(root)
-        self.note_entry.grid(row=0, column=1)
+    def render_filter(self):
+        pass
 
-        ttk.Label(root, text="Castka").grid(row=2, column=0)
-        self.amount_entry = ttk.Entry(root)
-        self.amount_entry.grid(row=2, column=1)
+    def render_list(self):
+        pass
 
-        # Date Entry Fields
-        ttk.Label(root, text="Den").grid(row=4, column=0)
-        self.day_entry = ttk.Entry(root)
-        self.day_entry.grid(row=4, column=1)
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Budget Tracker")
+        self.master.resizable(False, False)
 
-        ttk.Label(root, text="Mesic").grid(row=5, column=0)
-        self.month_entry = ttk.Entry(root)
-        self.month_entry.grid(row=5, column=1)
+        list_headers = ["Date", "Note", "Amount"]
+        list_content = []
 
-        ttk.Label(root, text="Rok").grid(row=6, column=0)
-        self.year_entry = ttk.Entry(root)
-        self.year_entry.grid(row=6, column=1)
+        big_font = ('Helvetica', 15, 'bold')
+        form_frame = Frame(master, bd=50)
 
-        # Radio Buttons
-        self.transaction_type = tk.StringVar()
-        ttk.Radiobutton(root, text="Prijem", variable=self.transaction_type, value="Prijem").grid(row=3, column=0)
-        ttk.Radiobutton(root, text="Vydaj", variable=self.transaction_type, value="Vydaj").grid(row=3, column=1)
+        label = Label(form_frame, text="Add record", font=big_font)
+        info_label = Label(form_frame, text="Note")
+        info_input = Entry(form_frame, width=20)
 
-        # Add Button
-        ttk.Button(root, text="Pridat", command=self.add_transaction).grid(row=7, column=0, columnspan=2)
+        label.grid(row=0, column=1, sticky=NSEW)
+        info_label.grid(row=1, column=1, sticky=W)
+        info_input.grid(row=1, column=1, sticky=E)
+        form_frame.pack(side="left")
 
-        # Filter Section
-        ttk.Label(root, text="od: Kc").grid(row=8, column=0)
-        self.filter_from_entry = ttk.Entry(root)
-        self.filter_from_entry.grid(row=8, column=1)
+        self.render_add()
 
-        ttk.Label(root, text="do: Kc").grid(row=8, column=2)
-        self.filter_to_entry = ttk.Entry(root)
-        self.filter_to_entry.grid(row=8, column=3)
 
-        ttk.Radiobutton(root, text="Prijem", variable=self.transaction_type, value="Prijem").grid(row=9, column=0)
-        ttk.Radiobutton(root, text="Vydaj", variable=self.transaction_type, value="Vydaj").grid(row=9, column=1)
+def render_menu(master):
+    menubar = Menu(master)
 
-        ttk.Button(root, text="Filter", command=self.apply_filter).grid(row=9, column=2, columnspan=2)
+    filemenu = Menu(menubar, tearoff=0)
+    cascmenu = Menu(menubar, tearoff=0)
+    cascmenu.add_command(label="1.0.0")
+    filemenu.add_cascade(label="Version", menu=cascmenu)
+    filemenu.add_separator()
+    filemenu.add_command(label="Quit", command=master.quit)
+    menubar.add_cascade(label="File", menu=filemenu)
 
-        # Table-like Display
-        ttk.Label(root, text="P/V").grid(row=10, column=0)
-        ttk.Label(root, text="Datum").grid(row=10, column=1)
-        ttk.Label(root, text="Poznamka").grid(row=10, column=2)
-        ttk.Label(root, text="Castka").grid(row=10, column=3)
+    editmenu = Menu(menubar, tearoff=0)
+    editmenu.add_command(label="URO Tkinter project 2024")
+    editmenu.add_command(label="Kateřina Baierová")
+    editmenu.add_command(label="Bai0033")
+    editmenu.add_command(label="VŠB")
+    menubar.add_cascade(label="About", menu=editmenu)
 
-        # Example Records
-        add_example_records()
+    master.config(menu=menubar)
 
-    def add_transaction(self):
-        """
-        Přidá novou transakci na základě zadaných údajů.
-        """
-        note = self.note_entry.get()
-        text = self.text_entry.get()
-        amount = self.amount_entry.get()
-        transaction_type = self.transaction_type.get()
-        day = self.day_entry.get()
-        month = self.month_entry.get()
-        year = self.year_entry.get()
 
-        # Zde implementujte logiku pro přidání transakce do vašeho datového úložiště (např. seznamu).
-
-        # Příklad: Přidání transakce do seznamu
-        new_transaction = {
-            "P/V": transaction_type,
-            "Datum": f"{day}.{month}.{year}",
-            "Poznamka": note,
-            "Castka": amount
-        }
-        # Přidejte new_transaction do vašeho datového úložiště (seznamu, databáze atd.)
-
-        # Aktualizujte zobrazení tabulky
-        self.add_example_records()
-
-    def apply_filter(self):
-        """
-        Aplikuje filtr na základě zadaných kritérií.
-        """
-        filter_from = self.filter_from_entry.get()
-        filter_to = self.filter_to_entry.get()
-        transaction_type = self.transaction_type.get()
-
-        # Zde implementujte logiku pro filtrování transakcí podle zadaných kritérií.
-
-        # Příklad: Filtrování transakcí podle typu (Prijem/Vydaj)
-        filtered_transactions = []
-        for transaction in self.all_transactions:
-            if transaction["P/V"] == transaction_type:
-                filtered_transactions.append(transaction)
-
-        # Aktualizujte zobrazení tabulky s filtrovanými transakcemi
-        self.display_filtered_records(filtered_transactions)
-
-    def display_filtered_records(self, filtered_transactions):
-        """
-        Zobrazí filtrované transakce v tabulce.
-        """
-        # Vymažte stávající záznamy v tabulce
-        # ...
-
-        # Přidejte filtrované transakce do tabulky
-        for i, record in enumerate(filtered_transactions):
-            for j, value in enumerate(record.values()):
-                ttk.Label(root, text=value).grid(row=i + 11, column=j)
+def main():
+    master = tk.Tk()
+    render_menu(master)
+    BudgetTrackerApp(master)
+    master.mainloop()
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = BudgetTrackerApp(root)
-    root.mainloop()
+    main()
