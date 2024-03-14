@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+from tkinter.ttk import Treeview, Notebook
 
 
 class BudgetTrackerApp:
@@ -10,6 +11,19 @@ class BudgetTrackerApp:
         pass
 
     def render_list(self):
+        tree = Treeview(self.master, columns=('date', 'note', 'amount'), show='headings')
+
+        tree.heading('date', text='Date')
+        tree.heading('note', text='Note')
+        tree.heading('amount', text='Amount')
+
+        scrollbar = Scrollbar(self.master, orient=VERTICAL, command=tree.yview)
+        tree.configure(yscroll=scrollbar.set)
+
+        scrollbar.pack(side='right', fill='y')
+        tree.pack(side='right', fill='both', expand=True)
+
+    def list_insert(self):
         pass
 
     def __init__(self, master):
@@ -17,22 +31,16 @@ class BudgetTrackerApp:
         self.master.title("Budget Tracker")
         self.master.resizable(False, False)
 
-        list_headers = ["Date", "Note", "Amount"]
-        list_content = []
+        self.notebook = Notebook(master)
+        self.notebook.pack(side='left', fill='both', expand=True)
 
-        big_font = ('Helvetica', 15, 'bold')
-        form_frame = Frame(master, bd=50)
+        self.page1 = Frame(self.notebook, width=300, height=400)
+        self.page2 = Frame(self.notebook, width=300, height=400)
 
-        label = Label(form_frame, text="Add record", font=big_font)
-        info_label = Label(form_frame, text="Note")
-        info_input = Entry(form_frame, width=20)
+        self.notebook.add(self.page1, text='Add')
+        self.notebook.add(self.page2, text='Filter')
 
-        label.grid(row=0, column=1, sticky=NSEW)
-        info_label.grid(row=1, column=1, sticky=W)
-        info_input.grid(row=1, column=1, sticky=E)
-        form_frame.pack(side="left")
-
-        self.render_add()
+        self.render_list()
 
 
 def render_menu(master):
