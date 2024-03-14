@@ -3,6 +3,7 @@
 
 #include "doctest.h"
 #include "tasks.h"
+#include "Integer.h"
 
 #include <sstream>
 #include <vector>
