@@ -1,26 +1,32 @@
-Úkol
+1. **Návrh tříd a hierarchie**:
+    - Pro začátek si představte, jaké typy hodnot JSON budete potřebovat reprezentovat. Máme integer, pole, objekt a null hodnotu.
+    - Zvažte, jaké metody a vlastnosti budou potřeba pro každý typ hodnoty. Například, integer bude potřebovat metodu `get_value`, pole bude potřebovat metody `size`, `append` a `remove`, objekt bude potřebovat metody pro práci s klíči a hodnotami jako `keys`, `insert` a `remove`.
 
-Vaším úkolem bude implementovat hierarchii popisující JSON dokument. Jedná se o cvičení v modelování dokumentu (hierarchie obsahující různé typy prvků) pomocí přístupu vanilla OOP s polymorfismem. Můžete se pokusit také modelovat tento dokument jiným způsobem, například pomocí std::variant. Uvidíme později, že takový přístup může být ergonomičtější.
+2. **Implementace jednotlivých tříd**:
+    - Pro každý typ hodnoty JSON vytvořte odpovídající třídu.
+    - Zamyslete se nad tím, jak bude každá třída reprezentovat daný typ hodnoty a jaké informace budou uchovávány v objektu.
 
-Abstraktní prvek dokumentu bude reprezentován třídou Value. Použijte OOP k modelování JSON dokumentů, které mohou obsahovat:
+3. **Memory management**:
+    - Použijte STL kontejnery pro ukládání prvků pole a objektů.
+    - Správně manipulujte s raw pointery a zajistěte, aby paměť byla dealokována správně. Ujistěte se, že každý prvek pole a objektu vlastní své potomky a odpovídajícím způsobem je dealokuje.
 
-    Celé číslo (Integer)
-    Pole JSON prvků (Array)
-    Objekt s řetězcovými klíči (Object)
-    Hodnotu null reprezentující nedostatek hodnoty (Null)
+4. **Indexace**:
+    - Implementujte operátor `[]` pro indexaci prvků pole a objektů. Dbejte na to, aby indexace byla povolena pouze pro objekty, které ji podporují.
+    - Zvažte implementaci odpovídajících výjimek pro případy, kdy je objekt indexován, ale není indexovatelný.
 
-Níže najdete komentáře týkající se implementace a požadovaných funkcí (viz také testy). Přemýšlejte o kompromisních, se kterými se setkáte při implementaci dokumentu pomocí OOP, a zahrňte komentář do příspěvku, který popíše vaše zkušenosti.
+5. **Kopírování**:
+    - Implementujte metodu `clone` pro hluboké kopírování objektů.
+    - Zvažte návratový typ této metody tak, aby podporoval polymorfní chování.
 
-Jsou zde některé otázky označené [*] - zkopírujte tyto otázky do nějakého komentáře v souboru tasks.h a odpovězte na ně ve svém příspěvku (můžete na ně také odpovědět pomocí systému Kelvinových komentářů).
-Správa paměti
+6. **Operace s jednotlivými typy**:
+    - Implementujte metody pro práci s jednotlivými typy hodnot JSON, jako jsou `get_value`, `size`, `append`, `remove`, `keys`, `insert` a `remove`.
 
-Můžete použít kontejnery STL pro ukládání prvků pole (např. std::vector) a prvků objektu (nějaký druh mapy nebo stromu). Zatím nepoužívejte chytré ukazatele, uchovávejte v kontejnerových prvcích (pole/objekt) raw pointery a řádně se starat o dealokaci paměti. Kontejnerové prvky by měly dostat své potomky jako raw pointery a v tu chvíli se stanou jedinečnými vlastníky těchto ukazatelů (budou zodpovědní za jejich smazání). Nemusíte implementovat podporu pro kopírování/přiřazení dokumentu, místo toho se ujistěte, že kopírování/přiřazení bude úplně zakázáno. [] Mohou být jednotlivé prvky sdíleny mezi různými JSON kontejnery (pole/objekt) s uvedeným návrhem? Můžete vzít jeden konkrétní prvek (např. celé číslo) alokovaný na haldě a umístit ho jak do pole, tak do objektu? [] Mohly by být použity reference (nebo ukazatele, které nejsou vlastníkem) k ukládání prvků v JSON kontejnerech? Jak by to ovlivnilo použitelnost polí a objektů? Vyzkoušejte to a podívejte se, jak snadné nebo obtížné to je :)
-Indexování
+7. **Visitor pattern**:
+    - Implementujte design pattern Visitor pro přidání nových operací bez změny základní hierarchie tříd.
+    - Vytvořte třídu reprezentujícího návštěvníka a implementujte virtuální metodu `accept` v každé třídě týkající se JSON hodnot, která bude delegovat volání na správnou metodu návštěvníka.
 
-Bude možné indexovat každý JSON prvek jak číselným indexem, tak řetězcem pomocí operátoru [] . Tyto indexovací operace budou pouze pro čtení. [] Není-li možné indexovat objekty, vyvolá výjimku při pokusu o indexování pomocí operátoru []. Můžete použít výjimku z standardní knihovny, ale raději vytvořte vlastní výjimku, pokud je to možné. Použijte název, který považujete za vhodný pro výjimku, testy kontrolují pouze to, zda je vyvolána výjimka, ne jaký typ výjimky to je. [] Přemýšlejte o této rozhraní. Jaké jsou jeho výhody nebo nevýhody? Je lepší umístit indexéry do kořenového prvku Value? Nebo by měly být podporovány pouze typy, které skutečně implementují indexaci (pole/objekty)? Přemýšlejte o kompromisních (kompilační časová bezpečnost vs. ergonomie). [*] Přemýšlejte o návratovém typu. Co by to mělo být? Je zde nutné použít std::optional?
-Kopírování
+8. **Testování**:
+    - Vytvořte testy pro ověření funkcionality každé metody a třídy.
+    - Testy by měly pokrýt různé scénáře a hraniční případy.
 
-Bude možné zkopírovat (klonovat) každý JSON prvek pomocí metody clone. To představí hlubokou kopii, která zkopíruje všechny obsažené prvky. Viz návrhový vzor Prototype. [*] Jak můžete implementovat kopírování pro polymorfní objektovou hierarchii? Jaký by měl být návratový typ metody clone? Pokud máte zájem, podívejte se na "C++ kovarianci".
-Celá čísla
-
-Objekty typu Integer budou mít metodu get_value, která vrátí jejich aktuální hodnotu.
+Během implementace se ujistěte, že dodržujete principy OOP, správně řídíte paměť a využíváte vhodné design patterns. Dále se můžete zamyslet nad různými optimalizacemi a zlepšeními implementace, které by mohly vylepšit výkon a údržbu kódu.

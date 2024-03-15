@@ -1,11 +1,53 @@
 import tkinter as tk
 from tkinter import *
-from tkinter.ttk import Treeview, Notebook
+from tkinter.ttk import Treeview, Notebook, Combobox
 
 
 class BudgetTrackerApp:
+    def fce(self, var):
+        self.la.configure(text=self.cmb.get())
+
     def render_add(self):
-        pass
+        title = Label(self.page1, text='Add expense', font='bolder', pady=20)
+
+        note_l = Label(self.page1, text='Note')
+        note_i = Entry(self.page1, width=20)
+        amount_l = Label(self.page1, text='Amount')
+        amount_i = Entry(self.page1, width=15)
+
+        title.pack()
+        note_l.pack()
+        note_i.pack()
+        amount_l.pack()
+        amount_i.pack()
+
+        days_l = Label(self.page1, text='Day')
+        days_l.pack()
+        days_frame = Frame(self.page1, pady=10)
+        days_frame.pack()
+        days = [str(i) for i in range(1, 32)]
+        days_vals = tuple(days)
+        days_box = Combobox(days_frame, values=days_vals, state="readonly", validatecommand=self.fce)
+        days_box.pack()
+
+        months_l = Label(self.page1, text='Month')
+        months_l.pack()
+        months_frame = Frame(self.page1, pady=10)
+        months_frame.pack()
+        months = ["January", "February", "March", "April", "May", "June", "July",
+                  "August", "September", "October", "November", "December"]
+        months_vals = tuple(months)
+        months_box = Combobox(months_frame, values=months_vals, state="readonly", validatecommand=self.fce)
+        months_box.pack()
+
+        years_l = Label(self.page1, text='Year')
+        years_l.pack()
+        years_frame = Frame(self.page1, pady=10)
+        years_frame.pack()
+        years = [str(i) for i in range(2023, 2026)]
+        years_vals = tuple(years)
+        years_box = Combobox(years_frame, values=years_vals, state="readonly", validatecommand=self.fce)
+        years_box.pack()
 
     def render_filter(self):
         pass
@@ -40,6 +82,7 @@ class BudgetTrackerApp:
         self.notebook.add(self.page1, text='Add')
         self.notebook.add(self.page2, text='Filter')
 
+        self.render_add()
         self.render_list()
 
 
