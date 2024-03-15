@@ -14,7 +14,7 @@ private:
 public:
     explicit Integer(int value);
 
-    static int get_value();
+    [[nodiscard]] static int get_value();
 
 };
 
@@ -24,6 +24,8 @@ private:
     size_t values_count{};
 
 public:
+    Array();
+
     explicit Array(const std::vector<Value *> &values);
 
     static int size();
@@ -32,16 +34,18 @@ public:
 
     void remove(int index);
 
-    Value *operator[](int index);
+    const Value *operator[](int index) const;
 };
 
 class Object : public Value {
 private:
     std::unordered_map<std::string, Value *> data;
-    size_t data_count;
+    size_t data_count{};
 
 public:
-    explicit Object(const std::vector<std::pair<std::string, Value *>> &pairs);
+    Object();
+
+    explicit Object(const std::unordered_map<std::string, Value *> &data);
 
     static int size();
 
@@ -51,7 +55,7 @@ public:
 
     void remove(const std::string &key);
 
-    Value *operator[](const std::string &key);
+    const Value *operator[](const std::string &key) const;
 
     virtual ~Object();
 };

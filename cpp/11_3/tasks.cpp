@@ -24,11 +24,13 @@ void Array::remove(int index) {
 
 }
 
-Value *Array::operator[](int index) {
+const Value *Array::operator[](int index) const {
     return nullptr;
 }
 
-Object::Object(const std::vector<std::pair<std::string, Value *>> &pairs) {
+Array::Array() = default;
+
+Object::Object(const std::unordered_map<std::string, Value *> &data) {
 
 }
 
@@ -44,12 +46,15 @@ void Object::remove(const std::string &key) {
 
 }
 
-Value *Object::operator[](const std::string &key) {
-    return nullptr;
-}
-
 int Object::size() {
     return 0;
 }
 
+const Value *Object::operator[](const std::string &key) const {
+    return nullptr;
+}
+
+Object::Object() = default;
+
 Object::~Object() = default;
+
