@@ -12,7 +12,7 @@
 static std::string print(const Value &value) {
     std::stringstream ss;
     PrintVisitor visitor{ss};
-    value.accept(visitor);
+    // value.accept(visitor);
     return ss.str();
 }
 

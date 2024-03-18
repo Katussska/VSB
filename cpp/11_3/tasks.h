@@ -11,134 +11,125 @@ class Value {
 public:
     [[nodiscard]] virtual Value *clone() const = 0;
 
-    virtual void accept(Visitor &visitor) const = 0;
+    virtual void accept(const Visitor &visitor) = 0;
 
-    virtual void accept(Visitor &visitor) = 0;
+    virtual Value *operator[](size_t index) const = 0;
 
-    virtual const Value &operator[](size_t index) const = 0;
-
-    virtual const Value &operator[](const std::string &key) const = 0;
+    virtual Value *operator[](const std::string &key) const = 0;
 
     virtual ~Value() = default;
 };
 
 class Integer : public Value {
 private:
-    int number{};
+    int number;
 
 public:
     explicit Integer(int value);
 
-    [[nodiscard]] static int get_value();
+    [[nodiscard]] int get_value() const;
 
     [[nodiscard]] Integer *clone() const override;
 
-    void accept(Visitor &visitor) const override;
+    void accept(const Visitor &visitor) override;
 
-    void accept(Visitor &visitor) override;
+    Value *operator[](size_t index) const override;
 
-    const Value &operator[](size_t index) const override;
-
-    const Value &operator[](const std::string &key) const override;
+    Value *operator[](const std::string &key) const override;
 
     ~Integer() override = default;
 };
 
 class Array : public Value {
-private:
+public:
     std::vector<Value *> values;
 
-public:
-    Array();
+    Array() = default;
 
     explicit Array(const std::vector<Value *> &values);
 
-    static int size();
+    [[nodiscard]] size_t size() const;
 
     void append(Value *value);
 
-    [[maybe_unused]] void remove(size_t index);
+    [[maybe_unused]] void remove(int index);
 
     [[nodiscard]] Array *clone() const override;
 
-    void accept(Visitor &visitor) const override;
+    void accept(const Visitor &visitor) override;
 
-    void accept(Visitor &visitor) override;
+    Value *operator[](size_t index) const override;
 
-    const Value &operator[](size_t index) const override;
+    Value *operator[](const std::string &key) const override;
 
-    const Value &operator[](const std::string &key) const override;
-
-    ~Array() override;
+    ~Array() override = default;
 };
 
 class Object : public Value {
-private:
+public:
     std::unordered_map<std::string, Value *> data;
 
-public:
-    Object();
+    Object() = default;
 
-    explicit Object(const std::unordered_map<std::string, Value *> &data);
+    explicit Object(const std::unordered_map<std::string, Value *> &pair);
 
-    static int size();
+    [[nodiscard]] size_t size() const;
 
-    static std::vector<std::string> keys();
+    [[nodiscard]] std::vector<std::string> keys() const;
 
     void insert(const std::string &key, Value *value);
 
-    void remove(const std::string &key);
+    [[maybe_unused]]  void remove(const std::string &key);
 
-    Object *clone() const override;
+    [[nodiscard]] Object *clone() const override;
 
-    void accept(Visitor &visitor) const override;
+    void accept(const Visitor &visitor) override;
 
-    void accept(Visitor &visitor) override;
+    Value *operator[](size_t index) const override;
 
-    const Value &operator[](size_t index) const override;
+    Value *operator[](const std::string &key) const override;
 
-    const Value &operator[](const std::string &key) const override;
-
-    ~Object() override;
+    ~Object() override = default;
 };
 
 class Null : public Value {
 public:
     [[nodiscard]] Null *clone() const override;
 
-    void accept(Visitor &visitor) const override;
+    void accept(const Visitor &visitor) override;
 
-    void accept(Visitor &visitor) override;
+    Value *operator[](size_t index) const override;
 
-    const Value &operator[](size_t index) const override;
-
-    const Value &operator[](const std::string &key) const override;
+    Value *operator[](const std::string &key) const override;
 };
 
 class Visitor {
 public:
-    virtual void visit(const Integer &integer) = 0;
+    virtual void visit(Integer &integer) const = 0;
 
-    virtual void visit(const Array &array) = 0;
+    [[maybe_unused]] virtual void visit(Null &null) const = 0;
 
-    virtual void visit(const Object &object) = 0;
+    [[maybe_unused]] virtual void visit(Object &object) const = 0;
 
-    virtual void visit(const Null &null) = 0;
+    [[maybe_unused]] virtual void visit(Array &array) const = 0;
 
     virtual ~Visitor() = default;
 };
 
 class RemoveNullVisitor : public Visitor {
 public:
-    using Visitor::visit;
+    RemoveNullVisitor() = default;
 
-    [[maybe_unused]] void visit([[maybe_unused]] Null &null);
+    void visit(Integer &integer) const override {};
 
-    [[maybe_unused]] void visit(Array &array);
+    void visit(Null &null) const override {};
 
-    [[maybe_unused]] void visit(Object &object);
+    void visit(Array &array) const override;
+
+    void visit(Object &object) const override;
 
     ~RemoveNullVisitor() override = default;
+
 };
 
 class PrintVisitor : public Visitor {
@@ -147,13 +138,14 @@ private:
 public:
     explicit PrintVisitor(std::stringstream &stream);
 
-    void visit(const Integer &integer) override;
+    void visit(Integer &integer) const override;
 
-    void visit(const Null &null) override;
+    void visit(Null &null) const override;
 
-    void visit(const Array &array) override;
+    void visit(Array &array) const override;
 
-    void visit(const Object &object) override;
+    void visit(Object &object) const override;
 
     ~PrintVisitor() override = default;
+
 };
