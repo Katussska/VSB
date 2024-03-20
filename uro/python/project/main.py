@@ -21,32 +21,35 @@ class BudgetTrackerApp:
         amount_l.pack()
         amount_i.pack()
 
-        days_l = Label(self.page1, text='Day')
+        # Dny
+        days_frame = Frame(self.page1, pady=5)
+        days_frame.pack(side='left', padx=15)
+        days_l = Label(days_frame, text='Day')
         days_l.pack()
-        days_frame = Frame(self.page1, pady=10)
-        days_frame.pack()
         days = [str(i) for i in range(1, 32)]
         days_vals = tuple(days)
-        days_box = Combobox(days_frame, values=days_vals, state="readonly", validatecommand=self.fce)
+        days_box = Combobox(days_frame, values=days_vals, state="readonly", width=5)
         days_box.pack()
 
-        months_l = Label(self.page1, text='Month')
+        # Měsíce
+        months_frame = Frame(self.page1, pady=5)
+        months_frame.pack(side='left', padx=5)
+        months_l = Label(months_frame, text='Month')
         months_l.pack()
-        months_frame = Frame(self.page1, pady=10)
-        months_frame.pack()
         months = ["January", "February", "March", "April", "May", "June", "July",
                   "August", "September", "October", "November", "December"]
         months_vals = tuple(months)
-        months_box = Combobox(months_frame, values=months_vals, state="readonly", validatecommand=self.fce)
+        months_box = Combobox(months_frame, values=months_vals, state="readonly", width=10)
         months_box.pack()
 
-        years_l = Label(self.page1, text='Year')
+        # Roky
+        years_frame = Frame(self.page1, pady=5)
+        years_frame.pack(side='left', padx=15)
+        years_l = Label(years_frame, text='Year')
         years_l.pack()
-        years_frame = Frame(self.page1, pady=10)
-        years_frame.pack()
         years = [str(i) for i in range(2023, 2026)]
         years_vals = tuple(years)
-        years_box = Combobox(years_frame, values=years_vals, state="readonly", validatecommand=self.fce)
+        years_box = Combobox(years_frame, values=years_vals, state="readonly", width=7)
         years_box.pack()
 
     def render_filter(self):
