@@ -2,88 +2,83 @@
 
 #include <memory>
 #include <cstdint>
+#include <stdexcept>
 #include <utility>
-
-/// UTF-8 string (reuse your previous implementation and modify it)
-
-using CodePoint = uint32_t;
-class UTF8String;
+#include <vector>
+#include <iostream>
 
 /// Binary tree
 // Big data that we cannot afford to copy
 struct BigData {
-    explicit BigData(int value): value(value) {}
-
-    BigData(const BigData&) = delete;
-    BigData& operator=(const BigData&) = delete;
-
-    bool operator==(int n) const{
-        return  value ==n;
-    }
-    BigData &operator=(int n){
-        value = n; return *this;
-    }
-
     int value;
+
+    explicit BigData(int value) : value(value) {}
+
+    BigData(const BigData &) = delete;
+
+    BigData &operator=(const BigData &) = delete;
 };
 
-class Tree{
-public:
-    struct Node : std::enable_shared_from_this<Node>{
-    public:
-        std::shared_ptr<BigData> value;
-        std::unique_ptr<Node> left_child = nullptr;
-        std::unique_ptr<Node> right_child = nullptr;
-        std::shared_ptr<Node> parent = nullptr;
+class Tree {
+private:
+    std::shared_ptr<BigData> value;
+    Tree *parent = nullptr;
+    std::unique_ptr<Tree> left_child;
+    std::unique_ptr<Tree> right_child;
+    bool visited = false;
 
-        Node(std::shared_ptr<BigData> data,std::shared_ptr<Node> par ) : value(std::move(data)), parent(std::move(par)){}
+public:
+    class Iterator {
+    private:
+        Tree *current;
+    public:
+        explicit Iterator(const Tree *node) : current(const_cast<Tree *>(node)) {}
+
+        Iterator &operator++();
+
+        const Tree &operator*() const;
+
+        bool operator!=(const Iterator &other) const;
     };
 
-    std::shared_ptr<BigData> value;
-    std::unique_ptr<Node> root = nullptr;
+    explicit Tree(int n) : value(std::make_shared<BigData>(n)) {}
 
-    Tree() : value(nullptr) {}
-    explicit Tree(std::shared_ptr<BigData> n) : value(std::move(n)){}
-    explicit Tree(std::unique_ptr<BigData> n) : value(std::move(n)){}
+    explicit Tree(std::shared_ptr<BigData> val) : value(std::move(val)) {}
 
-    [[nodiscard]] std::shared_ptr<BigData> get_value() const{
-        return value;
-    }
-    [[nodiscard]] Tree* get_root() const{
-        return reinterpret_cast<Tree *>(root.get());
-    }
-    [[nodiscard]] Tree* get_parent() const{
-        root->parent.get();
-    }
-    [[nodiscard]] Tree* get_left_child() const{
-        return reinterpret_cast<Tree *>(root->left_child.get());
-    }
-    [[nodiscard]] Tree* get_right_child() const{
-        return reinterpret_cast<Tree *>(root->right_child.get());
-    }
+    [[nodiscard]] BigData &get_value() const;
 
-    Tree* set_left_child(std::unique_ptr<Tree>(t)){
-        std::unique_ptr<Node> previous_child = std::move(root->left_child);
-        root->left_child = std::make_unique<Node>(std::move(t), root->shared_from_this());
-        return this;
-    }
-    Tree* set_right_child(std::unique_ptr<Tree>(t)){
-        std::unique_ptr<Node> previous_child = std::move(root->right_child);
-        root->right_child = std::make_unique<Node>(std::move(t), root->shared_from_this());
-        return this;
-    }
+    [[nodiscard]] Tree *get_parent() const;
 
-    [[nodiscard]] bool has_parent() const{
-        return root->parent != nullptr;
-    }
-    bool is_same_tree_as(Tree* other){
-        return this == other;
-    }
+    [[nodiscard]] bool has_parent() const;
 
-    void take_child(Tree&);
-    void take_left_child();
-    void take_right_child();
+    [[maybe_unused]] [[nodiscard]] bool get_visited() const;
+
+    [[maybe_unused]] void set_visited(bool str);
+
+    [[nodiscard]] Tree *get_left_child() const;
+
+    [[nodiscard]] Tree *get_right_child() const;
+
+    [[nodiscard]] Tree *get_root() const;
+
+    std::unique_ptr<Tree> take_left_child();
+
+    std::unique_ptr<Tree> take_right_child();
+
+    std::unique_ptr<Tree> take_child(Tree &child);
+
+    std::unique_ptr<Tree> set_left_child(std::unique_ptr<Tree> child);
+
+    std::unique_ptr<Tree> set_right_child(std::unique_ptr<Tree> child);
+
     void swap_children();
-    void replace_value(std::shared_ptr<BigData> data);
 
+    bool is_same_tree_as(Tree *other);
+
+    void replace_value(const std::shared_ptr<BigData> &new_value);
+
+    [[nodiscard]] Iterator begin() const;
+
+    static Iterator end();
 };
+

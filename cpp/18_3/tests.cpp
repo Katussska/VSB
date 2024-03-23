@@ -719,7 +719,7 @@ TEST_SUITE("Tree") {
          * 3   <- last
          */
         auto tree = std::make_unique<Tree>(0);
-        Tree* last = tree.get();
+        Tree *last = tree.get();
         for (int i = 1; i < 4; i++) {
             last->set_left_child(std::make_unique<Tree>(i));
             last = last->get_left_child();
@@ -843,7 +843,7 @@ TEST_SUITE("Tree") {
         auto tree = christmas_tree();
 
         std::vector<int> values;
-        for (const auto& node : *tree) {
+        for (const auto &node: *tree) {
             values.push_back(node.get_value().value);
         }
 
