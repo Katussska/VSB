@@ -5,18 +5,16 @@ Tree::Iterator &Tree::Iterator::operator++() {
         return *this;
     }
 
-    // If the current node has a right child, go to the leftmost node of its right subtree
     if (current->get_right_child()) {
         current = current->get_right_child();
         while (current->get_left_child()) {
             current = current->get_left_child();
         }
     } else {
-        // Otherwise, move up the tree until we find a parent whose left child is the current node
         while (current->get_parent() && current->get_parent()->get_right_child() == current) {
             current = current->get_parent();
         }
-        // Move to the parent if it exists
+
         current = current->get_parent();
     }
 
