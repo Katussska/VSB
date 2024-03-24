@@ -149,7 +149,7 @@ std::optional<CodePoint> UTF8String::nth_code_point(size_t index) const {
 
             CodePoint codePoint = buffer.at(i) & (0xFF >> (byteCount + 1));
 
-            for (size_t j = 1; j < byteCount; ++j) {
+            for (int j = 1; j < byteCount; ++j) {
                 if (i + j >= buffer.size() || (buffer.at(i + j) & 0xC0) != 0x80)
                     return std::nullopt;
                 codePoint = (codePoint << 6) | (buffer.at(i + j) & 0x3F);
@@ -179,7 +179,7 @@ UTF8String &UTF8String::operator+=(const UTF8String &str) {
 }
 
 UTF8String::operator std::string() const {
-    return std::string(buffer.begin(), buffer.end());
+    return {buffer.begin(), buffer.end()};
 }
 
 UTF8String &UTF8String::operator=(const UTF8String &str) {
@@ -191,70 +191,157 @@ UTF8String &UTF8String::operator=(const UTF8String &str) {
     return *this;
 }
 
-UTF8String::Iterator UTF8String::bytes() const {
-    return Iterator(&buffer.front(), &buffer.back() + 1);
+UTF8String::BIterator UTF8String::bytes() const {
+    return BIterator(&buffer.front(), &buffer.back() + 1);
 }
 
-UTF8String::Iterator UTF8String::Iterator::begin() {
+UTF8String::CpIterator UTF8String::codepoints() const {
+    return CpIterator(&buffer.front(), &buffer.back() + 1);
+}
+
+UTF8String::BIterator UTF8String::BIterator::begin() {
     current = const_cast<uint8_t *>(start);
 
     return *this;
 }
 
-UTF8String::Iterator UTF8String::Iterator::end() {
+UTF8String::BIterator UTF8String::BIterator::end() {
     current = const_cast<uint8_t *>(finish);
 
     return *this;
 }
 
-UTF8String::Iterator &UTF8String::Iterator::operator++() {
+UTF8String::BIterator &UTF8String::BIterator::operator++() {
     if (current + 1 <= finish)
         current++;
 
     return *this;
 }
 
-UTF8String::Iterator &UTF8String::Iterator::operator--() {
+UTF8String::BIterator &UTF8String::BIterator::operator--() {
     if (current - 1 >= start)
         current--;
 
     return *this;
 }
 
-uint8_t &UTF8String::Iterator::operator*() const {
+uint8_t UTF8String::BIterator::operator*() const {
     return *current;
 }
 
-UTF8String::Iterator UTF8String::Iterator::operator+=(int value) {
+UTF8String::BIterator UTF8String::BIterator::operator+=(int value) {
     if ((current + value) <= finish)
         current += value;
 
     return *this;
 }
 
-UTF8String::Iterator UTF8String::Iterator::operator-=(int value) {
+UTF8String::BIterator UTF8String::BIterator::operator-=(int value) {
     if ((current - value) >= start)
         current -= value;
 
     return *this;
 }
 
-UTF8String::Iterator UTF8String::Iterator::operator+(int value) {
-    return Iterator(current + value, start, finish);
+UTF8String::BIterator UTF8String::BIterator::operator+(int value) {
+    return BIterator(current + value, start, finish);
 }
 
-UTF8String::Iterator UTF8String::Iterator::operator-(int value) {
-    return Iterator(current - value, start, finish);
+UTF8String::BIterator UTF8String::BIterator::operator-(int value) {
+    return BIterator(current - value, start, finish);
 }
 
-bool UTF8String::Iterator::operator!=(const UTF8String::Iterator &other) const {
+bool UTF8String::BIterator::operator!=(const UTF8String::BIterator &other) const {
     return current != other.current;
 }
 
-bool UTF8String::Iterator::operator==(const UTF8String::Iterator &other) const {
+bool UTF8String::BIterator::operator==(const UTF8String::BIterator &other) const {
     return current == other.current;
 }
 
+UTF8String::CpIterator UTF8String::CpIterator::begin() {
+    current = const_cast<uint8_t *>(start);
+
+    return *this;
+}
+
+UTF8String::CpIterator UTF8String::CpIterator::end() {
+    current = const_cast<uint8_t *>(finish);
+
+    return *this;
+}
+
+UTF8String::CpIterator &UTF8String::CpIterator::operator++() {
+    int index = byte_count_helper(*current);
+
+    if ((current + index) <= finish) {
+        current += index;
+        return *this;
+    }
+
+    return *this;
+}
+
+UTF8String::CpIterator &UTF8String::CpIterator::operator--() {
+    int i = 1;
+
+    while (byte_count_helper(*(current - i)) < 1) {
+        i++;
+    }
+
+    int index = byte_count_helper(*(current - i));
+
+    if ((current - index) >= start) {
+        current -= index;
+        return *this;
+    }
+
+    return *this;
+}
+
+CodePoint UTF8String::CpIterator::operator*() {
+    uint8_t first = *current;
+
+    switch (byte_count_helper(*current)) {
+        case 1:
+            return first;
+        case 2: {
+            uint8_t second = *(current + 1);
+            return ((first & 0x1F) << 6) | (second & 0x3F);
+        }
+        case 3: {
+            uint8_t second = *(current + 1);
+            uint8_t third = *(current + 2);
+            return ((first & 0x0F) << 12) | ((second & 0x3F) << 6) | (third & 0x3F);
+        }
+        case 4: {
+            uint8_t second = *(current + 1);
+            uint8_t third = *(current + 2);
+            uint8_t fourth = *(current + 3);
+            return ((first & 0x07) << 18) | ((second & 0x3F) << 12) | ((third & 0x3F) << 6) | (fourth & 0x3F);
+        }
+        default:
+            return 0x00;
+    }
+
+//    size_t byte_count = byte_count_helper(*current);
+//    CodePoint cp = 0;
+//
+//    for (size_t i = 0; i < byte_count; ++i) {
+//        cp <<= 6;
+//        cp |= *(current + i) & 0x3F;
+//    }
+//
+//    return cp;
+}
+
+bool UTF8String::CpIterator::operator!=(const UTF8String::CpIterator &other) const {
+    return current != other.current;
+}
+
+bool UTF8String::CpIterator::operator==(const UTF8String::CpIterator &other) const {
+    return current == other.current;
+}
 
 /// Binary tree
 Tree::Iterator &Tree::Iterator::operator++() {

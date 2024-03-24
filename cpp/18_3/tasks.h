@@ -17,42 +17,68 @@ private:
     std::vector<uint8_t> buffer;
 
 public:
-    class Iterator {
+    class BIterator {
     private:
         uint8_t *current;
         const uint8_t *start;
         const uint8_t *finish;
 
     public:
-        explicit Iterator(const uint8_t *begin, const uint8_t *end) : current(const_cast<uint8_t *>(begin)),
-                                                                      start(begin), finish(end) {
-        }
+        explicit BIterator(const uint8_t *begin, const uint8_t *end) :
+                current(const_cast<uint8_t *>(begin)), start(begin), finish(end) {}
 
-        explicit Iterator(uint8_t *curr, const uint8_t *begin, const uint8_t *end) : current(curr),
-            start(begin), finish(end) {
-        }
+        explicit BIterator(uint8_t *curr, const uint8_t *begin, const uint8_t *end) :
+                current(curr), start(begin), finish(end) {}
 
-        Iterator begin();
+        BIterator begin();
 
-        Iterator end();
+        BIterator end();
 
-        Iterator &operator++();
+        BIterator &operator++();
 
-        Iterator &operator--();
+        BIterator &operator--();
 
-        uint8_t &operator*() const;
+        uint8_t operator*() const;
 
-        Iterator operator+=(int value);
+        BIterator operator+=(int value);
 
-        Iterator operator-=(int value);
+        BIterator operator-=(int value);
 
-        Iterator operator+(int value);
+        BIterator operator+(int value);
 
-        Iterator operator-(int value);
+        BIterator operator-(int value);
 
-        bool operator!=(const Iterator &other) const;
+        bool operator!=(const BIterator &other) const;
 
-        bool operator==(const Iterator &other) const;
+        bool operator==(const BIterator &other) const;
+    };
+
+    class CpIterator {
+    private:
+        uint8_t *current;
+        const uint8_t *start;
+        const uint8_t *finish;
+
+    public:
+        explicit CpIterator(const uint8_t *begin, const uint8_t *end) :
+                current(const_cast<uint8_t *>(begin)), start(begin), finish(end) {}
+
+        explicit CpIterator(uint8_t *curr, const uint8_t *begin, const uint8_t *end) :
+                current(curr), start(begin), finish(end) {}
+
+        CpIterator begin();
+
+        CpIterator end();
+
+        CpIterator &operator++();
+
+        CpIterator &operator--();
+
+        CodePoint operator*();
+
+        bool operator!=(const CpIterator &other) const;
+
+        bool operator==(const CpIterator &other) const;
     };
 
     UTF8String() = default;
@@ -85,8 +111,8 @@ public:
 
     [[nodiscard]] std::optional<CodePoint> nth_code_point(size_t index) const;
 
-    explicit UTF8String(std::vector<uint8_t> bytes) : buffer(std::move(bytes)) {
-    }
+    explicit UTF8String(std::vector<uint8_t> bytes) :
+            buffer(std::move(bytes)) {}
 
     UTF8String operator+(const UTF8String &str);
 
@@ -94,14 +120,16 @@ public:
 
     explicit operator std::string() const;
 
-    UTF8String(UTF8String &&str) noexcept: buffer(std::move(str.buffer)) {
-    };
+    UTF8String(UTF8String &&str) noexcept:
+            buffer(std::move(str.buffer)) {}
 
     UTF8String &operator=(const UTF8String &str);
 
     ~UTF8String() = default;
 
-    [[nodiscard]] Iterator bytes() const;
+    [[nodiscard]] BIterator bytes() const;
+
+    [[nodiscard]] CpIterator codepoints() const;
 };
 
 /// Binary tree
@@ -130,8 +158,8 @@ public:
         Tree *current;
 
     public:
-        explicit Iterator(const Tree *node) : current(const_cast<Tree *>(node)) {
-        }
+        explicit Iterator(const Tree *node) :
+                current(const_cast<Tree *>(node)) {}
 
         Iterator &operator++();
 
