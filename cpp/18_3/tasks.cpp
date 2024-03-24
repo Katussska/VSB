@@ -323,16 +323,6 @@ CodePoint UTF8String::CpIterator::operator*() {
         default:
             return 0x00;
     }
-
-//    size_t byte_count = byte_count_helper(*current);
-//    CodePoint cp = 0;
-//
-//    for (size_t i = 0; i < byte_count; ++i) {
-//        cp <<= 6;
-//        cp |= *(current + i) & 0x3F;
-//    }
-//
-//    return cp;
 }
 
 bool UTF8String::CpIterator::operator!=(const UTF8String::CpIterator &other) const {
@@ -474,24 +464,24 @@ void Tree::swap_children() {
 }
 
 bool Tree::is_same_tree_as(Tree *other) {
-    // probably not workin correctly, but the implementation below should
-    return get_root() == other->get_root();
+    // probably not workin correctly (tests pass), but the implementation below should
+    //return get_root() == other->get_root();
 
-    //        if (this->parent == nullptr && other->parent == nullptr) {
-    //            if (this == other) { return true; }
-    //            return false;
-    //        }
-    //
-    //        if (this->parent == other->parent)
-    //            return true;
-    //
-    //        if (this->parent != nullptr) {
-    //            return parent->is_same_tree_as(other);
-    //        } else if (other->parent != nullptr) {
-    //            return other->parent->is_same_tree_as(this);
-    //        }
-    //
-    //        return false;
+    if (this->parent == nullptr && other->parent == nullptr) {
+        if (this == other) { return true; }
+        return false;
+    }
+
+    if (this->parent == other->parent)
+        return true;
+
+    if (this->parent != nullptr) {
+        return parent->is_same_tree_as(other);
+    } else if (other->parent != nullptr) {
+        return other->parent->is_same_tree_as(this);
+    }
+
+    return false;
 }
 
 void Tree::replace_value(const std::shared_ptr<BigData> &new_value) {

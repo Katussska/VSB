@@ -63,9 +63,6 @@ public:
         explicit CpIterator(const uint8_t *begin, const uint8_t *end) :
                 current(const_cast<uint8_t *>(begin)), start(begin), finish(end) {}
 
-        explicit CpIterator(uint8_t *curr, const uint8_t *begin, const uint8_t *end) :
-                current(curr), start(begin), finish(end) {}
-
         CpIterator begin();
 
         CpIterator end();
