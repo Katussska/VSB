@@ -6,6 +6,59 @@
 #include <utility>
 #include <vector>
 #include <iostream>
+#include <optional>
+#include <cstring>
+/// UTF-8 string (reuse your previous implementation and modify it)
+
+using CodePoint = uint32_t;
+
+class UTF8String {
+private:
+    std::vector<uint8_t> buffer;
+
+public:
+    UTF8String() = default;
+
+    explicit UTF8String(const char *str);
+
+    explicit UTF8String(const std::string &str);
+
+    static int byte_count_helper(uint8_t byte);
+
+    [[nodiscard]] size_t get_byte_count() const;
+
+    static int codepoint_count_helper(CodePoint codepoint);
+
+    void encode(CodePoint code_point);
+
+    [[nodiscard]] int get_point_count() const;
+
+    explicit UTF8String(const std::vector<CodePoint> &);
+
+    void append(CodePoint codepoint);
+
+    UTF8String(const UTF8String &str);
+
+    bool operator==(const UTF8String &str) const;
+
+    bool operator!=(const UTF8String &str) const;
+
+    std::optional<uint8_t> operator[](size_t index) const;
+
+    [[nodiscard]] std::optional<CodePoint> nth_code_point(size_t index) const;
+
+    explicit UTF8String(std::vector<uint8_t> bytes) : buffer(std::move(bytes)) {}
+
+    UTF8String operator+(const UTF8String &str);
+
+    UTF8String &operator+=(const UTF8String &str);
+
+    explicit operator std::string() const;
+
+    UTF8String(UTF8String &&str) : buffer(str.buffer) {};
+
+    ~UTF8String() = default;
+};
 
 /// Binary tree
 // Big data that we cannot afford to copy
@@ -59,7 +112,7 @@ public:
 
     [[nodiscard]] Tree *get_right_child() const;
 
-    [[nodiscard]] Tree *get_root() const;
+    [[nodiscard]] Tree *get_root();
 
     std::unique_ptr<Tree> take_left_child();
 
@@ -81,4 +134,3 @@ public:
 
     static Iterator end();
 };
-

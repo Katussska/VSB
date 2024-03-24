@@ -1,5 +1,193 @@
 #include "tasks.h"
 
+#include <utility>
+
+/// UTF-8
+UTF8String::UTF8String(const char *str) {
+    size_t size = std::strlen(str);
+    buffer.reserve(size);
+    std::copy(str, str + size, std::back_inserter(buffer));
+}
+
+UTF8String::UTF8String(const std::string &str) {
+    size_t size = str.size();
+    buffer.reserve(size);
+    std::copy(str.begin(), str.end(), std::back_inserter(buffer));
+}
+
+size_t UTF8String::get_byte_count() const {
+    return buffer.size();
+}
+
+int UTF8String::byte_count_helper(uint8_t byte) {
+    if ((byte >> 7) == 0b0)
+        return 1;
+    if ((byte >> 5) == 0b110)
+        return 2;
+    if ((byte >> 4) == 0b1110)
+        return 3;
+    if ((byte >> 3) == 0b11110)
+        return 4;
+    return 0;
+}
+
+int UTF8String::get_point_count() const {
+    int point_count = 0;
+
+    if (buffer.empty())
+        return point_count;
+
+    for (size_t i = 0; i < buffer.size(); i++) {
+        point_count++;
+        if ((buffer.at(i) >> 7) == 0b0) {
+            i += 0;
+            continue;
+        }
+
+        if ((buffer.at(i) >> 5) == 0b110) {
+            i += 1;
+            continue;
+        }
+
+        if ((buffer.at(i) >> 4) == 0b1110) {
+            i += 2;
+            continue;
+        }
+
+        if ((buffer.at(i) >> 3) == 0b11110) {
+            i += 3;
+            continue;
+        }
+    }
+    return point_count;
+}
+
+UTF8String::UTF8String(const std::vector<CodePoint> &cpvector) {
+    size_t size = cpvector.size();
+    buffer.reserve(size);
+
+    for (auto codepoint: cpvector)
+        append(codepoint);
+
+}
+
+int UTF8String::codepoint_count_helper(CodePoint codepoint) {
+    if (codepoint <= 0x7F)
+        return 1;
+    if (codepoint <= 0x7FF)
+        return 2;
+    if (codepoint <= 0xFFFF)
+        return 3;
+    if (codepoint <= 0x10FFFF)
+        return 4;
+    return 0;
+}
+
+void UTF8String::encode(CodePoint code_point) {
+    int byte_count = codepoint_count_helper(code_point);
+
+    switch (byte_count) {
+        case 1:
+            buffer.push_back(code_point);
+            break;
+        case 2:
+            buffer.push_back((code_point >> 6) | 0xC0);
+            buffer.push_back((code_point & 0x3F) | 0x80);
+            break;
+        case 3:
+            buffer.push_back((code_point >> 12) | 0xE0);
+            buffer.push_back(((code_point >> 6) & 0x3F) | 0x80);
+            buffer.push_back((code_point & 0x3F) | 0x80);
+            break;
+        case 4:
+            buffer.push_back((code_point >> 18) | 0xF0);
+            buffer.push_back(((code_point >> 12) & 0x3F) | 0x80);
+            buffer.push_back(((code_point >> 6) & 0x3F) | 0x80);
+            buffer.push_back((code_point & 0x3F) | 0x80);
+            break;
+        default:
+            break;
+    }
+}
+
+void UTF8String::append(CodePoint codepoint) {
+    encode(codepoint);
+}
+
+UTF8String::UTF8String(const UTF8String &str) {
+    if (!str.buffer.empty()) {
+        buffer.reserve(str.buffer.size());
+        std::copy(str.buffer.begin(), str.buffer.end(), std::back_inserter(buffer));
+    }
+}
+
+bool UTF8String::operator==(const UTF8String &str) const {
+    return std::equal(buffer.begin(), buffer.end(), str.buffer.begin(), str.buffer.end());
+}
+
+bool UTF8String::operator!=(const UTF8String &str) const {
+    return !(std::equal(buffer.begin(), buffer.end(), str.buffer.begin(), str.buffer.end()));
+}
+
+std::optional<uint8_t> UTF8String::operator[](size_t index) const {
+    if (index < buffer.size())
+        return buffer.at(index);
+
+    return std::nullopt;
+}
+
+std::optional<CodePoint> UTF8String::nth_code_point(size_t index) const {
+    size_t i = 0;
+    size_t pointCount = 0;
+    while (i < buffer.size()) {
+        auto byteCount = byte_count_helper(buffer.at(i));
+        if (pointCount == index) {
+            if (byteCount == 0)
+                return std::nullopt;
+
+            if (byteCount == 1)
+                return buffer.at(i);
+
+            CodePoint codePoint = buffer.at(i) & (0xFF >> (byteCount + 1));
+
+            for (size_t j = 1; j < byteCount; ++j) {
+                if (i + j >= buffer.size() || (buffer.at(i + j) & 0xC0) != 0x80)
+                    return std::nullopt;
+                codePoint = (codePoint << 6) | (buffer.at(i + j) & 0x3F);
+            }
+            return codePoint;
+        }
+        i += byteCount;
+        ++pointCount;
+    }
+    return std::nullopt;
+}
+
+UTF8String UTF8String::operator+(const UTF8String &str) {
+    UTF8String temp(this->buffer);
+
+    for (auto byte: str.buffer)
+        temp.buffer.push_back(byte);
+
+    return temp;
+}
+
+UTF8String &UTF8String::operator+=(const UTF8String &str) {
+    for (auto byte: str.buffer)
+        buffer.push_back(byte);
+
+    return *this;
+}
+
+UTF8String::operator std::string() const {
+    return std::string(buffer.begin(), buffer.end());
+}
+
+//UTF8String::UTF8String(UTF8String &&str) noexcept {
+//    UTF8String temp(str.buffer);
+//}
+
+/// Binary tree
 Tree::Iterator &Tree::Iterator::operator++() {
     if (!current) {
         return *this;
@@ -60,12 +248,12 @@ Tree *Tree::get_right_child() const {
     return right_child.get();
 }
 
-Tree *Tree::get_root() const {
+Tree *Tree::get_root() {
     if (!has_parent()) {
-        return const_cast<Tree *>(this);
+        return this;
     }
 
-    Tree *current = const_cast<Tree *>(this);
+    Tree *current = this;
 
     while (current->has_parent()) {
         current = current->get_parent();
