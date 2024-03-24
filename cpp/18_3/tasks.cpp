@@ -68,7 +68,6 @@ UTF8String::UTF8String(const std::vector<CodePoint> &cpvector) {
 
     for (auto codepoint: cpvector)
         append(codepoint);
-
 }
 
 int UTF8String::codepoint_count_helper(CodePoint codepoint) {
@@ -209,7 +208,7 @@ UTF8String::Iterator UTF8String::Iterator::end() {
 }
 
 UTF8String::Iterator &UTF8String::Iterator::operator++() {
-    if (current + 1 < finish)
+    if (current + 1 <= finish)
         current++;
 
     return *this;
@@ -227,15 +226,25 @@ uint8_t &UTF8String::Iterator::operator*() const {
 }
 
 UTF8String::Iterator UTF8String::Iterator::operator+=(int value) {
-    current += value;
+    if ((current + value) <= finish)
+        current += value;
 
     return *this;
 }
 
 UTF8String::Iterator UTF8String::Iterator::operator-=(int value) {
-    current -= value;
+    if ((current - value) >= start)
+        current -= value;
 
     return *this;
+}
+
+UTF8String::Iterator UTF8String::Iterator::operator+(int value) {
+    return Iterator(current + value, start, finish);
+}
+
+UTF8String::Iterator UTF8String::Iterator::operator-(int value) {
+    return Iterator(current - value, start, finish);
 }
 
 bool UTF8String::Iterator::operator!=(const UTF8String::Iterator &other) const {
@@ -381,21 +390,21 @@ bool Tree::is_same_tree_as(Tree *other) {
     // probably not workin correctly, but the implementation below should
     return get_root() == other->get_root();
 
-//        if (this->parent == nullptr && other->parent == nullptr) {
-//            if (this == other) { return true; }
-//            return false;
-//        }
-//
-//        if (this->parent == other->parent)
-//            return true;
-//
-//        if (this->parent != nullptr) {
-//            return parent->is_same_tree_as(other);
-//        } else if (other->parent != nullptr) {
-//            return other->parent->is_same_tree_as(this);
-//        }
-//
-//        return false;
+    //        if (this->parent == nullptr && other->parent == nullptr) {
+    //            if (this == other) { return true; }
+    //            return false;
+    //        }
+    //
+    //        if (this->parent == other->parent)
+    //            return true;
+    //
+    //        if (this->parent != nullptr) {
+    //            return parent->is_same_tree_as(other);
+    //        } else if (other->parent != nullptr) {
+    //            return other->parent->is_same_tree_as(this);
+    //        }
+    //
+    //        return false;
 }
 
 void Tree::replace_value(const std::shared_ptr<BigData> &new_value) {

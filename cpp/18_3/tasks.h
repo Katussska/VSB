@@ -22,8 +22,15 @@ public:
         uint8_t *current;
         const uint8_t *start;
         const uint8_t *finish;
+
     public:
-        explicit Iterator(uint8_t *begin, const uint8_t *end) : current(begin), start(begin), finish(end) {}
+        explicit Iterator(const uint8_t *begin, const uint8_t *end) : current(const_cast<uint8_t *>(begin)),
+                                                                      start(begin), finish(end) {
+        }
+
+        explicit Iterator(uint8_t *curr, const uint8_t *begin, const uint8_t *end) : current(curr),
+            start(begin), finish(end) {
+        }
 
         Iterator begin();
 
@@ -38,6 +45,10 @@ public:
         Iterator operator+=(int value);
 
         Iterator operator-=(int value);
+
+        Iterator operator+(int value);
+
+        Iterator operator-(int value);
 
         bool operator!=(const Iterator &other) const;
 
@@ -74,7 +85,8 @@ public:
 
     [[nodiscard]] std::optional<CodePoint> nth_code_point(size_t index) const;
 
-    explicit UTF8String(std::vector<uint8_t> bytes) : buffer(std::move(bytes)) {}
+    explicit UTF8String(std::vector<uint8_t> bytes) : buffer(std::move(bytes)) {
+    }
 
     UTF8String operator+(const UTF8String &str);
 
@@ -82,15 +94,14 @@ public:
 
     explicit operator std::string() const;
 
-    UTF8String(UTF8String &&str) noexcept: buffer(std::move(str.buffer)) {};
+    UTF8String(UTF8String &&str) noexcept: buffer(std::move(str.buffer)) {
+    };
 
     UTF8String &operator=(const UTF8String &str);
 
     ~UTF8String() = default;
 
     [[nodiscard]] Iterator bytes() const;
-
-
 };
 
 /// Binary tree
@@ -98,7 +109,8 @@ public:
 struct BigData {
     int value;
 
-    explicit BigData(int value) : value(value) {}
+    explicit BigData(int value) : value(value) {
+    }
 
     BigData(const BigData &) = delete;
 
@@ -111,12 +123,15 @@ private:
     Tree *parent = nullptr;
     std::unique_ptr<Tree> left_child;
     std::unique_ptr<Tree> right_child;
+
 public:
     class Iterator {
     private:
         Tree *current;
+
     public:
-        explicit Iterator(const Tree *node) : current(const_cast<Tree *>(node)) {}
+        explicit Iterator(const Tree *node) : current(const_cast<Tree *>(node)) {
+        }
 
         Iterator &operator++();
 
@@ -125,9 +140,11 @@ public:
         bool operator!=(const Iterator &other) const;
     };
 
-    explicit Tree(int n) : value(std::make_shared<BigData>(n)) {}
+    explicit Tree(int n) : value(std::make_shared<BigData>(n)) {
+    }
 
-    explicit Tree(std::shared_ptr<BigData> val) : value(std::move(val)) {}
+    explicit Tree(std::shared_ptr<BigData> val) : value(std::move(val)) {
+    }
 
     [[nodiscard]] BigData &get_value() const;
 
