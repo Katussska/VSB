@@ -17,6 +17,33 @@ private:
     std::vector<uint8_t> buffer;
 
 public:
+    class Iterator {
+    private:
+        uint8_t *current;
+        const uint8_t *start;
+        const uint8_t *finish;
+    public:
+        explicit Iterator(uint8_t *begin, const uint8_t *end) : current(begin), start(begin), finish(end) {}
+
+        Iterator begin();
+
+        Iterator end();
+
+        Iterator &operator++();
+
+        Iterator &operator--();
+
+        uint8_t &operator*() const;
+
+        Iterator operator+=(int value);
+
+        Iterator operator-=(int value);
+
+        bool operator!=(const Iterator &other) const;
+
+        bool operator==(const Iterator &other) const;
+    };
+
     UTF8String() = default;
 
     explicit UTF8String(const char *str);
@@ -55,9 +82,15 @@ public:
 
     explicit operator std::string() const;
 
-    UTF8String(UTF8String &&str) : buffer(str.buffer) {};
+    UTF8String(UTF8String &&str) noexcept: buffer(std::move(str.buffer)) {};
+
+    UTF8String &operator=(const UTF8String &str);
 
     ~UTF8String() = default;
+
+    [[nodiscard]] Iterator bytes() const;
+
+
 };
 
 /// Binary tree
@@ -78,8 +111,6 @@ private:
     Tree *parent = nullptr;
     std::unique_ptr<Tree> left_child;
     std::unique_ptr<Tree> right_child;
-    bool visited = false;
-
 public:
     class Iterator {
     private:
@@ -103,10 +134,6 @@ public:
     [[nodiscard]] Tree *get_parent() const;
 
     [[nodiscard]] bool has_parent() const;
-
-    [[maybe_unused]] [[nodiscard]] bool get_visited() const;
-
-    [[maybe_unused]] void set_visited(bool str);
 
     [[nodiscard]] Tree *get_left_child() const;
 

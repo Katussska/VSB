@@ -183,9 +183,69 @@ UTF8String::operator std::string() const {
     return std::string(buffer.begin(), buffer.end());
 }
 
-//UTF8String::UTF8String(UTF8String &&str) noexcept {
-//    UTF8String temp(str.buffer);
-//}
+UTF8String &UTF8String::operator=(const UTF8String &str) {
+    if (this != &str) {
+        buffer = std::vector<uint8_t>(str.buffer.size());
+        std::copy(str.buffer.begin(), str.buffer.end(), buffer.begin());
+    }
+
+    return *this;
+}
+
+UTF8String::Iterator UTF8String::bytes() const {
+    return Iterator(&buffer.front(), &buffer.back() + 1);
+}
+
+UTF8String::Iterator UTF8String::Iterator::begin() {
+    current = const_cast<uint8_t *>(start);
+
+    return *this;
+}
+
+UTF8String::Iterator UTF8String::Iterator::end() {
+    current = const_cast<uint8_t *>(finish);
+
+    return *this;
+}
+
+UTF8String::Iterator &UTF8String::Iterator::operator++() {
+    if (current + 1 < finish)
+        current++;
+
+    return *this;
+}
+
+UTF8String::Iterator &UTF8String::Iterator::operator--() {
+    if (current - 1 >= start)
+        current--;
+
+    return *this;
+}
+
+uint8_t &UTF8String::Iterator::operator*() const {
+    return *current;
+}
+
+UTF8String::Iterator UTF8String::Iterator::operator+=(int value) {
+    current += value;
+
+    return *this;
+}
+
+UTF8String::Iterator UTF8String::Iterator::operator-=(int value) {
+    current -= value;
+
+    return *this;
+}
+
+bool UTF8String::Iterator::operator!=(const UTF8String::Iterator &other) const {
+    return current != other.current;
+}
+
+bool UTF8String::Iterator::operator==(const UTF8String::Iterator &other) const {
+    return current == other.current;
+}
+
 
 /// Binary tree
 Tree::Iterator &Tree::Iterator::operator++() {
@@ -230,14 +290,6 @@ bool Tree::has_parent() const {
         return true;
     else
         return false;
-}
-
-[[maybe_unused]] bool Tree::get_visited() const {
-    return visited;
-}
-
-[[maybe_unused]] void Tree::set_visited(bool str) {
-    visited = str;
 }
 
 Tree *Tree::get_left_child() const {
@@ -326,6 +378,7 @@ void Tree::swap_children() {
 }
 
 bool Tree::is_same_tree_as(Tree *other) {
+    // probably not workin correctly, but the implementation below should
     return get_root() == other->get_root();
 
 //        if (this->parent == nullptr && other->parent == nullptr) {

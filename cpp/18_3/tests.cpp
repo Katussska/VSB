@@ -431,42 +431,42 @@ TEST_SUITE("UTF8String new") {
         REQUIRE(str.get_point_count() == 0);
     }
 
-//    TEST_CASE("Move assign") {
-//        UTF8String str{"ahoj"};
-//        str = UTF8String{"cau"};
-//
-//        REQUIRE(str.get_point_count() == 3);
-//    }
-//
-//    TEST_CASE("Iterate bytes empty") {
-//        UTF8String str;
-//        REQUIRE(collect<uint8_t>(str.bytes()).empty());
-//
-//        auto it = str.bytes();
-//        REQUIRE(!(it.begin() != it.end()));
-//    }
-//
-//    TEST_CASE("Const string can be byte-iterated") {
-//        const UTF8String str{"ahoj"};
-//        auto iterator = str.bytes().begin();
-//        ++iterator;
-//    }
-//
-//    TEST_CASE("Iterate bytes") {
-//        UTF8String str{std::vector<CodePoint>{
-//                0x1F601, // 😁
-//                0x1F614, // 😔
-//                static_cast<CodePoint>('0'),
-//                0x010D // č
-//        }};
-//        check_vectors(collect<uint8_t>(str.bytes()), std::vector<uint8_t>{
-//                0xF0, 0x9F, 0x98, 0x81,
-//                0xF0, 0x9F, 0x98, 0x94,
-//                0x30,
-//                0xC4, 0x8D
-//        });
-//    }
-//
+    TEST_CASE("Move assign") {
+        UTF8String str{"ahoj"};
+        str = UTF8String{"cau"};
+
+        REQUIRE(str.get_point_count() == 3);
+    }
+
+    TEST_CASE("Iterate bytes empty") {
+        UTF8String str;
+        REQUIRE(collect<uint8_t>(str.bytes()).empty());
+
+        auto it = str.bytes();
+        REQUIRE(!(it.begin() != it.end()));
+    }
+
+    TEST_CASE("Const string can be byte-iterated") {
+        const UTF8String str{"ahoj"};
+        auto iterator = str.bytes().begin();
+        ++iterator;
+    }
+
+    TEST_CASE("Iterate bytes") {
+        UTF8String str{std::vector<CodePoint>{
+                0x1F601, // 😁
+                0x1F614, // 😔
+                static_cast<CodePoint>('0'),
+                0x010D // č
+        }};
+        check_vectors(collect<uint8_t>(str.bytes()), std::vector<uint8_t>{
+                0xF0, 0x9F, 0x98, 0x81,
+                0xF0, 0x9F, 0x98, 0x94,
+                0x30,
+                0xC4, 0x8D
+        });
+    }
+
 //    TEST_CASE("Iterate bytes concurrently") {
 //        UTF8String str{"ahoj"};
 //
