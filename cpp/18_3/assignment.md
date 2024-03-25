@@ -56,7 +56,7 @@ for (CodePoint cp: str.codepoints()) {
 
 Implement the two iterators above manually, do not reuse iterators of other STL collections.
 
-## Binary tree
+~~## Binary tree
 Implement a simple binary tree using smart pointers.
 
 Makes ure to answer questions marked with [*]. You can put the answers in your source code or post
@@ -89,7 +89,7 @@ Implement a method for finding if two nodes belong to the same tree.
 - `bool is_same_tree_as(Tree*)`
 Implement a method for replacing the shared value of the current node and of all its descendants
 to the passed value.
-- `replace_value(...)`
+- `replace_value(...)`~~
 
 ### Bonus task
 Implement inorder traversal of the binary tree using the *iterator protocol*.

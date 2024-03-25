@@ -11,33 +11,41 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(str.get_byte_count() == 0);
         REQUIRE(str.get_point_count() == 0);
     }
+
     TEST_CASE("Create with string") {
         const UTF8String str{"hello"};
         REQUIRE(str.get_byte_count() == 5);
         REQUIRE(str.get_point_count() == 5);
     }
+
     TEST_CASE("Create with std::string") {
-        const UTF8String str{ std::string("hello") };
+        const UTF8String str{std::string("hello")};
         REQUIRE(str.get_byte_count() == 5);
         REQUIRE(str.get_point_count() == 5);
     }
+
     TEST_CASE("Create with code points") {
-        const UTF8String str{std::vector<CodePoint>{
-            0x1F601, // 😁
-            0x1F614, // 😔
-            static_cast<CodePoint>('0'),
-            0x010D // č
-        }};
+        const UTF8String str{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
+        };
         REQUIRE(str.get_byte_count() == 11);
         REQUIRE(str.get_point_count() == 4);
     }
+
     TEST_CASE("String can be copied") {
-        UTF8String str{std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-        }};
+        UTF8String str{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
+        };
         str.append(' ');
         UTF8String str2(str);
 
@@ -52,20 +60,25 @@ TEST_SUITE("UTF8String old") {
         UTF8String str3 = str;
         REQUIRE(str3 == str);
     }
+
     TEST_CASE("Non-empty string can be assigned") {
-        UTF8String str{std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-        }};
+        UTF8String str{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
+        };
         str.append(' ');
 
-        UTF8String str2{std::vector<CodePoint>{
-            0x1F614,
-            0x010D,
-            static_cast<CodePoint>('f')
-        }};
+        UTF8String str2{
+                std::vector<CodePoint>{
+                        0x1F614,
+                        0x010D,
+                        static_cast<CodePoint>('f')
+                }
+        };
         str2.append('a');
 
         str = str2;
@@ -78,12 +91,15 @@ TEST_SUITE("UTF8String old") {
 
         REQUIRE(str == str2);
     }
+
     TEST_CASE("Empty string can be assigned") {
-        UTF8String str2{std::vector<CodePoint>{
-                0x1F614,
-                0x010D,
-                static_cast<CodePoint>('f')
-        }};
+        UTF8String str2{
+                std::vector<CodePoint>{
+                        0x1F614,
+                        0x010D,
+                        static_cast<CodePoint>('f')
+                }
+        };
         str2.append('a');
 
         UTF8String str;
@@ -97,107 +113,118 @@ TEST_SUITE("UTF8String old") {
 
         REQUIRE(str == str2);
     }
+
     TEST_CASE("Self assignment") {
-        UTF8String str1{std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-        }};
+        UTF8String str1{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
+        };
         str1 = str1;
 
         REQUIRE(str1.get_byte_count() == 11);
         REQUIRE(str1.get_point_count() == 4);
 
-        UTF8String str2 { "string" };
+        UTF8String str2{"string"};
         str2 = str2;
 
-        REQUIRE(str2 == UTF8String { "string" });
+        REQUIRE(str2 == UTF8String{"string"});
     }
+
     TEST_CASE("Deep copy is created when copying a string") {
-        UTF8String s1 { "aaa" };
-        UTF8String s2 { s1 };
-        UTF8String s3 { "ccc" };
+        UTF8String s1{"aaa"};
+        UTF8String s2{s1};
+        UTF8String s3{"ccc"};
         s3 = s1;
 
-        const UTF8String* const p1 = &s1;
-        const UTF8String* const p2 = &s2;
-        const UTF8String* const p3 = &s3;
+        const UTF8String *const p1 = &s1;
+        const UTF8String *const p2 = &s2;
+        const UTF8String *const p3 = &s3;
 
         REQUIRE_NE(memcmp(p1, p2, sizeof(UTF8String)), 0);
         REQUIRE_NE(memcmp(p1, p3, sizeof(UTF8String)), 0);
         REQUIRE_NE(memcmp(p2, p3, sizeof(UTF8String)), 0);
     }
+
     TEST_CASE("String equality 1") {
-        UTF8String s1 { "aaaaaa" };
-        UTF8String s2 { "aaaaaa" };
-        UTF8String s3 { "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" };
+        UTF8String s1{"aaaaaa"};
+        UTF8String s2{"aaaaaa"};
+        UTF8String s3{"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"};
 
         REQUIRE(s1 == s1);
         REQUIRE(s1 == s2);
-        REQUIRE(not (s1 == s3));
-        REQUIRE(not (s3 == s1));
+        REQUIRE(not(s1 == s3));
+        REQUIRE(not(s3 == s1));
     }
+
     TEST_CASE("String equality 2") {
-        UTF8String s1 { "aaaaaa" };
-        UTF8String s2 { "bbbbbb" };
-        UTF8String s3 { "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" };
+        UTF8String s1{"aaaaaa"};
+        UTF8String s2{"bbbbbb"};
+        UTF8String s3{"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"};
 
         REQUIRE(s1 != s2);
         REQUIRE(s3 != s1);
     }
+
     TEST_CASE("String equality 3") {
-        UTF8String s1 {
-            std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-            }
+        UTF8String s1{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
         };
 
-        UTF8String s2 {
-            std::vector<CodePoint>{
-                0x1F602, // succ 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-            }
+        UTF8String s2{
+                std::vector<CodePoint>{
+                        0x1F602, // succ 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
         };
 
         REQUIRE(s1 != s2);
     }
+
     TEST_CASE("String equality 4") {
-        UTF8String s1 {
-            std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-            }
+        UTF8String s1{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
         };
 
-        UTF8String s2 {
-            std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-            }
+        UTF8String s2{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
         };
 
         REQUIRE(s1 == s2);
     }
+
     TEST_CASE("Byte indexing") {
-        const UTF8String str{std::vector<CodePoint>{
-            static_cast<CodePoint>('A'),
-            static_cast<CodePoint>('h'),
-            static_cast<CodePoint>('o'),
-            static_cast<CodePoint>('j'),
-            static_cast<CodePoint>(' '),
-            0x1F601, // 😁
-            static_cast<CodePoint>('.'),
-        }};
+        const UTF8String str{
+                std::vector<CodePoint>{
+                        static_cast<CodePoint>('A'),
+                        static_cast<CodePoint>('h'),
+                        static_cast<CodePoint>('o'),
+                        static_cast<CodePoint>('j'),
+                        static_cast<CodePoint>(' '),
+                        0x1F601, // 😁
+                        static_cast<CodePoint>('.'),
+                }
+        };
 
         REQUIRE(str.get_byte_count() == 10);
         REQUIRE(str.get_point_count() == 7);
@@ -213,6 +240,7 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(str[8].value() == 0x81);
         REQUIRE(str[9].value() == '.');
     }
+
     TEST_CASE("Code point indexing") {
         UTF8String string;
         string.append('A');
@@ -226,7 +254,7 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(string.get_byte_count() == 10);
         REQUIRE(string.get_point_count() == 7);
 
-        const UTF8String& str = string;
+        const UTF8String &str = string;
         REQUIRE(str.nth_code_point(0).value() == 'A');
         REQUIRE(str.nth_code_point(1).value() == 'h');
         REQUIRE(str.nth_code_point(2).value() == 'o');
@@ -235,10 +263,12 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(str.nth_code_point(5).value() == 0x1F601);
         REQUIRE(str.nth_code_point(6).value() == '.');
     }
+
     TEST_CASE("Invalid byte index") {
         UTF8String str{"foo"};
         REQUIRE(!str[4].has_value());
     }
+
     TEST_CASE("Invalid code point index") {
         UTF8String str;
         str.append('f');
@@ -246,17 +276,21 @@ TEST_SUITE("UTF8String old") {
         str.append('o');
         REQUIRE(!str.nth_code_point(4).has_value());
     }
+
     TEST_CASE("Append char") {
-        UTF8String str{std::vector<CodePoint>{
-            static_cast<CodePoint>('a'),
-            0x1F601 // 😁
-        }};
+        UTF8String str{
+                std::vector<CodePoint>{
+                        static_cast<CodePoint>('a'),
+                        0x1F601 // 😁
+                }
+        };
         str.append('a');
         REQUIRE(str.get_byte_count() == 6);
         REQUIRE(str.get_point_count() == 3);
 
         REQUIRE(str[5].value() == 'a');
     }
+
     TEST_CASE("Append char stress test") {
         UTF8String str;
 
@@ -269,11 +303,14 @@ TEST_SUITE("UTF8String old") {
 
         REQUIRE(str == UTF8String{std::vector<CodePoint>(count, static_cast<CodePoint>('a'))});
     }
+
     TEST_CASE("Append code point 1") {
-        UTF8String str{std::vector<CodePoint>{
-                static_cast<CodePoint>('a'),
-                0x1F601 // 😁
-        }};
+        UTF8String str{
+                std::vector<CodePoint>{
+                        static_cast<CodePoint>('a'),
+                        0x1F601 // 😁
+                }
+        };
         str.append(static_cast<CodePoint>('b'));
         str.append(static_cast<CodePoint>(0x1F602)); // 😂
 
@@ -287,28 +324,31 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(str[8].value() == 0x98);
         REQUIRE(str[9].value() == 0x82);
     }
+
     TEST_CASE("Append code point 2") {
         UTF8String str;
         str.append(static_cast<CodePoint>('a'));
-        str.append(static_cast<CodePoint>(0x00A3));  // £
-        str.append(static_cast<CodePoint>(0x20AC));  // €
+        str.append(static_cast<CodePoint>(0x00A3)); // £
+        str.append(static_cast<CodePoint>(0x20AC)); // €
         str.append(static_cast<CodePoint>(0x10348)); // 𐍈
 
         REQUIRE(str.get_byte_count() == 10);
         REQUIRE(str.get_point_count() == 4);
     }
+
     TEST_CASE("Append code point stress test") {
         UTF8String str;
 
         size_t count = 1'000;
         for (size_t i = 0; i < count; i++) {
-            str.append(static_cast<CodePoint>(0x20AC));  // €
+            str.append(static_cast<CodePoint>(0x20AC)); // €
         }
         REQUIRE(str.get_byte_count() == count * 3);
         REQUIRE(str.get_point_count() == count);
 
         REQUIRE(str == UTF8String{std::vector<CodePoint>(count, 0x20AC)});
     }
+
     TEST_CASE("Join strings 1") {
         UTF8String str{"Hello"};
         UTF8String str2{" world"};
@@ -317,18 +357,22 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(str == UTF8String{"Hello"});
         REQUIRE(str2 == UTF8String{" world"});
     }
+
     TEST_CASE("Join strings 2") {
         UTF8String str{"Hello"};
 
         REQUIRE((str + UTF8String{}) == UTF8String{"Hello"});
         REQUIRE((UTF8String{} + str) == UTF8String{"Hello"});
     }
+
     TEST_CASE("Join strings 3") {
         UTF8String str{"Hello"};
-        UTF8String str2{std::vector<CodePoint>{
-            0x20AC,  // €
-            static_cast<CodePoint>('f')
-        }};
+        UTF8String str2{
+                std::vector<CodePoint>{
+                        0x20AC, // €
+                        static_cast<CodePoint>('f')
+                }
+        };
 
         auto res1 = str + str2;
         REQUIRE(res1.get_byte_count() == 9);
@@ -338,6 +382,7 @@ TEST_SUITE("UTF8String old") {
         REQUIRE(res2.get_byte_count() == 9);
         REQUIRE(res2.get_point_count() == 7);
     }
+
     TEST_CASE("Append strings 1") {
         UTF8String str{"Hello"};
         UTF8String str2{", "};
@@ -350,17 +395,21 @@ TEST_SUITE("UTF8String old") {
 
         REQUIRE(str == UTF8String{"Hello, World!"});
     }
+
     TEST_CASE("Append strings 2") {
         UTF8String str{"Hello"};
-        UTF8String str2{std::vector<CodePoint>{
-            0x20AC,  // €
-            static_cast<CodePoint>('f')
-        }};
+        UTF8String str2{
+                std::vector<CodePoint>{
+                        0x20AC, // €
+                        static_cast<CodePoint>('f')
+                }
+        };
 
         str += str2;
         REQUIRE(str.get_byte_count() == 9);
         REQUIRE(str.get_point_count() == 7);
     }
+
     TEST_CASE("Test cast") {
         UTF8String str{"Ahoj"};
 
@@ -372,14 +421,14 @@ TEST_SUITE("UTF8String old") {
 template<typename Item, typename Iterator>
 std::vector<Item> collect(Iterator iterator) {
     std::vector<Item> items;
-    for (const auto& item: iterator) {
+    for (const auto &item: iterator) {
         items.push_back(item);
     }
     return items;
 }
 
 // This function is used to avoid problems with SFINAE in GCC 11.
-template <typename T>
+template<typename T>
 void check_vectors(std::vector<T> a, std::vector<T> b) {
     REQUIRE_EQ(a.size(), b.size());
     for (size_t i = 0; i < a.size(); i++) {
@@ -387,7 +436,7 @@ void check_vectors(std::vector<T> a, std::vector<T> b) {
     }
 }
 
-// New string tests with move semantics and iterator
+//// New string tests with move semantics and iterator
 TEST_SUITE("UTF8String new") {
     TEST_CASE("Move string") {
         auto fn = [](UTF8String string) {
@@ -426,12 +475,14 @@ TEST_SUITE("UTF8String new") {
     }
 
     TEST_CASE("Iterate bytes") {
-        UTF8String str{std::vector<CodePoint>{
-                0x1F601, // 😁
-                0x1F614, // 😔
-                static_cast<CodePoint>('0'),
-                0x010D // č
-        }};
+        UTF8String str{
+                std::vector<CodePoint>{
+                        0x1F601, // 😁
+                        0x1F614, // 😔
+                        static_cast<CodePoint>('0'),
+                        0x010D // č
+                }
+        };
         check_vectors(collect<uint8_t>(str.bytes()), std::vector<uint8_t>{
                 0xF0, 0x9F, 0x98, 0x81,
                 0xF0, 0x9F, 0x98, 0x94,
@@ -457,6 +508,7 @@ TEST_SUITE("UTF8String new") {
         REQUIRE(*it1 == 'h');
         REQUIRE(*it2 == 'o');
     }
+
 
     TEST_CASE("Random access byte iterators") {
         UTF8String str{"I Love Haskell"};
@@ -719,7 +771,7 @@ TEST_SUITE("Tree") {
          * 3   <- last
          */
         auto tree = std::make_unique<Tree>(0);
-        Tree* last = tree.get();
+        Tree *last = tree.get();
         for (int i = 1; i < 4; i++) {
             last->set_left_child(std::make_unique<Tree>(i));
             last = last->get_left_child();
@@ -843,7 +895,7 @@ TEST_SUITE("Tree") {
         auto tree = christmas_tree();
 
         std::vector<int> values;
-        for (const auto& node : *tree) {
+        for (const auto &node: *tree) {
             values.push_back(node.get_value().value);
         }
 
