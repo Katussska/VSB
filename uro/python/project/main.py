@@ -15,104 +15,69 @@ def generate_random_data():
     return data
 
 
-def render_date(page):
-    date = Frame(page)
-    date.pack(pady=5)
+class DateSelector(Frame):
+    def __init__(self, parent, **kwargs):
+        super().__init__(parent, **kwargs)
+        self.setup_ui()
 
-    # Days
-    days_frame = Frame(date)
-    days_frame.pack(side='left', padx=5)
-    days_l = Label(days_frame, text='Day')
-    days_l.pack()
-    days = [str(i) for i in range(1, 32)]
-    days_vals = tuple(days)
-    days_box = Combobox(days_frame, values=days_vals, state="readonly", width=5)
-    days_box.pack()
+    def setup_ui(self):
+        self.pack(pady=5)
 
-    # Months
-    months_frame = Frame(date)
-    months_frame.pack(side='left', padx=5)
-    months_l = Label(months_frame, text='Month')
-    months_l.pack()
-    months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"]
-    months_vals = tuple(months)
-    months_box = Combobox(months_frame, values=months_vals, state="readonly", width=10)
-    months_box.pack()
-
-    # Years
-    years_frame = Frame(date)
-    years_frame.pack(side='left', padx=5)
-    years_l = Label(years_frame, text='Year')
-    years_l.pack()
-    years = [str(i) for i in range(2023, 2026)]
-    years_vals = tuple(years)
-    years_box = Combobox(years_frame, values=years_vals, state="readonly", width=7)
-    years_box.pack()
+        for label, values in [("Day", range(1, 32)), ("Month", [
+            "January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"]), ("Year", range(2023, 2026))]:
+            frame = Frame(self)
+            frame.pack(side='left', padx=5)
+            label_widget = Label(frame, text=label)
+            label_widget.pack()
+            # Configure Comboboxes to use the same variable for selection and display
+            values_combo = Combobox(frame, values=list(values), state="readonly", width=10)
+            values_combo.pack()
 
 
 class BudgetTrackerApp:
-    def fce(self):
-        self.la.configure(text=self.cmb.get())
-
     def render_add(self):
         title = Label(self.page1, text='Add Expense', font='bolder', pady=20)
         title.pack(padx=100)
 
-        note_l = Label(self.page1, text='Note')
-        note_i = Entry(self.page1, width=20)
-        amount_l = Label(self.page1, text='Amount')
-        amount_i = Entry(self.page1, width=15)
+        for label_text in ["Note", "Amount"]:
+            label = Label(self.page1, text=label_text)
+            label.pack()
+            entry = Entry(self.page1, width=20 if label_text == "Note" else 15)
+            entry.pack()
 
-        note_l.pack()
-        note_i.pack()
-        amount_l.pack()
-        amount_i.pack()
-
-        render_date(self.page1)
+        DateSelector(self.page1)
 
         choose = Frame(self.page1)
         choose.pack(pady=10)
 
-        r1 = Radiobutton(choose, text="Income", variable=self.var, value="Income")
-        r2 = Radiobutton(choose, text="Expense", variable=self.var, value="Expense")
+        for text, side in [("Income", 'left'), ("Expense", 'right')]:
+            Radiobutton(choose, text=text, variable=self.var, value=text).pack(side=side)
 
-        r1.pack(side='left')
-        r2.pack(side='right')
-
-        b = Button(self.page1, text="Add", pady=5, width=20)
-        b.pack(pady=20)
+        Button(self.page1, text="Add", pady=5, width=20).pack(pady=20)
 
     def render_filter(self):
         title = Label(self.page2, text='Filter data', font='bolder', pady=20)
         title.pack(padx=100)
 
-        since = Label(self.page2, text='Since:')
-        since.pack()
-        render_date(self.page2)
-
-        until = Label(self.page2, text='Until:')
-        until.pack()
-        render_date(self.page2)
+        for label_text in ["Since:", "Until:"]:
+            label = Label(self.page2, text=label_text)
+            label.pack()
+            DateSelector(self.page2)
 
         choose = Frame(self.page2)
         choose.pack(pady=15)
 
-        r1 = Radiobutton(choose, text="Income", variable=self.var, value="Income")
-        r2 = Radiobutton(choose, text="Expense", variable=self.var, value="Expense")
+        for text, side in [("Income", 'left'), ("Expense", 'right')]:
+            Radiobutton(choose, text=text, variable=self.var, value=text).pack(side=side)
 
-        r1.pack(side='left')
-        r2.pack(side='right')
-
-        b = Button(self.page2, text="Filter", pady=5, width=20)
-        b.pack(pady=20)
+        Button(self.page2, text="Filter", pady=5, width=20).pack(pady=20)
 
     def render_list(self):
         tree = Treeview(self.master, columns=('date', 'note', 'amount'), show='headings')
 
-        tree.heading('date', text='Date')
-        tree.heading('note', text='Note')
-        tree.heading('amount', text='Amount')
+        for header, column_id in [('Date', '#0'), ('Note', '#1'), ('Amount', '#2')]:
+            tree.heading(column_id, text=header)
 
         example_data = generate_random_data()
 
@@ -120,13 +85,13 @@ class BudgetTrackerApp:
             random_value = random.choice(['income', 'expense'])
             tree.insert('', 'end', values=data, tags=(random_value,))
 
-        tree.tag_configure('income', background='lightgreen')
-        tree.tag_configure('expense', background='lightcoral')
+        for tag, background in [('income', 'lightgreen'), ('expense', 'lightcoral')]:
+            tree.tag_configure(tag, background=background)
 
         col_width = 100
-        tree.column('date', width=col_width, anchor='center')
-        tree.column('note', width=col_width, anchor='center')
-        tree.column('amount', width=col_width, anchor='center')
+        for column, width, anchor in [('date', col_width, 'center'), ('note', col_width, 'center'),
+                                      ('amount', col_width, 'center')]:
+            tree.column(column, width=width, anchor=anchor)
 
         scrollbar = Scrollbar(self.master, orient=VERTICAL, command=tree.yview)
         tree.configure(yscroll=scrollbar.set)
@@ -154,17 +119,6 @@ class BudgetTrackerApp:
         self.render_list()
         self.render_filter()
 
-    def show_about(self):
-        self.about_window = tk.Toplevel(self.root)
-        self.about_window.title("About")
-        self.about_window.resizable(False, False)
-        about_label = tk.Label(self.about_window, text="KnihaDB v0.1")
-        author_label = tk.Label(self.about_window, text="Filip Sikora SIK0207 @ vsb.cz")
-        about_label.pack(padx=20, pady=10)
-        author_label.pack(padx=20, pady=10)
-        ok_btn = tk.Button(self.about_window, text="OK", command=self.close_about)
-        ok_btn.pack(padx=20, pady=10)
-
 
 def show_about_info():
     about_window = tk.Toplevel()
@@ -172,8 +126,8 @@ def show_about_info():
     about_window.geometry("300x200")
 
     about_label = tk.Label(about_window,
-                           text="Project informations:\n\nURO Tkinter project 2024\nKateřina Baierová\nVŠB-FEI")
-    about_label.config(justify="center", padx=20, pady=20)  # Zarovnání na střed a padding
+                           text="Project informations:\n\nURO Tkinter project 2024\n Budget tracker\nKateřina Baierová\nVŠB-FEI")
+    about_label.config(justify="center", padx=20, pady=20)  # Align center and add padding
     about_label.pack()
 
     close_button = tk.Button(about_window, text="Close", command=about_window.destroy)
