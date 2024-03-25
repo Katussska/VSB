@@ -12,6 +12,7 @@ _deps
 cmake-build-debug
 target
 .DS_Store
+__pycache__
 
 # Doxygen output directory
 /doc
