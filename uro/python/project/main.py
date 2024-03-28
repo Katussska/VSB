@@ -1,125 +1,97 @@
+import random
 import tkinter as tk
 from tkinter import *
 from tkinter.ttk import Treeview, Notebook, Combobox
 
 
+def generate_random_data():
+    data = []
+
+    for _ in range(40):
+        random_date = "2024-03-" + str(random.randint(1, 30))
+        random_note = "Example Note " + str(random.randint(4, 100))
+        random_amount = str(random.randint(100, 1000))
+        data.append((random_date, random_note, random_amount))
+    return data
+
+
+class DateSelector(Frame):
+    def __init__(self, parent, **kwargs):
+        super().__init__(parent, **kwargs)
+        self.setup_ui()
+
+    def setup_ui(self):
+        self.pack(pady=5)
+
+        for label, values in [("Day", range(1, 32)), ("Month", [
+            "January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"]), ("Year", range(2023, 2026))]:
+            frame = Frame(self)
+            frame.pack(side='left', padx=5)
+            label_widget = Label(frame, text=label)
+            label_widget.pack()
+            # Configure Comboboxes to use the same variable for selection and display
+            values_combo = Combobox(frame, values=list(values), state="readonly", width=10)
+            values_combo.pack()
+
+
 class BudgetTrackerApp:
-    def fce(self):
-        self.la.configure(text=self.cmb.get())
-
-    def render_date(self, string: page):
-        date = Frame(self.page)
-        date.pack(pady=5)
-
-        # Days
-        days_frame = Frame(date)
-        days_frame.pack(side='left', padx=5)
-        days_l = Label(days_frame, text='Day')
-        days_l.pack()
-        days = [str(i) for i in range(1, 32)]
-        days_vals = tuple(days)
-        days_box = Combobox(days_frame, values=days_vals, state="readonly", width=5)
-        days_box.pack()
-
-        # Months
-        months_frame = Frame(date)
-        months_frame.pack(side='left', padx=5)
-        months_l = Label(months_frame, text='Month')
-        months_l.pack()
-        months = ["January", "February", "March", "April", "May", "June", "July",
-                  "August", "September", "October", "November", "December"]
-        months_vals = tuple(months)
-        months_box = Combobox(months_frame, values=months_vals, state="readonly", width=10)
-        months_box.pack()
-
-        # Years
-        years_frame = Frame(date)
-        years_frame.pack(side='left', padx=5)
-        years_l = Label(years_frame, text='Year')
-        years_l.pack()
-        years = [str(i) for i in range(2023, 2026)]
-        years_vals = tuple(years)
-        years_box = Combobox(years_frame, values=years_vals, state="readonly", width=7)
-        years_box.pack()
-
     def render_add(self):
         title = Label(self.page1, text='Add Expense', font='bolder', pady=20)
         title.pack(padx=100)
 
-        note_l = Label(self.page1, text='Note')
-        note_i = Entry(self.page1, width=20)
-        amount_l = Label(self.page1, text='Amount')
-        amount_i = Entry(self.page1, width=15)
+        for label_text in ["Note", "Amount"]:
+            label = Label(self.page1, text=label_text)
+            label.pack()
+            entry = Entry(self.page1, width=20 if label_text == "Note" else 15)
+            entry.pack()
 
-        note_l.pack()
-        note_i.pack()
-        amount_l.pack()
-        amount_i.pack()
-
-        self.render_date(page1)
+        DateSelector(self.page1)
 
         choose = Frame(self.page1)
         choose.pack(pady=10)
 
-        r1 = Radiobutton(choose, text="Income")
-        r2 = Radiobutton(choose, text="Expense")
+        for text, side in [("Income", 'left'), ("Expense", 'right')]:
+            Radiobutton(choose, text=text, variable=self.var, value=text).pack(side=side)
 
-        r1.pack(side='left')
-        r2.pack(side='right')
-
-        b = Button(self.page1, text="Add", pady=5, width=20)
-        b.pack(pady=20)
+        Button(self.page1, text="Add", pady=5, width=20).pack(pady=20)
 
     def render_filter(self):
         title = Label(self.page2, text='Filter data', font='bolder', pady=20)
         title.pack(padx=100)
 
-        since = Label(self.page2, text='Since:')
-        since.pack()
-        self.render_date(page2)
-
-        Until = Label(self.page2, text='Until:')
-        Until.pack()
-        self.render_date(page2)
+        for label_text in ["Since:", "Until:"]:
+            label = Label(self.page2, text=label_text)
+            label.pack()
+            DateSelector(self.page2)
 
         choose = Frame(self.page2)
         choose.pack(pady=15)
 
-        r1 = Radiobutton(choose, text="Income")
-        r2 = Radiobutton(choose, text="Expense")
+        for text, side in [("Income", 'left'), ("Expense", 'right')]:
+            Radiobutton(choose, text=text, variable=self.var, value=text).pack(side=side)
 
-        r1.pack(side='left')
-        r2.pack(side='right')
-
-        b = Button(self.page2, text="Filter", pady=5, width=20)
-        b.pack(pady=20)
+        Button(self.page2, text="Filter", pady=5, width=20).pack(pady=20)
 
     def render_list(self):
         tree = Treeview(self.master, columns=('date', 'note', 'amount'), show='headings')
 
-        tree.heading('date', text='Date')
-        tree.heading('note', text='Note')
-        tree.heading('amount', text='Amount')
+        for header, column_id in [('Date', '#0'), ('Note', '#1'), ('Amount', '#2')]:
+            tree.heading(column_id, text=header)
 
-        example_data = [
-            ('2024-03-21', 'Example Note 1', '100'),
-            ('2024-03-22', 'Example Note 2', '200'),
-            ('2024-03-23', 'Example Note 3', '300')
-        ]
+        example_data = generate_random_data()
 
-        for idx, data in enumerate(example_data):
-            if idx % 2 == 0:
-                tree.insert('', 'end', values=data, tags=('income',))
-            else:
-                tree.insert('', 'end', values=data, tags=('expense',))
+        for data in example_data:
+            random_value = random.choice(['income', 'expense'])
+            tree.insert('', 'end', values=data, tags=(random_value,))
 
-        tree.tag_configure('income', background='lightgreen')
-        tree.tag_configure('expense', background='lightcoral')
+        for tag, background in [('income', 'lightgreen'), ('expense', 'lightcoral')]:
+            tree.tag_configure(tag, background=background)
 
         col_width = 100
-        tree.column('date', width=col_width, anchor='center')  # Center align the column
-        tree.column('note', width=col_width, anchor='center')  # Center align the column
-        tree.column('amount', width=col_width, anchor='center')  # Center align the column
+        for column, width, anchor in [('date', col_width, 'center'), ('note', col_width, 'center'),
+                                      ('amount', col_width, 'center')]:
+            tree.column(column, width=width, anchor=anchor)
 
         scrollbar = Scrollbar(self.master, orient=VERTICAL, command=tree.yview)
         tree.configure(yscroll=scrollbar.set)
@@ -141,9 +113,25 @@ class BudgetTrackerApp:
         self.notebook.add(self.page1, text='Add')
         self.notebook.add(self.page2, text='Filter')
 
+        self.var = StringVar(value="Income")
+
         self.render_add()
         self.render_list()
         self.render_filter()
+
+
+def show_about_info():
+    about_window = tk.Toplevel()
+    about_window.title("About")
+    about_window.geometry("300x200")
+
+    about_label = tk.Label(about_window,
+                           text="Project informations:\n\nURO Tkinter project 2024\n Budget tracker\nKateřina Baierová\nVŠB-FEI")
+    about_label.config(justify="center", padx=20, pady=20)  # Align center and add padding
+    about_label.pack()
+
+    close_button = tk.Button(about_window, text="Close", command=about_window.destroy)
+    close_button.pack()
 
 
 def render_menu(master):
@@ -157,13 +145,9 @@ def render_menu(master):
     filemenu.add_command(label="Quit", command=master.quit)
     menubar.add_cascade(label="File", menu=filemenu)
 
-    # TODO: udelat z about popup okno s informacemi o projektu
-    editmenu = Menu(menubar, tearoff=0)
-    editmenu.add_command(label="URO Tkinter project 2024")
-    editmenu.add_command(label="Kateřina Baierová")
-    editmenu.add_command(label="Bai0033")
-    editmenu.add_command(label="VŠB")
-    menubar.add_cascade(label="About", menu=editmenu)
+    about = Menu(menubar, tearoff=0)
+    about.add_command(label="About", command=show_about_info)
+    menubar.add_cascade(label="Help", menu=about)
 
     master.config(menu=menubar)
 
