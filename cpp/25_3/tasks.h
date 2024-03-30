@@ -113,8 +113,6 @@ void serialize_object(const Object &obj, std::vector<uint8_t> &serialized);
 
 Value deserialize(const std::vector<uint8_t> &serialized);
 
-Value deserialize_value(uint8_t typeId, const std::vector<uint8_t> &data);
-
 Boolean deserialize_boolean(const std::vector<uint8_t> &data);
 
 Number deserialize_number(const std::vector<uint8_t> &data);

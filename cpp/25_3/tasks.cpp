@@ -372,7 +372,10 @@ void serialize_object(const Object &obj, std::vector<uint8_t> &serialized) {
     }
 }
 
-Value deserialize_value(uint8_t type, const std::vector<uint8_t> &data) {
+Value deserialize(const std::vector<uint8_t> &serialized) {
+    uint8_t type = serialized[0];
+    std::vector<uint8_t> data(serialized.begin() + 1, serialized.end());
+
     switch (type) {
         case 0:
             return Null();
@@ -389,17 +392,6 @@ Value deserialize_value(uint8_t type, const std::vector<uint8_t> &data) {
         default:
             throw std::runtime_error("Unknown type.");
     }
-}
-
-Value deserialize(const std::vector<uint8_t> &serialized) {
-    if (serialized.empty())
-        throw std::runtime_error("Data empty.");
-
-
-    uint8_t type = serialized[0];
-    std::vector<uint8_t> data(serialized.begin() + 1, serialized.end());
-
-    return deserialize_value(type, data);
 }
 
 Boolean deserialize_boolean(const std::vector<uint8_t> &data) {
@@ -419,45 +411,27 @@ Number deserialize_number(const std::vector<uint8_t> &data) {
 }
 
 String deserialize_string(const std::vector<uint8_t> &data) {
-    if (data.size() < sizeof(size_t))
-        throw std::runtime_error("Data missing.");
-
     size_t size;
     std::memcpy(&size, data.data(), sizeof(size_t));
-
-    if (data.size() < sizeof(size_t) + size)
-        throw std::runtime_error("String data incomplete.");
 
     std::string value(data.begin() + sizeof(size_t), data.begin() + sizeof(size_t) + size);
 
     return String{value};
 }
 
-
 Array deserialize_array(const std::vector<uint8_t> &data) {
-    if (data.size() < sizeof(size_t))
-        throw std::runtime_error("Array size data is incomplete");
-
-    size_t arraySize;
-    std::memcpy(&arraySize, data.data(), sizeof(size_t));
-    size_t currentPos = sizeof(size_t);
+    size_t size;
+    size_t current = sizeof(size_t);
     Array array;
 
-    for (size_t i = 0; i < arraySize; ++i) {
-        if (data.size() < currentPos + sizeof(uint8_t) + sizeof(size_t))
-            throw std::runtime_error("Array type ID data is incomplete");
+    std::memcpy(&size, data.data(), sizeof(size_t));
 
-        uint8_t typeId = data[currentPos];
-        size_t dataSize;
-
-        std::memcpy(&dataSize, data.data() + currentPos + sizeof(uint8_t), sizeof(size_t));
-        std::vector<uint8_t> valueData(data.begin() + currentPos + sizeof(uint8_t) + sizeof(size_t),
-                                       data.begin() + currentPos + sizeof(uint8_t) + sizeof(size_t) + dataSize);
-        array.items.push_back(deserialize_value(typeId, valueData));
-        currentPos += sizeof(uint8_t) + sizeof(size_t) + dataSize;
+    for (size_t i = 0; i < size; i++) {
+        std::vector<uint8_t> value(data.begin() + current, data.end());
+        array.items.push_back(deserialize(value));
+        current += array.items.size();//TODO: toto je v pici T-T
     }
     return array;
 }
-
 
 Object deserialize_object(const std::vector<uint8_t> &data) {}
