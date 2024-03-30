@@ -8,6 +8,8 @@
 #include <map>
 #include <optional>
 #include <cctype>
+#include <iomanip>
+#include <cstring>
 
 // JSON document: implement parsing.
 // JSON is implemented using algebraic data types here, it should be more practical than working
@@ -99,4 +101,27 @@ std::ostream &operator<<(std::ostream &os, const Number &value);
 
 std::vector<uint8_t> serialize(const Value &value);
 
-Value deserialize(const std::vector<uint8_t> &data);
+void serialize_boolean(const Boolean &b, std::vector<uint8_t> &serialized);
+
+void serialize_number(const Number &num, std::vector<uint8_t> &serialized);
+
+void serialize_string(const String &str, std::vector<uint8_t> &serialized);
+
+void serialize_array(const Array &arr, std::vector<uint8_t> &serialized);
+
+void serialize_object(const Object &obj, std::vector<uint8_t> &serialized);
+
+Value deserialize(const std::vector<uint8_t> &serialized);
+
+Value deserialize_value(uint8_t typeId, const std::vector<uint8_t> &data);
+
+Boolean deserialize_boolean(const std::vector<uint8_t> &data);
+
+Number deserialize_number(const std::vector<uint8_t> &data);
+
+String deserialize_string(const std::vector<uint8_t> &data);
+
+Array deserialize_array(const std::vector<uint8_t> &data);
+
+Object deserialize_object(const std::vector<uint8_t> &data);
+
