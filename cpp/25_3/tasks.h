@@ -113,13 +113,14 @@ void serialize_object(const Object &obj, std::vector<uint8_t> &serialized);
 
 Value deserialize(const std::vector<uint8_t> &serialized);
 
-Boolean deserialize_boolean(const std::vector<uint8_t> &data);
+Value deserialize_value(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end);
 
-Number deserialize_number(const std::vector<uint8_t> &data);
+Value deserialize_bool(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end);
 
-String deserialize_string(const std::vector<uint8_t> &data);
+Value deserialize_number(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end);
 
-Array deserialize_array(const std::vector<uint8_t> &data);
+Value deserialize_string(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end);
 
-Object deserialize_object(const std::vector<uint8_t> &data);
+Value deserialize_array(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end);
 
+Value deserialize_object(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end);

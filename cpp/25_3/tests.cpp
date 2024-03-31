@@ -1018,8 +1018,8 @@ TEST_SUITE("Serde") {
 
         REQUIRE_EQ(bytes, serialized);
 
-//        auto deserialized = deserialize(serialized);
-//        check_object(deserialized, values);
+        auto deserialized = deserialize(serialized);
+        check_object(deserialized, values);
     }
 
     TEST_CASE("Complex object") {
@@ -1066,8 +1066,8 @@ TEST_SUITE("Serde") {
         };
 
         REQUIRE_EQ(serialized, bytes);
-//
-//        auto deserialized = deserialize(serialized);
-//        check_object(deserialized, values);
+
+        auto deserialized = deserialize(serialized);
+        check_object(deserialized, values);
     }
 }

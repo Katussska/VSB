@@ -373,65 +373,105 @@ void serialize_object(const Object &obj, std::vector<uint8_t> &serialized) {
 }
 
 Value deserialize(const std::vector<uint8_t> &serialized) {
-    uint8_t type = serialized[0];
-    std::vector<uint8_t> data(serialized.begin() + 1, serialized.end());
+    auto it = serialized.begin();
+    return deserialize_value(it, serialized.end());
+}
 
-    switch (type) {
+Value deserialize_value(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end) {
+    if (it == end) {
+        throw std::runtime_error("Unexpected end of input");
+    }
+
+    uint8_t typeID = *it;
+    ++it;
+
+    switch (typeID) {
         case 0:
-            return Null();
+            return Null{};
         case 1:
-            return deserialize_boolean(data);
+            return deserialize_bool(it, end);
         case 2:
-            return deserialize_number(data);
+            return deserialize_number(it, end);
         case 3:
-            return deserialize_string(data);
+            return deserialize_string(it, end);
         case 4:
-            return deserialize_array(data);
+            return deserialize_array(it, end);
         case 5:
-            return deserialize_object(data);
+            return deserialize_object(it, end);
         default:
-            throw std::runtime_error("Unknown type.");
+            throw std::runtime_error("Unknown type ID");
     }
 }
 
-Boolean deserialize_boolean(const std::vector<uint8_t> &data) {
-    if (data.empty()) //just to be sure, i kdyz vim, ze na testy useless(i u ostatnich)
-        throw std::runtime_error("Data missing");
+Value deserialize_bool(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end) {
+    bool value = (*it != 0);
+    ++it;
 
-    return data[0] == 1 ? Boolean{true} : Boolean{false};
+    return Boolean{value};
 }
 
-Number deserialize_number(const std::vector<uint8_t> &data) {
-    if (data.size() < sizeof(double))
-        throw std::runtime_error("Data missing");
+Value deserialize_number(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end) {
+    if (std::distance(it, end) < sizeof(double))
+        throw std::runtime_error("Unexpected end of input");
 
-    double number;
-    std::memcpy(&number, data.data(), sizeof(double));
-    return Number{number};
+    double value;
+    std::memcpy(&value, &(*it), sizeof(double));
+    it += sizeof(double);
+
+    return Number{value};
 }
 
-String deserialize_string(const std::vector<uint8_t> &data) {
-    size_t size;
-    std::memcpy(&size, data.data(), sizeof(size_t));
+Value deserialize_string(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end) {
+    if (std::distance(it, end) < sizeof(uint64_t))
+        throw std::runtime_error("Tady?");
 
-    std::string value(data.begin() + sizeof(size_t), data.begin() + sizeof(size_t) + size);
+    uint64_t size;
+    std::memcpy(&size, &(*it), sizeof(uint64_t));
+    it += sizeof(uint64_t);
+
+    if (std::distance(it, end) < static_cast<std::ptrdiff_t>(size))
+        throw std::runtime_error("HEJ CO TI VADI KURVA");
+
+    std::string value(it, it + size);
+    it += size;
 
     return String{value};
 }
 
-Array deserialize_array(const std::vector<uint8_t> &data) {
-    size_t size;
-    size_t current = sizeof(size_t);
+Value deserialize_array(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end) {
+    if (std::distance(it, end) < sizeof(uint64_t))
+        throw std::runtime_error("Error?");
+
+    uint64_t size;
+    std::memcpy(&size, &(*it), sizeof(uint64_t));
+    it += sizeof(uint64_t);
+
     Array array;
 
-    std::memcpy(&size, data.data(), sizeof(size_t));
+    for (uint64_t i = 0; i < size; ++i)
+        array.items.push_back(deserialize_value(it, end));
 
-    for (size_t i = 0; i < size; i++) {
-        std::vector<uint8_t> value(data.begin() + current, data.end());
-        array.items.push_back(deserialize(value));
-        current += array.items.size();//TODO: toto je v pici T-T
-    }
     return array;
 }
 
-Object deserialize_object(const std::vector<uint8_t> &data) {}
+Value deserialize_object(std::vector<uint8_t>::const_iterator &it, const std::vector<uint8_t>::const_iterator &end) {
+    if (std::distance(it, end) < sizeof(uint64_t))
+        throw std::runtime_error("Tak tady to nejede?");
+
+    uint64_t size;
+    std::memcpy(&size, &(*it), sizeof(uint64_t));
+    it += sizeof(uint64_t);
+
+    Object object;
+
+    for (uint64_t i = 0; i < size; ++i) {
+        auto key = deserialize_string(it, end);
+        auto value = deserialize_value(it, end);
+        if (!std::holds_alternative<String>(key))
+            throw std::runtime_error("Ja uz nechciiii aaaaaaaaa");
+
+        object.items[std::get<String>(key).value] = value;
+    }
+
+    return object;
+}
