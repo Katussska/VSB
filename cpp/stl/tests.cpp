@@ -151,7 +151,7 @@ TEST_CASE("Filter students no exams") {
             Student{"Martin", 30, 70}
     };
 
-    auto[all, one] = filter_students(students, {});
+    auto [all, one] = filter_students(students, {});
     REQUIRE(all == to_set(students));
     REQUIRE(one.empty());
 }
@@ -168,7 +168,7 @@ TEST_CASE("Filter students none passed") {
             Exam{"APPS", 70, 90}
     };
 
-    auto[all, one] = filter_students(students, exams);
+    auto [all, one] = filter_students(students, exams);
     REQUIRE(all.empty());
     REQUIRE(one.empty());
 }
@@ -185,7 +185,7 @@ TEST_CASE("Filter students all passed") {
             Exam{"UPR", 10, 50}
     };
 
-    auto[all, one] = filter_students(students, exams);
+    auto [all, one] = filter_students(students, exams);
     REQUIRE(all == to_set(students));
     REQUIRE(one == to_set(students));
 }
@@ -202,7 +202,7 @@ TEST_CASE("Filter students some passed") {
             Exam{"APPS", 20, 20}
     };
 
-    auto[all, one] = filter_students(students, exams);
+    auto [all, one] = filter_students(students, exams);
     REQUIRE(all == to_set({students[0]}));
     REQUIRE(one == to_set({students[0], students[2]}));
 }
