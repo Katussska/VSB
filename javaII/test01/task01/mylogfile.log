@@ -1,0 +1,19 @@
+23:18:43.253 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:18:43.254 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:18:43.254 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:18:43.254 [main] FATAL cz.vsb.java2.test1.Main - This is an fatal message.
+23:18:43.254 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:18:43.254 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:18:43.254 [main] FATAL cz.vsb.java2.test1.Main - This is an fatal message.
+23:18:43.254 [main] FATAL cz.vsb.java2.test1.Main - This is an fatal message.
+23:30:59.737 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:30:59.738 [main] ERROR cz.vsb.java2.test1.Main - This is an error message.
+23:30:59.738 [main] FATAL cz.vsb.java2.test1.Main - This is an fatal message.
+23:30:59.738 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:30:59.739 [main] FATAL cz.vsb.java2.test1.Main - This is an fatal message.
+23:30:59.739 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:30:59.739 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.
+23:30:59.739 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message.X
+23:30:59.739 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message. X
+23:30:59.739 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message. C
+23:30:59.739 [main] WARN  cz.vsb.java2.test1.Main - This is an warn message. c

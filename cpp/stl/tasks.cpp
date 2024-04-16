@@ -1,7 +1,5 @@
 #include "tasks.h"
 
-namespace sr = std::ranges;
-
 std::ostream &operator<<(std::ostream &os, const Student &student) {
     os << student.name;
     return os;
@@ -28,13 +26,15 @@ std::vector<std::pair<Student, Score>> find_best_n_students(std::vector<Student>
     std::vector<std::pair<Student, int>> studentScores;
     std::vector<std::pair<Student, int>> bestStudents;
 
-    sr::transform(students, std::back_inserter(studentScores),
+    std::ranges::transform(students, std::back_inserter(studentScores),
                            [&exam](const Student &student) {
                                return std::make_pair(student, calculate_score(student, exam));
                            });
 
-    sr::sort(studentScores, std::greater<>{}, [](const auto &pair) { return pair.second; });
-    sr::copy(studentScores | std::views::take(n), std::back_inserter(bestStudents));
+    std::ranges::sort(studentScores, std::greater<>{}, [](const auto &pair) {
+        return pair.second;
+    });
+    std::ranges::copy(studentScores | std::views::take(n), std::back_inserter(bestStudents));
 
     return bestStudents;
 }
@@ -48,9 +48,10 @@ size_t max_score_difference(const std::vector<Student> &students, const std::vec
     std::for_each(exams.begin(), exams.end(), [&](const Exam &exam) {
         std::vector<Score> examScores;
 
-        std::transform(students.begin(), students.end(), std::back_inserter(examScores), [&](const Student &student) {
-            return calculate_score(student, exam);
-        });
+        std::transform(students.begin(), students.end(), std::back_inserter(examScores),
+                       [&](const Student &student) {
+                           return calculate_score(student, exam);
+                       });
 
         std::sort(examScores.begin(), examScores.end(), std::greater<>{});
 
@@ -73,15 +74,16 @@ filter_students(const std::vector<Student> &students, const std::vector<Exam> &e
     std::unordered_set<Student> passedAllExams;
     std::unordered_set<Student> passedAtLeastOneExam;
 
-    sr::copy_if(students, std::inserter(passedAllExams, passedAllExams.end()), [&](const Student &student) {
-        return sr::all_of(exams, [&](const Exam &exam) {
-            return calculate_score(student, exam) >= 100;
-        });
-    });
-
-    sr::copy_if(students, std::inserter(passedAtLeastOneExam, passedAtLeastOneExam.end()),
+    std::ranges::copy_if(students, std::inserter(passedAllExams, passedAllExams.end()),
                          [&](const Student &student) {
-                             return sr::any_of(exams, [&](const Exam &exam) {
+                             return std::ranges::all_of(exams, [&](const Exam &exam) {
+                                 return calculate_score(student, exam) >= 100;
+                             });
+                         });
+
+    std::ranges::copy_if(students, std::inserter(passedAtLeastOneExam, passedAtLeastOneExam.end()),
+                         [&](const Student &student) {
+                             return std::ranges::any_of(exams, [&](const Exam &exam) {
                                  return calculate_score(student, exam) >= 100;
                              });
                          });
@@ -93,20 +95,20 @@ std::unordered_map<Subject, std::vector<std::pair<Student, Score>>>
 get_leaderboard_of_each_subject(const std::vector<Student> &students, const std::vector<Exam> &exams) {
     std::unordered_map<Subject, std::unordered_map<Student, Score>> subjectScores;
 
-    sr::for_each(exams, [&](const Exam &exam) {
-        sr::for_each(students, [&](const Student &student) {
+    std::ranges::for_each(exams, [&](const Exam &exam) {
+        std::ranges::for_each(students, [&](const Student &student) {
             subjectScores[exam.subject][student] += calculate_score(student, exam);
         });
     });
 
     std::unordered_map<Subject, std::vector<std::pair<Student, Score>>> leaderboard;
 
-    sr::for_each(subjectScores, [&](const auto &subjectScore) {
+    std::ranges::for_each(subjectScores, [&](const auto &subjectScore) {
         const auto &subject = subjectScore.first;
         const auto &studentsScores = subjectScore.second;
 
         std::vector<std::pair<Student, Score>> sortedStudents(studentsScores.begin(), studentsScores.end());
-        sr::sort(sortedStudents, [](const auto &a, const auto &b) {
+        std::ranges::sort(sortedStudents, [](const auto &a, const auto &b) {
             return a.second != b.second ? a.second > b.second : a.first.name < b.first.name;
         });
 
