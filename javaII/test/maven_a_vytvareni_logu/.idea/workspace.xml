@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70063e69-d797-4d6d-b285-cbd1db952a6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Drawing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/NestType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/RectangleMath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Star.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-hashcode/src/test/java/cz/vsb/fei/java2/testhashcode/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/Tools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/AnEmptyClassInEmptyPackage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/Bird.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/LetterLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/Nest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java2-test-jpa/src/test/java/cz/vsb/fei/java2/testjpa/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mylogfile.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/vsb/fei/java/LoggerExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/vsb/fei/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/vsb/fei/java/newPackage/NewClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mylogfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test01/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2fE6V3l2MJhvq6dMvXOaAObh64Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/katussska/Private/github/vsb/javaII/test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cz.vsb.fei.java.Main" />
+      <module name="testj-bai0033" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="maven_a_vytvareni_logu" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="maven_a_vytvareni_logu" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70063e69-d797-4d6d-b285-cbd1db952a6e" name="Changes" comment="" />
+      <created>1713350928490</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713350928490</updated>
+      <workItem from="1713350929687" duration="1745000" />
+      <workItem from="1713353910958" duration="61000" />
+      <workItem from="1713354577799" duration="57000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

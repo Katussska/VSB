@@ -5,14 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="989dd657-0b43-4f65-b9aa-d01556247319" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/task03/src/main/java/cz/vsb/fei/java2/testjpa/entities/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task03/src/main/java/cz/vsb/fei/java2/testjpa/entities/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task03/src/main/java/cz/vsb/fei/java2/testjpa/entities/StormObservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Drawing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/NestType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/RectangleMath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/cz/vsb/fei/java2/testhashcode/Star.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-hashcode/src/test/java/cz/vsb/fei/java2/testhashcode/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/Tools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/AnEmptyClassInEmptyPackage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/Bird.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/LetterLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/cz/vsb/fei/java2/testjpa/entities/Nest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/java2-test-jpa/src/test/java/cz/vsb/fei/java2/testjpa/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/mylogfile.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/src/main/java/cz/vsb/fei/java/LoggerExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/src/main/java/cz/vsb/fei/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/src/main/java/cz/vsb/fei/java/newPackage/NewClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/maven_a_vytvareni_logu/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/mylogfile.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/java2.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task03/src/main/java/cz/vsb/fei/java2/testjpa/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/task03/src/main/java/cz/vsb/fei/java2/testjpa/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +100,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/katussska/Private/github/vsb&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/katussska/Private/github/vsb/javaII/test01&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -71,6 +113,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,6 +135,8 @@
       <workItem from="1713342130942" duration="66000" />
       <workItem from="1713342213763" duration="1260000" />
       <workItem from="1713343495177" duration="207000" />
+      <workItem from="1713350026422" duration="3360000" />
+      <workItem from="1713354427898" duration="620000" />
     </task>
     <servers />
   </component>
