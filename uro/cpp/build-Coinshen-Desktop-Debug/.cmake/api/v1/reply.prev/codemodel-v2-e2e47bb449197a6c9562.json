@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-b02611648a16df6e8489.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Coinshen",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Coinshen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Coinshen-Debug-f41f10e39795a6bbfc8a.json",
+					"name" : "Coinshen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Coinshen_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Coinshen_autogen-Debug-932fa3df421ccefd4b7f.json",
+					"name" : "Coinshen_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Coinshen_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Coinshen_autogen_timestamp_deps-Debug-da043119f8ce688df4b0.json",
+					"name" : "Coinshen_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/katussska/Private/build-Coinshen-Desktop-Debug",
+		"source" : "/home/katussska/Private/Coinshen"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
