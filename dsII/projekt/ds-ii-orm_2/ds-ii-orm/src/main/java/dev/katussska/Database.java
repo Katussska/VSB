@@ -26,15 +26,17 @@ public class Database {
             throw new RuntimeException(e);
         }
         this.dbUrl = config.getProperty("db.url");
+        System.out.println(this.dbUrl);
         this.username = config.getProperty("db.username");
+        System.out.println(this.username);
         this.password = config.getProperty("db.password");
+        System.out.println(this.password);
     }
 
     public void connect() {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            conn = DriverManager.getConnection(this.dbUrl);
-//            conn = DriverManager.getConnection(dbUrl, username, password);
+//            conn = DriverManager.getConnection(this.dbUrl);
+            conn = DriverManager.getConnection(dbUrl, username, password);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

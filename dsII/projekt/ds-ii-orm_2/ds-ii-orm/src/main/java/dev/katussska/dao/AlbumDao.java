@@ -1,6 +1,5 @@
 package dev.katussska.dao;
 
-import dev.katussska.Database;
 import dev.katussska.dto.Album;
 import dev.katussska.dto.Artist;
 import dev.katussska.dto.Song;
@@ -16,13 +15,12 @@ public class AlbumDao {
      * @return inserted album id
      * @throws SQLException
      */
-    private static int insert(Database pDb, Album album) throws SQLException {
-        Database db = Database.connect(pDb);
+    private static int insert(Connection db, Album album) throws SQLException {
         String sql = """
             INSERT INTO album(name, release_date, description)
             VALUES (?, ?, ?)
             """;
-        try (PreparedStatement statement = db.getConn().prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement statement = db.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, album.getName());
             statement.setDate(2, album.getReleaseDate());
             statement.setString(3, album.getDescription());
@@ -33,7 +31,6 @@ public class AlbumDao {
             }
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    Database.close(pDb, db);
                     return generatedKeys.getInt(1);
                 } else {
                     throw new SQLException("Creating album failed, no ID obtained.");
@@ -42,9 +39,8 @@ public class AlbumDao {
         }
     }
 
-    public static void createNewAlbum(Database pDb, String name, String description, Date releaseDate, List<Artist> artists, List<Song> songs) throws SQLException {
-        Database db = Database.connect(pDb);
-
+    public static void createNewAlbum(Connection db, String name, String description,
+                                      Date releaseDate, List<Artist> artists, List<Song> songs) throws SQLException {
         for (Artist artist : artists) {
             if (ArtistDao.albumNameExists(db, artist, name))
                 throw new SQLException("Album name already exists");
@@ -56,7 +52,8 @@ public class AlbumDao {
         }
 
         try {
-            db.beginTransaction();
+//            db.beginTransaction();
+            db.setAutoCommit(false);
 
             Album album = new Album(releaseDate, name, description);
             Integer albumId = AlbumDao.insert(db, album);
@@ -66,17 +63,36 @@ public class AlbumDao {
             }
 
             for (Song song : songs) {
-                SongDao.insert(db, song);
                 for (Artist artist : artists) {
                     SongArtistDao.insert(db, song, artist);
                 }
             }
 
-            db.endTransaction();
+            db.commit();
+            db.setAutoCommit(true);
+//            db.endTransaction();
         } catch (SQLException e) {
             db.rollback();
         }
 
-        Database.close(pDb, db);
+    }
+
+    public static void createNewAlbum_sp(Connection db, String name, String description,
+                                         Date releaseDate, String artistIdList, String songIdList) throws SQLException {
+        String sql = """
+                   EXEC createNewAlbum
+                       @name = ?,
+                       @description = ?,
+                       @releaseDate = ?,
+                       @artistList = ?,
+                       @songList = ?
+                   """;
+        CallableStatement statement = db.prepareCall(sql);
+        statement.setString(1, name);
+        statement.setString(2, description);
+        statement.setDate(3, releaseDate);
+        statement.setString(4, artistIdList);
+        statement.setString(5, songIdList);
+        statement.execute();
     }
 }

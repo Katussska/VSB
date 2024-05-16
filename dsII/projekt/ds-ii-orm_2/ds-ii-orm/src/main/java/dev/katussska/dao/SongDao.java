@@ -1,19 +1,18 @@
 package dev.katussska.dao;
 
-import dev.katussska.Database;
 import dev.katussska.dto.Song;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class SongDao {
-    public static void insert(Database pDb, Song song) throws SQLException {
-        Database db = Database.connect(pDb);
+    public static void insert(Connection db, Song song) throws SQLException {
         String sql = """
                 INSERT INTO song(release_date, duration, name, album_id, lyrics)
                 VALUES (?, ?, ?, ?, ?)
                 """;
-        try (PreparedStatement statement = db.getConn().prepareStatement(sql)) {
+        try (PreparedStatement statement = db.prepareStatement(sql)) {
             statement.setDate(1, song.getReleaseDate());
             statement.setString(2, song.getDuration());
             statement.setString(3, song.getName());
@@ -24,6 +23,5 @@ public class SongDao {
                 throw new SQLException("Creating album_artist failed, no rows affected.");
             }
         }
-        Database.close(pDb, db);
     }
 }
