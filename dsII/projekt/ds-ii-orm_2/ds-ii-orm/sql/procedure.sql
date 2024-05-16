@@ -80,15 +80,15 @@ BEGIN
 END;
 
 
-DECLARE @name NVARCHAR(50) = 'Testovaci album';
-DECLARE @description NVARCHAR(200) = 'Popis testovaciho alba.';
-DECLARE @releaseDate DATE = '2024-05-16';
-DECLARE @artistList VARCHAR(MAX) = '1,2,3'; -- Seznam ID umělců oddělených čárkami
-DECLARE @songList VARCHAR(MAX) = '10,9,8'; -- Seznam ID písní oddělených čárkami
-
-    EXEC createNewAlbum
-         @name = @name,
-         @description = @description,
-         @releaseDate = @releaseDate,
-         @artistList = @artistList,
-         @songList = @songList;
+-- DECLARE @name NVARCHAR(50) = 'Testovaci album';
+-- DECLARE @description NVARCHAR(200) = 'Popis testovaciho alba.';
+-- DECLARE @releaseDate DATE = '2024-05-16';
+-- DECLARE @artistList VARCHAR(MAX) = '1,2,3'; -- Seznam ID umělců oddělených čárkami
+-- DECLARE @songList VARCHAR(MAX) = '10,9,8'; -- Seznam ID písní oddělených čárkami
+--
+--     EXEC createNewAlbum
+--          @name = @name,
+--          @description = @description,
+--          @releaseDate = @releaseDate,
+--          @artistList = @artistList,
+--          @songList = @songList;

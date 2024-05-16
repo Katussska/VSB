@@ -9,7 +9,6 @@ import java.util.List;
 
 public class AlbumDao {
     /**
-     *
      * @param pDb
      * @param album
      * @return inserted album id
@@ -17,9 +16,9 @@ public class AlbumDao {
      */
     private static int insert(Connection db, Album album) throws SQLException {
         String sql = """
-            INSERT INTO album(name, release_date, description)
-            VALUES (?, ?, ?)
-            """;
+                INSERT INTO album(name, release_date, description)
+                VALUES (?, ?, ?)
+                """;
         try (PreparedStatement statement = db.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, album.getName());
             statement.setDate(2, album.getReleaseDate());
@@ -66,7 +65,9 @@ public class AlbumDao {
                 for (Artist artist : artists) {
                     SongArtistDao.insert(db, song, artist);
                 }
+                SongDao.updateAlbumId(db, song, albumId);
             }
+
 
             db.commit();
             db.setAutoCommit(true);
@@ -80,13 +81,13 @@ public class AlbumDao {
     public static void createNewAlbum_sp(Connection db, String name, String description,
                                          Date releaseDate, String artistIdList, String songIdList) throws SQLException {
         String sql = """
-                   EXEC createNewAlbum
-                       @name = ?,
-                       @description = ?,
-                       @releaseDate = ?,
-                       @artistList = ?,
-                       @songList = ?
-                   """;
+                EXEC createNewAlbum
+                    @name = ?,
+                    @description = ?,
+                    @releaseDate = ?,
+                    @artistList = ?,
+                    @songList = ?
+                """;
         CallableStatement statement = db.prepareCall(sql);
         statement.setString(1, name);
         statement.setString(2, description);

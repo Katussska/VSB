@@ -7,18 +7,17 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class SongDao {
-    public static void insert(Connection db, Song song) throws SQLException {
+    public static void updateAlbumId(Connection db, Song song, int albumId) throws SQLException {
         String sql = """
-                INSERT INTO song(release_date, duration, name, album_id, lyrics)
-                VALUES (?, ?, ?, ?, ?)
-                """;
+                UPDATE song
+                SET album_id = ?
+                where song_id = ?
+                                """;
         try (PreparedStatement statement = db.prepareStatement(sql)) {
-            statement.setDate(1, song.getReleaseDate());
-            statement.setString(2, song.getDuration());
-            statement.setString(3, song.getName());
-            statement.setInt(4, song.getAlbumId());
-            statement.setString(5, song.getLyrics());
+            statement.setInt(1, albumId);
+            statement.setInt(2, song.getSongId());
             int affectedRows = statement.executeUpdate();
+
             if (affectedRows == 0) {
                 throw new SQLException("Creating album_artist failed, no rows affected.");
             }
