@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/cb7adf10-cca4-46bc-a7e7-17c34a7167b2/console.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/createAlbum.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/schema.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/seed.sql" dialect="TSQL" />
+  </component>
+</project>
