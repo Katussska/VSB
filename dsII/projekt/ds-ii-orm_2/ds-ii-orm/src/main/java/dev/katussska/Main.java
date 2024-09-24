@@ -66,18 +66,18 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-//        // procedura
-//        try {
-//            AlbumDao.createNewAlbum_sp(db,
-//                    "Testovaci album222",
-//                    "Popis testovaciho alba2222",
-//                    new Date(2024, 5, 16),
-//                    "2",
-//                    "7");
-//            System.out.println("Album vytvoreno");
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
+        // procedura
+        try {
+            AlbumDao.createNewAlbum_sp(db,
+                    "Testovaci album222",
+                    "Popis testovaciho alba2222",
+                    new Date(2024, 5, 16),
+                    "2",
+                    "7");
+            System.out.println("Album vytvoreno");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
 
 //        db.close();
     }
