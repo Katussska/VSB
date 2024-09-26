@@ -17,7 +17,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    char line[250];
+    char line[1000];
 
     while (fgets(line, sizeof(line), file))
         printf("%s", line);
