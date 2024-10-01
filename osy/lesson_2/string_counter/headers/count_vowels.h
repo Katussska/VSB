@@ -1,4 +1,4 @@
 #include <stdio.h>
 #include <string.h>
 
-void to_uppercase(char *str);
+void count_vowels(char *str);

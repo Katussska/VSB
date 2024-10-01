@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "headers/string_manipulate.h"
+#include "headers/text_process.h"
 
 int main()
 {
@@ -9,8 +9,7 @@ int main()
 
     while (fgets(buffer, sizeof(buffer), stdin) != NULL)
     {
-        string_manipulate(buffer);
-        printf("%s\n", buffer);
+        text_process(buffer);
     }
     return 0;
 }

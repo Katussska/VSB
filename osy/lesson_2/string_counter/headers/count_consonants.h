@@ -1,4 +1,4 @@
 #include <stdio.h>
 #include <string.h>
 
-void to_lowercase(char *str);
+void count_consonants(char *str);
