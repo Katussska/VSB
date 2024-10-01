@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "to_uppercase.h": "c",
+        "reverse_string.h": "c",
+        "to_lowercase.h": "c"
+    }
+}
