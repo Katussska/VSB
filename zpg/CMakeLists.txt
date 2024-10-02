@@ -10,8 +10,11 @@ set(OpenGL_GL_PREFERENCE LEGACY)
 find_package(glm REQUIRED)
 find_package(OpenGL REQUIRED)
 
+
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GLFW3 REQUIRED glfw3)
+pkg_check_modules(GLEW REQUIRED glew)
+
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
@@ -19,4 +22,4 @@ include_directories(include)
 
 add_executable(zpg ${SOURCES})
 
-target_link_libraries(zpg PRIVATE glfw glm::glm ${OPENGL_gl_LIBRARY})
+target_link_libraries(zpg PRIVATE glfw glm::glm ${OPENGL_gl_LIBRARY} ${GLEW_LIBRARIES})
