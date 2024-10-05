@@ -1,16 +1,6 @@
 // Include GLEW
 #include <GL/glew.h>
-// Include GLFW
 #include <GLFW/glfw3.h>
-
-// Include GLM
-#include <glm/vec3.hpp>                 // glm::vec3
-#include <glm/vec4.hpp>                 // glm::vec4
-#include <glm/mat4x4.hpp>               // glm::mat4
-#include <glm/gtc/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale, glm::perspective
-#include <glm/gtc/type_ptr.hpp>         // glm::value_ptr
-
-// Include the standard C++ headers
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -42,7 +32,7 @@ static void button_callback(GLFWwindow *window, int button, int action, int mode
 }
 
 float points[] = {
-    0.0f, 0.5f, 0.0f,
+    -0.5f, 0.5f, 0.f,
     0.5f, -0.5f, 0.0f,
     -0.5f, -0.5f, 0.0f};
 
@@ -57,7 +47,7 @@ const char *fragment_shader =
     "#version 330\n"
     "out vec4 frag_colour;"
     "void main () {"
-    "     frag_colour = vec4 (0.5, 0.0, 0.5, 1.0);"
+    "     frag_colour = vec4 (0.1, 0.9, 0.7, 1.0);"
     "}";
 
 int main(void)
@@ -142,6 +132,7 @@ int main(void)
         glGetProgramInfoLog(shaderProgram, infoLogLength, NULL, strInfoLog);
         fprintf(stderr, "Linker failure: %s\n", strInfoLog);
         delete[] strInfoLog;
+        exit(EXIT_FAILURE);
     }
 
     while (!glfwWindowShouldClose(window))
