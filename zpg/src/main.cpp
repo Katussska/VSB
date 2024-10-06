@@ -76,14 +76,20 @@ int main(void)
 
         IndexBuffer ib(indices, 15); // vytvoreni indexoveho bufferu
 
-        Shader shader("../res/shaders/Basic.shader"); // nacteni shaderu
+        Shader shader1("../res/shaders/Basic.shader");  // nacteni shaderu1
+        Shader shader2("../res/shaders/Basic2.shader"); // nacteni shaderu2
+        Shader shader3("../res/shaders/Basic3.shader"); // nacteni shaderu3
 
-        shader.Bind(); // aktivace shaderu
+        shader1.Bind(); // aktivace shaderu1
+        shader2.Bind(); // aktivace shaderu2
+        shader3.Bind(); // aktivace shaderu3
 
         va.Unbind(); // unbindovani vsech objektu
         vb.Unbind();
         ib.Unbind();
-        shader.Unbind();
+        shader1.Unbind();
+        shader2.Unbind();
+        shader3.Unbind();
 
         Renderer renderer; // renderer pro vykreslovani
 
@@ -95,19 +101,21 @@ int main(void)
         {
             renderer.Clear(); // cisteni obrazovky
 
-            shader.Bind(); // znovu aktivace shaderu
+            shader1.Bind(); // aktivace prvniho shaderu
+            shader2.Bind(); // aktivace druheho shaderu
+            shader3.Bind(); // aktivace tretiho shaderu
 
             // vykresleni prvniho ctverce
-            shader.SetUniform4f("u_Color", r, 0.5f, 0.5f, 1.0f); // nastaveni barvy
-            renderer.Draw(va, ib, shader, 0, 6);                 // vykresleni prvniho ctverce (6 indexu)
+            shader1.SetUniform4f("u_Color", r, 0.5f, 0.5f, 1.0f); // nastaveni barvy
+            renderer.Draw(va, ib, shader1, 0, 6);                 // vykresleni prvniho ctverce (6 indexu)
 
             // vykresleni druheho ctverce
-            shader.SetUniform4f("u_Color", r, 0.1f, 0.5f, 1.0f); // nastaveni barvy
-            renderer.Draw(va, ib, shader, 6, 6);                 // vykresleni druheho ctverce (6 indexu)
+            shader2.SetUniform4f("u_Color", r, 0.1f, 0.5f, 1.0f); // nastaveni barvy
+            renderer.Draw(va, ib, shader2, 6, 6);                 // vykresleni druheho ctverce (6 indexu)
 
             // vykresleni trojuhelniku
-            shader.SetUniform4f("u_Color", r, 0.5f, 0.1f, 1.0f); // nastaveni barvy
-            renderer.Draw(va, ib, shader, 12, 3);                // vykresleni trojuhelniku (3 indexy)
+            shader3.SetUniform4f("u_Color", r, 0.5f, 0.1f, 1.0f); // nastaveni barvy
+            renderer.Draw(va, ib, shader3, 12, 3);                // vykresleni trojuhelniku (3 indexy)
 
             // zmena barvy v zavislosti na hodnote r
             if (r > 1.0f)
