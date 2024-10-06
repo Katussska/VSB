@@ -28,12 +28,12 @@ void Renderer::Clear() const
 }
 
 // funkce vykresluje objekt na obrazovku
-void Renderer::Draw(const VertexArray &va, const IndexBuffer &ib, const Shader &shader) const
+void Renderer::Draw(const VertexArray &va, const IndexBuffer &ib, const Shader &shader, unsigned int offset, unsigned int count) const
 {
     shader.Bind(); // aktivuje shaderovy program
     va.Bind();     // binduje vertex array objekt
     ib.Bind();     // binduje index buffer
 
-    // vykresluje trojuhelniky na zaklade indexu v ib (index buffer)
-    GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
+    // vykresluje trojuhelniky na zaklade indexu v ib (index buffer) s offsetem a poctem indexu
+    GLCall(glDrawElementsBaseVertex(GL_TRIANGLES, count, GL_UNSIGNED_INT, (const void *)(offset * sizeof(unsigned int)), 0));
 }

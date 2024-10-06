@@ -30,5 +30,5 @@ public:
     void Clear() const;
 
     // metoda pro vykresleni objektu vertex array index buffer shader
-    void Draw(const VertexArray &va, const IndexBuffer &ib, const Shader &shader) const;
+    void Draw(const VertexArray &va, const IndexBuffer &ib, const Shader &shader, unsigned int offset, unsigned int count) const;
 };
