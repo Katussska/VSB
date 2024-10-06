@@ -1,33 +1,52 @@
-#ifndef SHADER_H
-#define SHADER_H
+#pragma once
 
-#include <GL/glew.h>
 #include <string>
+#include <unordered_map>
 
-// třída shader reprezentující shader program
+// struktura pro uchovani zdroju shaderu
+struct ShaderProgramSource
+{
+    std::string VertexSource;   // zdroj vertex shaderu
+    std::string FragmentSource; // zdroj fragment shaderu
+};
+
+// trida pro spravu shaderu
 class Shader
 {
-protected:
-    GLuint shaderID;      // id shaderu
-    void compileShader(); // kompilace shaderu
-public:
-    Shader(const std::string &source); // konstruktor
-    virtual ~Shader();                 // destruktor
-    GLuint getID() const;              // získání id shaderu
-};
+private:
+    std::string m_FilePath;                                      // cesta k souboru shaderu
+    unsigned int m_RendererID;                                   // identifikator shaderu pro renderer
+    std::unordered_map<std::string, int> m_UniformLocationCache; // cache pro uniform location
 
-// třída vertexshader dědící z třídy shader
-class VertexShader : public Shader
-{
 public:
-    VertexShader(const std::string &source); // konstruktor
-};
+    // konstruktor inicializuje shader s cestou k souboru
+    Shader(const std::string &filepath);
 
-// třída fragmentshader dědící z třídy shader
-class FragmentShader : public Shader
-{
-public:
-    FragmentShader(const std::string &source); // konstruktor
-};
+    // destruktor pro uvolneni shaderu
+    ~Shader();
 
-#endif // SHADER_H
+    // metoda pro aktivaci shaderu
+    void Bind() const;
+
+    // metoda pro deaktivaci shaderu
+    void Unbind() const;
+
+    // nastaveni uniform pro integer
+    void SetUniform1i(const std::string &name, float value);
+
+    // nastaveni uniform pro vec4
+    void SetUniform4f(const std::string &name, float v0, float v1, float v2, float v3);
+
+private:
+    // kompilace shaderu podle typu a zdroje
+    unsigned int CompileShader(unsigned int type, const std::string &source);
+
+    // vytvoreni shaderu ze zdroju vertex a fragment shaderu
+    unsigned int CreateShader(const std::string &vertexShader, const std::string &fragmentShader);
+
+    // parsovani shaderu ze souboru
+    ShaderProgramSource ParseShader(const std::string &filepath);
+
+    // ziskani location uniformu
+    int GetUniformLocation(const std::string &name);
+};

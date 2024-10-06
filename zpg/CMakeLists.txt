@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(OpenGL_GL_PREFERENCE LEGACY)
 
-find_package(glm REQUIRED)
 find_package(OpenGL REQUIRED)
 
 
@@ -17,9 +16,10 @@ pkg_check_modules(GLEW REQUIRED glew)
 
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE SHADERS "res/shaders/*.shader")
 
 include_directories(include)
 
-add_executable(zpg ${SOURCES})
+add_executable(zpg ${SOURCES} ${SHADERS})
 
-target_link_libraries(zpg PRIVATE glfw glm::glm ${OPENGL_gl_LIBRARY} ${GLEW_LIBRARIES})
+target_link_libraries(zpg PRIVATE glfw  ${OPENGL_gl_LIBRARY} ${GLEW_LIBRARIES})
